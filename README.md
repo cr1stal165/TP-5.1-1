@@ -14,7 +14,7 @@
 
 1. Таск-менеджер: [Trello](https://trello.com/b/EdGDby24/%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%B2%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D0%B8) <br />
 
-2. Функциональная диаграмма с User Story: [Miro]() <br />
+2. Функциональная диаграмма с User Story: [Miro](https://miro.com/app/board/uXjVMe9HOf4=/?share_link_id=191011390342) <br />
 
 # Документация
 
