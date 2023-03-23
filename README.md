@@ -16,6 +16,8 @@
 
 2. Функциональная диаграмма с User Story: [Miro](https://miro.com/app/board/uXjVMe9HOf4=/?share_link_id=191011390342) <br />
 
+3. Прототип интерфейса: [Figma](https://www.figma.com/file/lbwCyNJmzD3AKl5oquqVBu/WikiWorld?node-id=0%3A1&t=4BweVBgmoZyOHkVO-1) <br />
+
 # Документация
 
 1. [Курсовой проект]()
