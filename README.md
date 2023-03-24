@@ -24,6 +24,6 @@
 
 # Документация
 
-1. [Курсовой проект]()
-2. [Техническое задание]()
+1. [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
+2. [Техническое задание](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
 3. [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
