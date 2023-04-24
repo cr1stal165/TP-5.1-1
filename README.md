@@ -34,3 +34,4 @@
 
 1. [Видеопрезентация production макетов](https://www.youtube.com/watch?v=0kdLCa_OOzQ)
 2. [Production макеты](https://www.figma.com/file/lbwCyNJmzD3AKl5oquqVBu/WikiWorld?node-id=0%3A1&t=4BweVBgmoZyOHkVO-1)
+3. [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
