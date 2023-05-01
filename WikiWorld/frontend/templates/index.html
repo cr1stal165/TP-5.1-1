@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: "/api/users/",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    var users = data;
+                    for (var i = 0; i < users.length; i++) {
+                        $('#users-list').append('<li>' + users[i].nickname + '</li>');
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Users</h1>
+    <ul id="users-list"></ul>
+</body>
+</html>
