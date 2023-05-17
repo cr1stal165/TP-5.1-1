@@ -21,6 +21,7 @@ from backend.views import ArticleAPIList, ArticleAPIUpdateView, ArticleAPIDestro
     TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView
 from frontend.urls import urlpatterns1
 from WikiWorld import settings
+from .yasg import urlpatterns as doc_urls
 
 
 urlpatterns = [
@@ -43,6 +44,7 @@ urlpatterns = [
     # re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]
 
+urlpatterns += doc_urls
 urlpatterns += urlpatterns1
 
 
