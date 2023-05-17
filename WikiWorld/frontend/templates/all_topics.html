@@ -6,8 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'scripts/get_articles.js' %}"></script>
-    <script src="{% static 'scripts/get_topics.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -88,9 +86,9 @@
         }
 
         @font-face {
-            font-family: 'Montserrat-SemiBold';
+            font-family: 'Montserrat-Bold';
             src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
-            font-weight: normal;
+            font-weight: 400;
             font-style: normal;
         }
 
@@ -182,21 +180,21 @@
         }
 
         .article1 {
-            padding-top: 36px;
             vertical-align: top;
-            width: 513px;
-            height: 597px;
+            width: 664px;
+            height: 600px;
             margin-left: 20px;
             background: #FFFFFF;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
             border-radius: 25px;
+            padding-top: 35px;
+
         }
 
         .article2 {
-            padding-top: 36px;
             vertical-align: top;
-            width: 513px;
-            height: 597px;
+            width: 348px;
+            height: 675px;
             margin-left: 20px;
             background: #FFFFFF;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
@@ -211,47 +209,104 @@
             padding-bottom: 10px;
         }
 
-        .h-f, .h-s{
-            margin-top: 36px;
-            margin-left: 31px;
-            font-family: 'Montserrat-SemiBold', sans-serif;
-            font-size: 26px;
-            padding-bottom: 10px;
-            color: black;
-        }
-
         .line1 {
-            margin-top: 14px;
             width: 256px;
             height: 0px;
             margin-left: 31px;
             border: 2px solid #2558B8;
+            margin-top: 20px;
         }
 
         .main-text {
-            height: 442px;
+            height: 540px;
             font-size: 16px;
-            width: 410px;
+            width: 535px;
             margin-left: 31px;
             margin-top: 24px;
             font-family: 'Montserrat-Regular', sans-serif;
             line-height: 160%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
         }
 
-        .main-text1 {
-            height: 442px;
-            font-size: 16px;
-            width: 410px;
+        .art {
+            font-size: 34px;
+            color: #000000;
+            font-family: 'Montserrat-Bold', sans-serif;
             margin-left: 31px;
-            margin-top: 24px;
+        }
+
+
+        .avatar {
+            border-radius: 10px;
+        }
+
+        .date,
+        .author {
+            font-size: 20px;
             font-family: 'Montserrat-Regular', sans-serif;
-            line-height: 160%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
+            color: #000000;
+            margin-left: 26px;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .button1 {
+            order: 1;
+            margin-left: 23px;
+            background-color: #FFFFFF;
+            border: none;
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 20px;
+            width: 43px;
+            height: 43px;
+        }
+
+        .button1_text {
+            margin-left: 20px;
+            order: 2;
+            align-content: center;
+            color: #000000;
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 20px;
+        }
+
+        .topic {
+            display: flex;
+            align-items: center;
+            width: 513px;
+            height: 84px;
+            margin-left: 1%;
+            background: #2558B8;
+            border-radius: 21px;
+
+        }
+
+        .topic-main {
+            order: 1;
+            font-family: 'Montserrat-Regular', sans-serif;
+            color: #FFFFFF;
+            font-size: 36px;
+            margin-left: 52px;
+        }
+
+        .topic_img {
+            position: absolute;
+            order: 2;
+            margin-left: 420px;
+        }
+
+        .container234 {
+            margin-left: 14%;
+            margin-top: 15px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        form {
+            margin-top: 120px;
         }
 
     </style>
@@ -266,8 +321,9 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <a href="{% url 'index' %}"><img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px"
-                                                 height="65px"></a>
+                <a href="{% url 'index' %}"><img class="main-logo"
+                                                 src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                 width="65px" height="65px"></a>
                 <button class="but1">Вход</button>
                 <input class="search1" placeholder="Search">
 
@@ -278,34 +334,39 @@
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <main>
 
-    <br><br><br><br>
-    <div class="menu-bar1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
-        <h3>Темы</h3>
-        <a id="1"></a>
-        <br><br>
-        <a id="2"></a>
-        <br><br>
-        <a id="3"></a>
-        <br><br>
-        <a id="4"></a>
-        <br>
-        <br>
-        <div class="line"></div>
-        <br>
-        <a class="down-topic" href="{% url 'all_topics' %}">Все тематики</a>
-        <br>
-    </div>
-    <div class="article1" style="display: inline-block;">
-        <a class="h-f" id="h-f"></a>
-        <div class="line1"></div>
-        <p class="main-text1" id="main-text1"></p>
-
-    </div>
-    <div class="article2 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
-        <a class="h-s" id="h-s"></a>
-        <div class="line1"></div>
-        <p class="main-text" id="main-text"></p>
-
+    <div>
+        <form>
+            <div class="container234">
+                <div class="topic">
+                    <a class="topic-main">Наука</a>
+                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
+                </div>
+                <div class="topic">
+                    <a class="topic-main">История</a>
+                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
+                </div>
+            </div>
+            <div class="container234">
+                <div class="topic">
+                    <a class="topic-main">Спорт</a>
+                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
+                </div>
+                <div class="topic">
+                    <a class="topic-main">Политика</a>
+                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
+                </div>
+            </div>
+            <div class="container234">
+                <div class="topic">
+                    <a class="topic-main">Философия</a>
+                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
+                </div>
+                <div class="topic">
+                    <a class="topic-main">Технологии</a>
+                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
+                </div>
+            </div>
+        </form>
     </div>
     <br><br><br><br><br><br>
 </main>
@@ -316,7 +377,6 @@
         <p class="p2023">2023</p>
     </div>
 </footer>
-
 
 </body>
 
