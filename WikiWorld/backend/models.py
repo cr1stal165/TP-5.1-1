@@ -13,7 +13,7 @@ class User(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='image_topic')
+    image = models.BinaryField(null=True)
 
     def __str__(self):
         return self.name
@@ -23,9 +23,10 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField()
     date = models.DateField()
-    image = models.ImageField(upload_to='photos')
+    image = models.BinaryField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title + " " + f'{self.date}'
+
