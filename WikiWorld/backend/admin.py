@@ -1,16 +1,9 @@
 from django.contrib import admin
-from .models import User, Topic, Article
+from .models import User, Article, Topic
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    pass
+admin.site.register(User)
 
+admin.site.register(Article)
 
-@admin.register(Topic)
-class TopicAdmin(admin.ModelAdmin):
-    pass
+admin.site.register(Topic)
 
-
-@admin.register(Article)
-class ArticleAdmin(admin.ModelAdmin):
-    pass
