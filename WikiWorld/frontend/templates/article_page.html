@@ -328,22 +328,27 @@
     </div>
     <div class="article2 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
         <img class="avatar" width="348px" height="351px">
-        <form>
-            <p class="author" id="author"></p>
-            <p class="date">22-09-2023</p>
-            <div class="button-container">
-                <button class="button1"><img src="{% static 'img/Group 26.svg' %}" height="43px" width="43px"></button>
-                <p class="button1_text">Скачать статью</p>
-            </div>
-            <div class="button-container">
-                <button class="button1"><img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px"></button>
-                <p class="button1_text">Прослушать статью</p>
-            </div>
-            <div class="button-container">
-                <button class="button1"><img src="{% static 'img/Group 28.svg' %}" height="43px" width="43px"></button>
-                <p class="button1_text">Скачать аудио статьи</p>
-            </div>
-        </form>
+
+        <p class="author" id="author"></p>
+        <p class="date">22-09-2023</p>
+        <div class="button-container">
+            <form method="post" action="{% url 'download_pdf' %}">
+                {% csrf_token %}
+                <input name="hid_id" id="hid_id" type="hidden">
+                <button type="submit" class="button1"><img src="{% static 'img/Group 26.svg' %}" height="43px" width="43px">
+                </button>
+            </form>
+            <p class="button1_text">Скачать статью</p>
+
+        </div>
+        <div class="button-container">
+            <button class="button1"><img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px"></button>
+            <p class="button1_text">Прослушать статью</p>
+        </div>
+        <div class="button-container">
+            <button class="button1"><img src="{% static 'img/Group 28.svg' %}" height="43px" width="43px"></button>
+            <p class="button1_text">Скачать аудио статьи</p>
+        </div>
     </div>
     <br><br><br><br><br><br>
 </main>
@@ -357,7 +362,6 @@
 </footer>
 
 </body>
-
 
 
 </html>

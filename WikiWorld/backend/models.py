@@ -62,5 +62,4 @@ class Article(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.title + " " + f'{self.date}'
+
