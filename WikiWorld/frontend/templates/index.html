@@ -254,6 +254,10 @@
             white-space: normal;
         }
 
+        .but1337{
+            margin-left: -20px;
+        }
+
     </style>
 </head>
 
@@ -268,7 +272,7 @@
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
                 <a href="{% url 'index' %}"><img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px"
                                                  height="65px"></a>
-                <button class="but1">Вход</button>
+                <a class="but1337" href="{% url 'login_page' %}"><button class="but1">Вход</button></a>
                 <input class="search1" placeholder="Search">
 
             </header>

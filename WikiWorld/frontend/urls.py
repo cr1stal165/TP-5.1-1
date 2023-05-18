@@ -20,17 +20,19 @@ from django.urls import path
 from frontend import views
 from WikiWorld import settings
 
-
 urlpatterns1 = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('topics/', views.all_topics, name='all_topics'),
     path('article_page/<int:pk>/', views.article_page, name='article_page'),
-]
+    path('login/', views.login_page, name='login_page'),
+    path('registration/', views.registration_page, name='registration_page'),
+    path('download_pdf/', views.download_pdf, name='download_pdf'),
 
+]
 
 if settings.DEBUG:
     urlpatterns1 += static(
-            settings.STATIC_URL,
-            document_root=settings.STATIC_ROOT
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
