@@ -64,7 +64,7 @@ class TokenCreateViewApi(TokenCreateView):
         token = utils.login_user(self.request, serializer.user)
         token_serializer_class = settings.SERIALIZERS.token
         return Response(
-            data=(token_serializer_class(token).data, ({"nickname":serializer.user.nickname}),({"email": serializer.user.email}), ({"is_superuser":serializer.user.is_superuser})),
+            data=(token_serializer_class(token).data, ({"nickname":serializer.user.nickname}),({"email": serializer.user.email}), ({"is_superuser":serializer.user.is_superuser}), ({"id": serializer.user.id})),
             status=status.HTTP_200_OK,
         )
 
@@ -110,6 +110,7 @@ class UsersDetailView(APIView):
             return Response(serializer.data)
         except User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
+
 
 class TopicAPIList(generics.ListAPIView):
     queryset = Topic.objects.all()

@@ -335,15 +335,21 @@
             <form method="post" action="{% url 'download_pdf' %}">
                 {% csrf_token %}
                 <input name="hid_id" id="hid_id" type="hidden">
-                <button type="submit" class="button1"><img src="{% static 'img/Group 26.svg' %}" height="43px" width="43px">
+                <button type="submit" class="button1"><img src="{% static 'img/Group 26.svg' %}" height="43px"
+                                                           width="43px">
                 </button>
             </form>
             <p class="button1_text">Скачать статью</p>
 
         </div>
         <div class="button-container">
-            <button class="button1"><img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px"></button>
+            <form method="post" action="{% url 'download_audio' %}">
+                {% csrf_token %}
+                <input name="hid_id1" id="hid_id1" type="hidden">
+                <button class="button1"><img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px"></button>
+            </form>
             <p class="button1_text">Прослушать статью</p>
+
         </div>
         <div class="button-container">
             <button class="button1"><img src="{% static 'img/Group 28.svg' %}" height="43px" width="43px"></button>

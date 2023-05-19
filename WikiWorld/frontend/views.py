@@ -6,7 +6,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-
+from gtts import gTTS
 from backend.models import Article
 
 
@@ -30,9 +30,12 @@ def registration_page(request):
     return render(request, 'registration.html')
 
 
+def profile_page(request):
+    return render(request,'myprofile.html')
+
+
 def download_pdf(request):
     global pdf
-
     if request.method == 'POST':
         art_id = request.POST.get('hid_id')
         descript = Article.objects.get(id=art_id)
@@ -58,3 +61,25 @@ def download_pdf(request):
             response = HttpResponse(pdf_file.read(), content_type="application/pdf")
             response["Content-Disposition"] = 'attachment; filename="example.pdf"'
             return response
+
+
+def download_audio(request):
+
+    if request.method == 'POST':
+        art_id = request.POST.get('hid_id1')
+        descript = Article.objects.get(id=art_id)
+
+        text = descript.description
+        language = 'ru'
+
+        # создание объекта gTTS
+        tts = gTTS(text=text, lang=language)
+
+        # сохранение аудиофайла
+        tts.save("audio.mp3")
+
+        with open("audio.mp3", "rb") as file:
+            response = HttpResponse(file.read(), content_type="audio/mpeg")
+            response["Content-Disposition"] = 'attachment; filename=audio.mp3'
+            return response
+
