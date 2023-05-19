@@ -5,7 +5,9 @@
     <title>Пример адаптивно-фиксированного макета, построенного с использованием Bootstrap 4</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <script src="{% static 'scripts/authorization_user.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -196,23 +198,22 @@
         <div class="forma">
             <h1>Вход</h1>
             <div>
-                <input class="first" placeholder="Никнейм">
+                <input id="nickname" name="nickname" class="first" placeholder="Никнейм">
                 <br><br><br>
-                <input class="first" placeholder="Пароль">
+                <input id="password" name="password" class="first" placeholder="Пароль">
                 <br><br><br>
 
                 <button class="but1" value="2"><a style="text-decoration: none; color: white;" href="{% url 'registration_page' %}">Регистрация</a></button>
-                <button class="but2" value="1">Войти</button>
+                <button id="loginBtn" class="but2" value="1">Войти</button>
             </div>
         </div>
     </form>
-
+    <input type="hidden" id="hid" name="hid" class="hid">
     <div class="bg">
         <img class="wiki" src="{% static 'img/Wikipedia-Form.svg' %}">
     </div>
 </div>
 
 </body>
-
 </html>
 						

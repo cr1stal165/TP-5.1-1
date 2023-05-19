@@ -21,6 +21,7 @@ $(document).ready(function () {
 
             },
             complete: function (xmlHttp) {
+
                 window.location = '/login/'
             },
             error: function (error) {

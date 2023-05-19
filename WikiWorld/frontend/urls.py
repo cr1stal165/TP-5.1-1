@@ -28,6 +28,8 @@ urlpatterns1 = [
     path('login/', views.login_page, name='login_page'),
     path('registration/', views.registration_page, name='registration_page'),
     path('download_pdf/', views.download_pdf, name='download_pdf'),
+    path('profile/', views.profile_page, name='profile_page'),
+    path('download_audio/', views.download_audio, name='download_audio'),
 
 ]
 

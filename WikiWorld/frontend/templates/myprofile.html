@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+{% load static %}
+<head>
+    <title>Личный кабинет</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="/examples/vendors/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"
+            integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/get_username.js' %}"></script>
+    <!-- <style> -->
+    <!-- <link href="oldstyle.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <!-- </style> -->
+</head>
+
+<body>
+
+
+<!-- NAV #1 и HEADER -->
+<div class="top">
+    <div class="container1">
+        <div class="row">
+            <!-- HEADER -->
+            <header class="col-sm-5 col-md-6 col-xl-12 header order-md-0 order-xl-1">
+                <img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px"
+                     height="65px">
+
+                <input class="search1" placeholder="Search">
+                <form>
+                    <button class="button_save" id="button_save_editprofile"><p class=p-myprofilebutton>Редактировать
+                        профиль</p>
+        </div>
+        </form>
+        <form>
+            <button class="button_save" id="button_save_exit"><p class=p-myprofilebutton>Выйти</p>
+    </div>
+    </form>
+
+    </header>
+</div>
+</div>
+</div>
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<main>
+    <script>
+        function logout() {
+            // Remove the token from local storage
+            localStorage.removeItem('token');
+
+            // Redirect to the logout page or any other desired destination
+            window.location.href = 'http://127.0.0.1:8000/';
+        }
+    </script>
+
+    <button onclick="logout()">Logout</button>
+    <br><br><br><br>
+    <img class="profilepic-myprofile" src="{% static 'img/lexa_avatarka.svg' %}">
+    <a id="author" name="author" class="loginname-myprofile"> AlexWriter28 </a>
+    <a class="email-myprofile"> alex372@gmail.com </a>
+    <div class="thematic-edit">
+        <form>
+            <button class="deletebutton-profile"><img class="deletebutton-profile-svg" src="delete.svg"></button>
+        </form>
+        <h class="articlename_profile"> Ро́берт де Брюс</h>
+        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд
+            Аннандейл[en] с 1124 </p>
+        <form>
+            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="pencil.svg"></button>
+        </form>
+    </div>
+    <div class="thematic-edit2">
+        <form>
+            <button class="deletebutton-profile"><img class="deletebutton-profile-svg" src="delete.svg"></button>
+        </form>
+        <h class="articlename_profile"> Ро́берт де Брюс</h>
+        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд
+            Аннандейл[en] с 1124 </p>
+        <form>
+            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="pencil.svg"></button>
+        </form>
+    </div>
+    <div class="thematic-edit3">
+        <form>
+            <button class="deletebutton-profile"><img class="deletebutton-profile-svg" src="delete.svg"></button>
+        </form>
+        <h class="articlename_profile"> Ро́берт де Брюс</h>
+        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд
+            Аннандейл[en] с 1124 </p>
+        <form>
+            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="pencil.svg"></button>
+        </form>
+    </div>
+    <form>
+        <button class="add-article-button"> Добавить статью</button>
+    </form>
+    <div class="chosenbutton_onetwothree"> 1</div>
+    <div class="leftunchosenbutton_onetwothree"> 2</div>
+    <div class="rightunchosenbutton_onetwothree"> 3</div>
+
+
+    <br><br><br><br><br><br>
+</main>
+<!-- FOOTER -->
+<footer>
+    <div class="container footer col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+        <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
+        <p class="p2023">2023</p>
+    </div>
+</footer>
+
+</body>
+
+</html>
