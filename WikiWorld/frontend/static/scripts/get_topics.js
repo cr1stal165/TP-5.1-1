@@ -6,10 +6,10 @@ $(document).ready(function() {
     type: 'GET',
     dataType: 'json',
     success: function(response) {
-      $('#1').text(JSON.stringify(response[0]['name']).replace(/"/g, ''));
-      $('#2').text(JSON.stringify(response[1]['name']).replace(/"/g, ''));
-      $('#3').text(JSON.stringify(response[2]['name']).replace(/"/g, ''));
-      $('#4').text(JSON.stringify(response[3]['name']).replace(/"/g, ''));
+      $('#1').text(JSON.stringify(response[0]['name']).replace(/"/g, '')).attr('href', `/articles_topic/${response[0]['id']}/`);
+      $('#2').text(JSON.stringify(response[1]['name']).replace(/"/g, '')).attr('href', `/articles_topic/${response[1]['id']}/`);
+      $('#3').text(JSON.stringify(response[2]['name']).replace(/"/g, '')).attr('href', `/articles_topic/${response[2]['id']}/`);
+      $('#4').text(JSON.stringify(response[3]['name']).replace(/"/g, '')).attr('href', `/articles_topic/${response[3]['id']}/`);
 
     },
     error: function(error) {

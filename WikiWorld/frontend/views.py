@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, FileResponse
 from django.shortcuts import render
 from reportlab.pdfgen import canvas
@@ -10,6 +11,7 @@ from gtts import gTTS
 from backend.models import Article
 
 
+@login_required(login_url='index_auth')
 def index(request):
     return render(request, 'index.html')
 
@@ -22,6 +24,10 @@ def article_page(request, pk):
     return render(request, 'article_page.html')
 
 
+def articles_topic(request, pk):
+   return render(request, 'articles_topic.html')
+
+
 def login_page(request):
     return render(request, 'login.html')
 
@@ -31,7 +37,11 @@ def registration_page(request):
 
 
 def profile_page(request):
-    return render(request,'myprofile.html')
+    return render(request, 'auth_template/myprofile.html')
+
+
+def index_auth(request):
+    return render(request, 'auth_template/main_authorised.html')
 
 
 def download_pdf(request):

@@ -6,9 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'scripts/get_article.js' %}"></script>
-    <script src="{% static 'scripts/get_topics.js' %}"></script>
-    <script src="{% static 'scripts/get_username.js' %}"></script>
+    <script src="{% static 'scripts/get_articles_topic.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -26,39 +24,19 @@
             background-color: #F6F9FD;
         }
 
-        .nav-1 {
-            background-color: #00b0f0;
-        }
-
         .header {
             background-color: #FFFFFF;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
             height: 144px;
         }
 
-        .nav-2 {
-            background-color: #002060;
-        }
-
-        .article {
-            background-color: #c00000;
-            min-height: 10rem;
-        }
-
-        .aside {
-            background-color: #00b050;
-        }
 
         .footer {
             height: 102px;
             background-color: #2558B8;
         }
 
-        .nav-1,
         .header,
-        .nav-2,
-        .article,
-        .aside,
         .footer {
             color: #fff;
         }
@@ -182,28 +160,6 @@
 
         }
 
-        .article1 {
-            display: inline-block;
-            vertical-align: top;
-            width: 664px;
-            margin-left: 20px;
-            background: #FFFFFF;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-            border-radius: 25px;
-            padding-top: 35px;
-
-        }
-
-        .article2 {
-            vertical-align: top;
-            width: 348px;
-            height: 675px;
-            margin-left: 20px;
-            background: #FFFFFF;
-            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-            border-radius: 25px;
-        }
-
         h1 {
             margin-top: 36px;
             margin-left: 31px;
@@ -212,70 +168,56 @@
             padding-bottom: 10px;
         }
 
-        .line1 {
-            width: 256px;
-            height: 0px;
+        .topic-1 {
+            margin-top: 5px;
             margin-left: 31px;
-            border: 2px solid #2558B8;
-            margin-top: 20px;
-        }
-
-        .main-text {
-            padding-bottom: 30px;
-            font-size: 16px;
-            width: 535px;
-            margin-left: 31px;
-            margin-top: 24px;
-            font-family: 'Montserrat-Regular', sans-serif;
-            line-height: 160%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
-        }
-
-        .art {
-            font-size: 34px;
-            color: #000000;
-            font-family: 'Montserrat-Bold', sans-serif;
-            margin-left: 31px;
+            font-family: 'Montserrat-Medium', sans-serif;
+            font-size: 36px;
+            padding-bottom: 10px;
         }
 
 
-        .avatar {
-            border-radius: 10px;
-        }
 
-        .date,
-        .author {
-            font-size: 20px;
-            font-family: 'Montserrat-Regular', sans-serif;
-            color: #000000;
-            margin-left: 26px;
-        }
-
-        .button-container {
+        .container234 {
+            margin-left: 1%;
+            margin-top: 15px;
             display: flex;
+            justify-content: flex-start;
             align-items: center;
         }
 
-        .button1 {
-            order: 1;
-            margin-left: 23px;
-            background-color: #FFFFFF;
-            border: none;
-            font-family: 'Montserrat-Regular', sans-serif;
-            font-size: 20px;
-            width: 43px;
-            height: 43px;
+        .topic {
+            padding-top: 20px;
+            width: 427px;
+            height: 228px;
+            margin-left: 3%;
+            margin-top: 10px;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 33px;
+
         }
 
-        .button1_text {
-            margin-left: 20px;
-            order: 2;
-            align-content: center;
+        .topic-main {
+
+            font-family: 'Montserrat-Medium', sans-serif;
             color: #000000;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-left: 20px;
+        }
+
+        .topic-text {
+            margin-top: 20px;
             font-family: 'Montserrat-Regular', sans-serif;
-            font-size: 20px;
+            font-size: 14px;
+            margin-left: 20px;
+            line-height: 160%;
+            width: 348px;
+        }
+
+        .main-cont {
+            margin-left: 50px;
         }
 
 
@@ -291,9 +233,7 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <a href="{% url 'index' %}"><img class="main-logo"
-                                                 src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
-                                                 width="65px" height="65px"></a>
+                <a href="{% url 'index' %}"><img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px" height="65px"></a>
                 <button class="but1">Вход</button>
                 <input class="search1" placeholder="Search">
 
@@ -307,13 +247,13 @@
     <br><br><br><br>
     <div class="menu-bar1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
         <h3>Темы</h3>
-        <a id="1"></a>
+        <a>История</a>
         <br><br>
-        <a id="2"></a>
+        <a>Война</a>
         <br><br>
-        <a id="3"></a>
+        <a>Политика</a>
         <br><br>
-        <a id="4"></a>
+        <a>Общество</a>
         <br>
         <br>
         <div class="line"></div>
@@ -321,62 +261,45 @@
         <a class="down-topic">Все тематики</a>
         <br>
     </div>
-    <div class="article1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
-        <a id="art" class="art"></a>
-        <div class="line1"></div>
-        <p class="main-text" id="main-text"></p>
-    </div>
-    <div class="article2 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
-        <img class="avatar" width="348px" height="351px">
+    <div class="main-cont" style="display: inline-block;">
+        <h1 id="topic-1" class="topic-1"></h1>
+        <div class="container234">
+            <div class="topic">
+                <a class="topic-main">Дворец Друцких-Любецких</a>
+                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
+                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
+            </div>
+            <div class="topic">
+                <a class="topic-main">Политика</a>
+                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
+                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
 
-        <p class="author" id="author"></p>
-        <p class="date">22-09-2023</p>
-        <div class="button-container">
-            <form method="post" action="{% url 'download_pdf' %}">
-                {% csrf_token %}
-                <input name="hid_id" id="hid_id" type="hidden">
-                <button type="submit" class="button1"><img src="{% static 'img/Group 26.svg' %}" height="43px"
-                                                           width="43px">
-                </button>
-            </form>
-            <p class="button1_text">Скачать статью</p>
-
+            </div>
         </div>
-        <div class="button-container">
-            <form method="post" action="{% url 'download_audio' %}">
-                {% csrf_token %}
-                <input name="hid_id1" id="hid_id1" type="hidden">
-                <button class="button1"><img src="{% static 'img/Group 28.svg' %}" height="43px" width="43px"></button>
-            </form>
-            <p class="button1_text">Скачать аудио статьи</p>
+        <div class="container234">
+            <div class="topic">
+                <a class="topic-main">Дворец Друцких-Любецких</a>
+                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
+                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
+            </div>
+            <div class="topic">
+                <a class="topic-main">Политика</a>
+                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
+                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
 
-        </div>
-        <div class="button-container">
-            <script>
-                function playMusic() {
-                    var music = new Audio('{% static 'audio.mp3' %}');
-                    music.play();
-
-                }
-
-            </script>
-            <button onclose="" onclick="playMusic()" class="button1"><img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px"></button>
-            <p class="button1_text">Прослушать статью</p>
+            </div>
         </div>
     </div>
     <br><br><br><br><br><br>
 </main>
 
-<input type="hidden" id="hid" class="hid" name="hid"></input>
 <footer>
     <div class="container footer">
         <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
         <p class="p2023">2023</p>
     </div>
 </footer>
-
 </body>
-
 
 </html>
 						

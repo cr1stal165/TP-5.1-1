@@ -15,7 +15,7 @@ $(document).ready(function () {
             $('#hid_id').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
             $('#hid_id1').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
 
-            var url2 = `http://127.0.0.1:8000/api/v1/user/${user}/`; // Используем значение user во втором URL-адресе
+            var url2 = `http://127.0.0.1:8000/api/v1/user/${user}/`;
             $.ajax({
                 url: url2,
                 type: 'GET',

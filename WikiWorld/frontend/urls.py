@@ -25,12 +25,13 @@ urlpatterns1 = [
     path('', views.index, name='index'),
     path('topics/', views.all_topics, name='all_topics'),
     path('article_page/<int:pk>/', views.article_page, name='article_page'),
+    path('articles_topic/<int:pk>/', views.articles_topic, name='articles_topic'),
     path('login/', views.login_page, name='login_page'),
     path('registration/', views.registration_page, name='registration_page'),
     path('download_pdf/', views.download_pdf, name='download_pdf'),
     path('profile/', views.profile_page, name='profile_page'),
     path('download_audio/', views.download_audio, name='download_audio'),
-
+    path('index_auth/', views.index_auth, name='index_auth'),
 ]
 
 if settings.DEBUG:

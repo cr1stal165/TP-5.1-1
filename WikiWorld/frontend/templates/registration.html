@@ -116,7 +116,7 @@
 
         }
 
-        .forma {
+        .forma1 {
             padding: 64px 0 0 74px;
             position: relative;
             width: 940px;
@@ -196,7 +196,7 @@
 
     <form>
         {% csrf_token %}
-        <div class="forma">
+        <div class="forma1">
             <h1>Регистрация</h1>
             <div>
                 <input class="first" id="email" placeholder="Почта">
@@ -206,8 +206,8 @@
                 <input class="first2" id="password" placeholder="Пароль">
                 <br><br><br>
 
-                <button class="but1" value="2"><a style="text-decoration: none; color: white;"
-                                                  href="{% url 'login_page' %}">Вход</a></button>
+                <div class="but1" value="2"><a style="text-decoration: none; color: white;"
+                                                  href="{% url 'login_page' %}">Вход</a></div>
                 <button id="register-btn" class="but2" value="1" type="submit">Зарегистрироваться</button>
             </div>
         </div>

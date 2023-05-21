@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static  'scripts/get_alltopics.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -335,37 +336,38 @@
 <main>
 
     <div>
-        <form>
-            <div class="container234">
-                <div class="topic">
-                    <a class="topic-main">Наука</a>
-                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
-                </div>
-                <div class="topic">
-                    <a class="topic-main">История</a>
-                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
-                </div>
-            </div>
-            <div class="container234">
-                <div class="topic">
-                    <a class="topic-main">Спорт</a>
-                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
-                </div>
-                <div class="topic">
-                    <a class="topic-main">Политика</a>
-                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
-                </div>
-            </div>
-            <div class="container234">
-                <div class="topic">
-                    <a class="topic-main">Философия</a>
-                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
-                </div>
-                <div class="topic">
-                    <a class="topic-main">Технологии</a>
-                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">
-                </div>
-            </div>
+        <form id="forma1">
+            {#            <div class="container234">#}
+            {#                <div class="topic">#}
+            {#                    <a class="topic-main">Наука</a>#}
+            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
+            {#                </div>#}
+            {#                <div class="topic">#}
+            {#                    <a class="topic-main">История</a>#}
+            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <div class="container234">#}
+            {#                <div class="topic">#}
+            {#                    <a class="topic-main">Спорт</a>#}
+            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
+            {#                </div>#}
+            {#                <div class="topic">#}
+            {#                    <a class="topic-main">Политика</a>#}
+            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <div class="container234">#}
+            {#                <div class="topic">#}
+            {#                    <a class="topic-main">Философия</a>#}
+            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
+            {#                </div>#}
+            {#                <div class="topic">#}
+            {#                    <a class="topic-main">Технологии</a>#}
+            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
+            {#                </div>#}
+            {#            </div>#}
+
         </form>
     </div>
     <br><br><br><br><br><br>

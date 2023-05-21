@@ -141,7 +141,7 @@
             margin-left: 20%
         }
 
-        .first {
+        .first123 {
             width: 714px;
             height: 71px;
             font-size: 25px;
@@ -171,7 +171,7 @@
             border: 0;
         }
 
-        .but1 {
+        .but3 {
             position: relative;
             float: right;
             margin-right: 220px;
@@ -198,13 +198,12 @@
         <div class="forma">
             <h1>Вход</h1>
             <div>
-                <input id="nickname" name="nickname" class="first" placeholder="Никнейм">
-                <br><br><br>
-                <input id="password" name="password" class="first" placeholder="Пароль">
+
                 <br><br><br>
 
-                <button class="but1" value="2"><a style="text-decoration: none; color: white;" href="{% url 'registration_page' %}">Регистрация</a></button>
-                <button id="loginBtn" class="but2" value="1">Войти</button>
+                <button class="but3"><a style="text-decoration: none; color: white;"
+                                        href="{% url 'registration_page' %}">Регистрация</a></button>
+                <button name="loginBtn" id="loginBtn" class="but2">Войти</button>
             </div>
         </div>
     </form>
@@ -213,7 +212,10 @@
         <img class="wiki" src="{% static 'img/Wikipedia-Form.svg' %}">
     </div>
 </div>
-
 </body>
+<input id="nickname" name="nickname" class="first123" placeholder="Никнейм">
+<br><br><br>
+<input id="password" name="password" class="first123" placeholder="Пароль">
+<button id="lsd">войти</button>
 </html>
 						

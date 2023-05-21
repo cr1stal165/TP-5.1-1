@@ -3,7 +3,6 @@ $(document).ready(function () {
         var nickname = $('#nickname').val();
         var email = $('#email').val();
         var password = $('#password').val();
-
         var requestData = {
             'nickname': nickname,
             'email': email,
@@ -22,7 +21,7 @@ $(document).ready(function () {
             },
             complete: function (xmlHttp) {
 
-                window.location = '/login/'
+                // window.location.href = 'http://127.0.0.1:8000/login/'
             },
             error: function (error) {
                 // Обработка ошибки

@@ -18,11 +18,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
 from backend.views import ArticleAPIList, ArticleAPIUpdateView, ArticleAPIDestroyView, RegistrUserView, \
-    TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView
+    TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView, TokenDestroyViewApi, TopicDetailView
 from frontend.urls import urlpatterns1
 from WikiWorld import settings
 from .yasg import urlpatterns as doc_urls
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,8 +33,9 @@ urlpatterns = [
     path('api/v1/articles/delete/<int:pk>/', ArticleAPIDestroyView.as_view()),
     path('api/v1/registration/', RegistrUserView.as_view()),
     path('api/v1/login/', TokenCreateViewApi.as_view()),
-
+    path('api/v1/logout/', TokenDestroyViewApi.as_view()),
     path('api/v1/topics/', TopicAPIList.as_view()),
+    path('api/v1/topics/<int:pk>/', TopicDetailView.as_view()),
 
     path('api/v1/user/<int:pk>/', UsersDetailView.as_view()),
 
@@ -47,9 +47,8 @@ urlpatterns = [
 urlpatterns += doc_urls
 urlpatterns += urlpatterns1
 
-
 if settings.DEBUG:
     urlpatterns += static(
-            settings.STATIC_URL,
-            document_root=settings.STATIC_ROOT
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
     ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
