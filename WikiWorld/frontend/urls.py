@@ -32,6 +32,7 @@ urlpatterns1 = [
     path('profile/', views.profile_page, name='profile_page'),
     path('download_audio/', views.download_audio, name='download_audio'),
     path('index_auth/', views.index_auth, name='index_auth'),
+    path('edit_profile_auth/', views.edit_profile_auth, name='edit_profile_auth'),
 ]
 
 if settings.DEBUG:

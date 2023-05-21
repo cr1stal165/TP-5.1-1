@@ -44,6 +44,10 @@ def index_auth(request):
     return render(request, 'auth_template/main_authorised.html')
 
 
+def edit_profile_auth(request):
+    return render(request, 'auth_template/editprofile.html')
+
+
 def download_pdf(request):
     global pdf
     if request.method == 'POST':
