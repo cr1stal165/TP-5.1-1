@@ -2,7 +2,7 @@
 <html lang="ru">
 {% load static %}
 <head>
-    <title>Пример адаптивно-фиксированного макета, построенного с использованием Bootstrap 4</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -33,10 +33,11 @@
             <!-- HEADER -->
 
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px"
-                     height="65px">
-                <!--  <button class="but1">Вход</button> -->
-                <a id="loginname" class="loginname"></a>
+                <a href="{% url 'index_auth' %}"><img class="main-logo"
+                                                      src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                      width="65px"
+                                                      height="65px"></a>
+                <a id="loginname" class="loginname">AlexWriter28</a>
                 <input class="search1" placeholder="Search">
                 <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}">
                 </a>
@@ -61,7 +62,7 @@
         <br>
         <div class="line"></div>
         <br>
-        <a class="down-topic">Все тематики</a>
+        <a class="down-topic" href="{% url 'all_topics_auth' %}">Все тематики</a>
         <br>
     </div>
     <div class="article1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">

@@ -11,11 +11,12 @@ from gtts import gTTS
 from backend.models import Article
 
 
-@login_required(login_url='index_auth')
+# @login_required(login_url='index_auth')
 def index(request):
     return render(request, 'index.html')
 
 
+# @login_required(login_url='index_auth')
 def all_topics(request):
     return render(request, 'all_topics.html')
 
@@ -45,7 +46,30 @@ def index_auth(request):
 
 
 def edit_profile_auth(request):
-    return render(request, 'auth_template/editprofile.html')
+    return render(request, 'auth_template/edit_profile.html')
+
+
+def article_page_auth(request):
+    return render(request, 'auth_template/article_page_auth.html')
+
+
+def articles_topic_auth(request):
+    return render(request, 'auth_template/articles_topic_auth.html')
+
+
+def all_topics_auth(request):
+    return render(request, 'auth_template/all_topics_auth.html')
+
+
+def add_article(request):
+    return render(request, 'auth_template/add_article.html')
+
+
+def edit_article(request):
+    return render(request, 'auth_template/edit_article.html')
+
+
+
 
 
 def download_pdf(request):

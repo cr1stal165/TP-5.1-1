@@ -85,8 +85,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'wikiworld',
-        'USER': 'sergey',
-        'PASSWORD': 'qwerty123',
+        'USER': 'postgres',
+        'PASSWORD': '1243',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
