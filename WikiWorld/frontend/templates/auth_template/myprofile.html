@@ -20,6 +20,7 @@
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
+    <script src="{% static 'scripts/logout_user.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
 </head>
 
@@ -40,7 +41,8 @@
                 <input class="search1" placeholder="Search">
                 <form>
                     <button class="button_save" id="button_save_editprofile"><p class=p-myprofilebutton>Редактировать
-                        профиль</p>
+                        профиль</p></button>
+                </form>
         </div>
         </form>
         <form>
@@ -54,17 +56,19 @@
 </div>
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <main>
-    <script>
-        function logout() {
-            // Remove the token from local storage
-            localStorage.removeItem('token');
+    {#    <script>#}
+    {#        function logout() {#}
+    {#            // Remove the token from local storage#}
+    {#            localStorage.removeItem('token');#}
+    {##}
+    {#            // Redirect to the logout page or any other desired destination#}
+    {#            window.location.href = 'http://127.0.0.1:8000/';#}
+    {#        }#}
+    {#    </script>#}
 
-            // Redirect to the logout page or any other desired destination
-            window.location.href = 'http://127.0.0.1:8000/';
-        }
-    </script>
-
-    <button onclick="logout()">Logout</button>
+    <form id="myForm">
+        <button id="logoutBtn">Logout</button>
+    </form>
     <br><br><br><br>
 
     <img class="profilepic-myprofile" src="{% static 'img/lexa_avatarka.svg' %}">

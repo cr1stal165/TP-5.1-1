@@ -79,8 +79,6 @@ class TokenDestroyViewApi(TokenDestroyView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-
-
 class ArticleAPIList(generics.ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer

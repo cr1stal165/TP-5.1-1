@@ -24,7 +24,7 @@ $(document).ready(function() {
             localStorage.setItem('nickname', data[1].nickname);
             localStorage.setItem('is_superuser', data[3].is_superuser);
             localStorage.setItem('id', data[4].id);
-
+            localStorage.setItem('password', data[5].password);
             // Показываем кнопку для перенаправления на страницу после аутентификации
             $('#loginBtn').show();
 

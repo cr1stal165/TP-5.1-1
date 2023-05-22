@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_articles_topic.js' %}"></script>
+    <script src="{% static 'scripts/get_topics.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -177,7 +178,6 @@
         }
 
 
-
         .container234 {
             margin-left: 1%;
             margin-top: 15px;
@@ -195,6 +195,9 @@
             background: #FFFFFF;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
             border-radius: 33px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
 
         }
 
@@ -233,7 +236,9 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <a href="{% url 'index' %}"><img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px" height="65px"></a>
+                <a href="{% url 'index' %}"><img class="main-logo"
+                                                 src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                 width="65px" height="65px"></a>
                 <button class="but1">Вход</button>
                 <input class="search1" placeholder="Search">
 
@@ -247,48 +252,49 @@
     <br><br><br><br>
     <div class="menu-bar1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
         <h3>Темы</h3>
-        <a>История</a>
+        <a id="1">История</a>
         <br><br>
-        <a>Война</a>
+        <a id="2">Война</a>
         <br><br>
-        <a>Политика</a>
+        <a id="3">Политика</a>
         <br><br>
-        <a>Общество</a>
+        <a id="4">Общество</a>
         <br>
         <br>
         <div class="line"></div>
         <br>
-        <a class="down-topic">Все тематики</a>
+        <a href="{% url 'all_topics' %}" class="down-topic">Все тематики</a>
         <br>
     </div>
-    <div class="main-cont" style="display: inline-block;">
+    <div id="main-cont" class="main-cont" style="display: inline-block;">
         <h1 id="topic-1" class="topic-1"></h1>
-        <div class="container234">
-            <div class="topic">
-                <a class="topic-main">Дворец Друцких-Любецких</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
-            </div>
-            <div class="topic">
-                <a class="topic-main">Политика</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
+        {#        <div class="container234">#}
+        {#            <div class="topic">#}
+        {#                <a class="topic-main">Дворец Друцких-Любецких</a>#}
+        {#                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де#}
+        {#                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>#}
+        {#            </div>#}
+        {#            <div class="topic">#}
+        {#                <a class="topic-main">Политика</a>#}
+        {#                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де#}
+        {#                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>#}
+        {##}
+        {#            </div>#}
+        {#        </div>#}
+        {#        <div class="container234">#}
+        {#            <div class="topic">#}
+        {#                <a class="topic-main">Дворец Друцких-Любецких</a>#}
+        {#                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де#}
+        {#                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>#}
+        {#            </div>#}
+        {#            <div class="topic">#}
+        {#                <a class="topic-main">Политика</a>#}
+        {#                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де#}
+        {#                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>#}
+        {##}
+        {#            </div>#}
+        {#        </div>#}
 
-            </div>
-        </div>
-        <div class="container234">
-            <div class="topic">
-                <a class="topic-main">Дворец Друцких-Любецких</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
-            </div>
-            <div class="topic">
-                <a class="topic-main">Политика</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
-
-            </div>
-        </div>
     </div>
     <br><br><br><br><br><br>
 </main>

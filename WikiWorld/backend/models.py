@@ -63,3 +63,10 @@ class Article(models.Model):
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 
 
+# class Token(models.Model):
+#     key = models.CharField(max_length=40, primary_key=True)
+#     user = models.ForeignKey('auth.User', related_name='auth_tokens', on_delete=models.CASCADE)
+#     created = models.DateTimeField(auto_now_add=True)
+#
+#     class Meta:
+#         db_table = 'authtoken_token'

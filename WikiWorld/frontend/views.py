@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
 from reportlab.pdfgen import canvas
@@ -8,12 +9,12 @@ from gtts import gTTS
 from backend.models import Article
 
 
+
 def index(request):
     return render(request, 'index.html')
 
 
 def all_topics(request):
-
     return render(request, 'all_topics.html')
 
 
