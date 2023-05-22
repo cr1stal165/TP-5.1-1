@@ -194,16 +194,18 @@
 <body>
 <div class="grid-container">
 
-    <form>
+    <form id="myForm" name="myForm">
         <div class="forma">
             <h1>Вход</h1>
             <div>
-
+                <input id="nickname" name="nickname" class="first123" placeholder="Никнейм">
+                <br><br><br>
+                <input id="password" name="password" class="first123" placeholder="Пароль">
                 <br><br><br>
 
                 <button class="but3"><a style="text-decoration: none; color: white;"
                                         href="{% url 'registration_page' %}">Регистрация</a></button>
-                <button name="loginBtn" id="loginBtn" class="but2">Войти</button>
+                <button id="loginBtn" type="submit" class="but2">Войти</button>
             </div>
         </div>
     </form>
@@ -213,9 +215,5 @@
     </div>
 </div>
 </body>
-<input id="nickname" name="nickname" class="first123" placeholder="Никнейм">
-<br><br><br>
-<input id="password" name="password" class="first123" placeholder="Пароль">
-<button id="lsd">войти</button>
 </html>
 						

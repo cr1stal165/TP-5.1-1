@@ -405,10 +405,10 @@ h1 {
     position: absolute;
     width: 193px;
     height: 50px;
-    left: 197px;
+    margin-left: 33%;
     top: 722px;
     background: #2558B8;
-    border-radius: 15px;
+    border-radius: 25px;
     font-family: 'Montserrat-Medium', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -477,18 +477,16 @@ h1 {
     width: 427px;
     height: 119px;
     left: 815px;
-    top: 246px;
     background: #FFFFFF;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 33px;
-    margin-bottom: 154px;
+    margin-bottom: 24px;
 }
 
 #thematic-edit-manyarticles {
-    /* position:static !important; */
+     position:static !important;
     left: 40% !important;
     right: 60% !important;
-    top: 150px !important;
 }
 
 .thematic-edit2 {
@@ -496,18 +494,17 @@ h1 {
     width: 427px;
     height: 119px;
     left: 815px;
-    top: 400px;
     background: #FFFFFF;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 33px;
-    margin-bottom: 154px;
+    margin-bottom: 24px;
 }
 
 #thematic-edit-manyarticles2 {
-    /* position:static !important; */
+    position: static !important;
     left: 40% !important;
     right: 60% !important;
-    bottom: 220px !important;
+
 }
 
 .thematic-edit3 {
@@ -515,18 +512,16 @@ h1 {
     width: 427px;
     height: 119px;
     left: 815px;
-    top: 554px;
     background: #FFFFFF;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
     border-radius: 33px;
-    margin-bottom: 154px;
 }
 
 #thematic-edit-manyarticles3 {
-    /* position:static !important; */
+    position: static !important;
     left: 40% !important;
     right: 60% !important;
-    top: 150px !important;
+
 
 }
 
@@ -616,6 +611,7 @@ h1 {
     height: 68px;
     left: 974px;
     top: 735px;
+    border-radius: 25px;
 
     background: #2558B8;
     border-radius: 25px;
@@ -650,6 +646,7 @@ h1 {
     bottom: 00px !important;
     top: 34px !important;
     left: 754px !important;
+    border-radius: 25px;
 }
 
 .p-editprofilebutton {
@@ -944,11 +941,10 @@ h1 {
 }
 
 .editbutton-profile {
-    position: absolute;
     width: 43.98px;
     height: 38.7px;
-    right: 25px;
-    top: 70px;
+    position: static;
+
     border-color: #2558d8;
     border: 0px;
 

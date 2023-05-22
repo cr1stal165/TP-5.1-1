@@ -13,6 +13,7 @@ def index(request):
 
 
 def all_topics(request):
+
     return render(request, 'all_topics.html')
 
 
@@ -63,6 +64,7 @@ def add_article(request):
 def edit_article(request):
     return render(request, 'auth_template/edit_article.html')
 
+
 def admin_thematics(request):
     return render(request, 'admin_template/admin_thematics.html')
 
@@ -77,6 +79,7 @@ def admin_edit_article(request):
 
 def admin_edit_thematics(request):
     return render(request, 'admin_template/admin_edit_thematics.html')
+
 
 def download_pdf(request):
     global pdf

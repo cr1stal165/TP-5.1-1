@@ -1,8 +1,11 @@
-$(document).ready(function () {
-    function authenticate(username, password) {
-        const url = '/api/v1/login/';
+$(document).ready(function() {
+    // Функция аутентификации
+    function authenticate() {
+        var username = $('#nickname').val();
+        var password = $('#password').val();
+        var url = '/api/v1/login/';
 
-        const data = {
+        var data = {
             'nickname': username,
             'password': password
         };
@@ -14,47 +17,50 @@ $(document).ready(function () {
             },
             body: JSON.stringify(data)
         })
-            .then(response => response.json())
-            .then(data => {
-                // Store the token securely (e.g., in local storage or a cookie)
-                localStorage.setItem('token', data[0].auth_token);
-                localStorage.setItem('nickname', data[1].nickname);
-                localStorage.setItem('is_superuser', data[3].is_superuser)
-                localStorage.setItem('id', data[4].id)
+        .then(response => response.json())
+        .then(data => {
+            // Сохраняем токен безопасно (например, в локальное хранилище или cookie)
+            localStorage.setItem('token', data[0].auth_token);
+            localStorage.setItem('nickname', data[1].nickname);
+            localStorage.setItem('is_superuser', data[3].is_superuser);
+            localStorage.setItem('id', data[4].id);
 
-                // Show the button for redirecting to the authenticated main page
-                document.getElementById('loginBtn').style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+            // Показываем кнопку для перенаправления на страницу после аутентификации
+            $('#loginBtn').show();
+
+            redirectToMainPage();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     }
 
-    // Function to redirect to the authenticated main page
+    // Функция для перенаправления на страницу после аутентификации
     function redirectToMainPage() {
-        const token = localStorage.getItem('token');
-        const id = localStorage.getItem('id');
-        const is_superuser = localStorage.getItem('is_superuser');
+        var token = localStorage.getItem('token');
+        var id = localStorage.getItem('id');
+        var is_superuser = localStorage.getItem('is_superuser');
         if (!token) {
-            // Show Bootstrap modal with error message
+            // Показываем модальное окно Bootstrap с сообщением об ошибке
             $('#myModal').modal('show');
             return;
         }
-        if (is_superuser === 'true'){
-            window.location.href = '/topics/';
-        } else {
-            window.location.href = '/profile/?token=' + token + '/?user=' + id;
-        }
-        // Redirect to the authenticated main page
+        // if (is_superuser === 'true') {
+        //     window.location.href = '/topics/';
+        // } else {
+        window.location.href = '/profile/?token=' + token + '&user=' + id;
 
     }
 
-    // Event handler for clicking the login button
+    // Обработчик события клика на кнопке входа
+    $('#loginBtn').click(function(event) {
+        event.preventDefault(); // Предотвращаем отправку формы
+        authenticate(); // Вызываем функцию аутентификации
+    });
 
-    var nickname = document.getElementById('nickname').value;
-    var password = document.getElementById('password').value;
-
-    authenticate('sergeyX', '1234');
-    redirectToMainPage();
-
+    // Обработчик события отправки формы
+    $('#myForm').submit(function(event) {
+        event.preventDefault(); // Предотвращаем отправку формы
+        authenticate(); // Вызываем функцию аутентификации
+    });
 });

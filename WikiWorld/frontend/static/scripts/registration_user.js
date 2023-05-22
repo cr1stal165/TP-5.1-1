@@ -21,7 +21,7 @@ $(document).ready(function () {
             },
             complete: function (xmlHttp) {
 
-                // window.location.href = 'http://127.0.0.1:8000/login/'
+                window.location.href = 'http://127.0.0.1:8000/login/'
             },
             error: function (error) {
                 // Обработка ошибки
