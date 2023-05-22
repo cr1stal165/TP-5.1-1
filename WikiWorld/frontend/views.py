@@ -63,6 +63,21 @@ def add_article(request):
 def edit_article(request):
     return render(request, 'auth_template/edit_article.html')
 
+def admin_thematics(request):
+    return render(request, 'admin_template/admin_thematics.html')
+
+
+def admin_many_articles(request):
+    return render(request, 'admin_template/admin_many_articles.html')
+
+
+def admin_edit_article(request):
+    return render(request, 'admin_template/admin_edit_article.html')
+
+
+def admin_edit_thematics(request):
+    return render(request, 'admin_template/admin_edit_thematics.html')
+
 def download_pdf(request):
     global pdf
     if request.method == 'POST':

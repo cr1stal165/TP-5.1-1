@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+{% load static %}
+<head>
+  <title>Добавление статьи</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link href="/examples/vendors/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <!-- <style> -->
+ <!-- <link href="oldstyle.css" rel="stylesheet"> -->
+ <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+ <!-- </style> -->
+</head>
+
+<body>
+  
+
+  <!-- NAV #1 и HEADER -->
+  <div class="top">
+    <div class="container1">
+      <div class="row">
+        <!-- HEADER -->
+        <header class="col-sm-5 col-md-6 col-xl-12 header order-md-0 order-xl-1">
+            <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+          <a href="{% url 'index_auth' %}"><img class="main-logo"
+                                                      src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                      width="65px"
+                                                      height="65px"></a>
+              <a class="loginname" id="loginname-admin">Admin32</a>
+            <img class="profilepic" id="profilepic-admin" src="{% static 'img/admin_ava.svg' %}">
+<!--          <button class="but1">Вход</button>-->
+<!--          <input class="search1" placeholder="Search">-->
+            
+        </header>
+      </div>
+    </div>
+  </div>
+  <!-- ОСНОВНОЙ КОНТЕНТ -->
+  <main>
+
+    <br><br><br><br>
+    <div class="article-editor col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: block;"></div>
+    <input type="text" placeholder="Заголовок" class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+    <input type="text" placeholder="Заголовок" class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+    <div class="upload_image"> test </div>
+      тест
+      <input type="text" placeholder="Текст статьи" class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+    </div>
+    <br><br><br><br><br><br>
+  </main>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+      <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
+      <p class="p2023">2023</p>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="/examples/vendors/jquery/jquery-3.3.1.min.js"></script>
+  <!-- Popper -->
+  <script src="/examples/vendors/popper.js/popper.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="/examples/vendors/bootstrap-4/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

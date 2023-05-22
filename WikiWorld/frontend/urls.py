@@ -38,6 +38,10 @@ urlpatterns1 = [
     path('all_topics_auth/', views.all_topics_auth, name='all_topics_auth'),
     path('add_article/', views.add_article, name='add_article'),
     path('edit_article/', views.edit_article, name='edit_article'),
+    path('admin_thematics/', views.admin_thematics, name='admin_thematics'),
+    path('admin_many_articles/', views.admin_many_articles, name='admin_many_articles'),
+    path('admin_edit_article/', views.admin_edit_article, name='admin_edit_article'),
+    path('admin_edit_thematics/', views.admin_edit_thematics, name='admin_edit_thematics'),
 ]
 
 if settings.DEBUG:
