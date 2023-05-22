@@ -1,22 +1,17 @@
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, FileResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 from reportlab.pdfgen import canvas
-from PIL import Image
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.units import mm
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from gtts import gTTS
 from backend.models import Article
 
 
-# @login_required(login_url='index_auth')
 def index(request):
     return render(request, 'index.html')
 
 
-# @login_required(login_url='index_auth')
 def all_topics(request):
     return render(request, 'all_topics.html')
 
@@ -46,7 +41,7 @@ def index_auth(request):
 
 
 def edit_profile_auth(request):
-    return render(request, 'auth_template/edit_profile.html')
+    return render(request, 'auth_template/editprofile.html')
 
 
 def article_page_auth(request):
@@ -67,10 +62,6 @@ def add_article(request):
 
 def edit_article(request):
     return render(request, 'auth_template/edit_article.html')
-
-
-
-
 
 def download_pdf(request):
     global pdf
