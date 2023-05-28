@@ -2,11 +2,13 @@
 <html lang="ru">
 {% load static %}
 <head>
-<!--    <title>Пример адаптивно-фиксированного макета, построенного с использованием Bootstrap 4</title>-->
+    <!--    <title>Пример адаптивно-фиксированного макета, построенного с использованием Bootstrap 4</title>-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'scripts/get_articles_topic.js' %}"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/get_topics_auth.js' %}"></script>
+    <script src="{% static 'scripts/get_articles_topic_auth.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -177,7 +179,6 @@
         }
 
 
-
         .container234 {
             margin-left: 1%;
             margin-top: 15px;
@@ -195,6 +196,9 @@
             background: #FFFFFF;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
             border-radius: 33px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
 
         }
 
@@ -220,6 +224,24 @@
             margin-left: 50px;
         }
 
+        .profilepic {
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 3%;
+            height: 50px;
+        }
+
+        .loginname {
+            position: absolute;
+            margin-left: 52%;
+            margin-top: 4%;
+            height: 50px;
+            font-size: 18px;
+            font-family: 'Montserrat-Medium', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+
 
     </style>
 </head>
@@ -237,27 +259,27 @@
                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                       width="65px"
                                                       height="65px"></a>
-                <a id="loginname" class="loginname">AlexWriter28</a>
+                <a id="loginname" class="loginname"></a>
                 <input class="search1" placeholder="Search">
-                <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}"></a>
+                <a href="{% url 'profile_page' %}"><img class="profilepic"
+                                                        src="{% static 'img/lexa_avatarka.svg' %}"></a>
 
             </header>
         </div>
     </div>
 </div>
-<!-- ОСНОВНОЙ КОНТЕНТ -->
 <main>
 
     <br><br><br><br>
     <div class="menu-bar1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
         <h3>Темы</h3>
-        <a>История</a>
+        <a id="1"></a>
         <br><br>
-        <a>Война</a>
+        <a id="2"></a>
         <br><br>
-        <a>Политика</a>
+        <a id="3"></a>
         <br><br>
-        <a>Общество</a>
+        <a id="4"></a>
         <br>
         <br>
         <div class="line"></div>
@@ -265,34 +287,9 @@
         <a class="down-topic" href="{% url 'all_topics_auth' %}">Все тематики</a>
         <br>
     </div>
-    <div class="main-cont" style="display: inline-block;">
+    <div id="main-cont" class="main-cont" style="display: inline-block;">
         <h1 id="topic-1" class="topic-1"></h1>
-        <div class="container234">
-            <div class="topic">
-                <a class="topic-main">Дворец Друцких-Любецких</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
-            </div>
-            <div class="topic">
-                <a class="topic-main">Политика</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
 
-            </div>
-        </div>
-        <div class="container234">
-            <div class="topic">
-                <a class="topic-main">Дворец Друцких-Любецких</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
-            </div>
-            <div class="topic">
-                <a class="topic-main">Политика</a>
-                <p class="topic-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де
-                    Фленерса на северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). </p>
-
-            </div>
-        </div>
     </div>
     <br><br><br><br><br><br>
 </main>

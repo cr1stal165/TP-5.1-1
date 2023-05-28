@@ -19,7 +19,41 @@
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/get_articles_auth.js' %}"></script>
+    <script src="{% static 'scripts/get_topics_auth.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+
+    <style>
+        .main-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+
+        .h-f, .h-s{
+            margin-top: 36px;
+            margin-left: 31px;
+            font-family: 'Montserrat-SemiBold', sans-serif;
+            font-size: 26px;
+            padding-bottom: 10px;
+            color: black;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-SemiBold';
+            src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .line1{
+            margin-top: 14px;
+        }
+
+        .article1, .article2{
+            padding-top: 36px;
+        }
+    </style>
     <!-- </style> -->
 </head>
 
@@ -37,7 +71,7 @@
                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                       width="65px"
                                                       height="65px"></a>
-                <a id="loginname" class="loginname">AlexWriter28</a>
+                <a id="loginname" class="loginname"></a>
                 <input class="search1" placeholder="Search">
                 <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}">
                 </a>
@@ -51,13 +85,13 @@
     <br><br><br><br>
     <div class="menu-bar1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
         <h3>Темы</h3>
-        <a id="1">История</a>
+        <a id="1"></a>
         <br><br>
-        <a>Война</a>
+        <a id="2"></a>
         <br><br>
-        <a>Политика</a>
+        <a id="3"></a>
         <br><br>
-        <a>Общество</a>
+        <a id="4"></a>
         <br>
         <br>
         <div class="line"></div>
@@ -66,24 +100,14 @@
         <br>
     </div>
     <div class="article1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
-        <h1>Дворец Друцких-Любецких</h1>
+        <a class="h-f" id="h-f"></a>
         <div class="line1"></div>
-        <p class="main-text">Первый дворец построен во второй половине XVIII века по проекту архитектора де Фленерса на
-            северной окраине города Щучина, в парке регулярной планировки (садовод С. Юндзилл). Принадлежал подскарбию
-            литовскому Щуку, с начала XIX века был владением князей Друцких-Любецких[2].
-            Дворец спроектирован в 1892 — 1895 годах по заказу князя Владислава Друцкого-Любецкого (польск.)рус.
-            (1864—1913) виленским архитектором Тадеушем Ростворовским (1860—1928) и был мало связан с предыдущим
-            дворцово-парковым комплексом XVIII века. Из-за болезни князя строительство шло очень медленно. </p>
+        <p id="main-text1" class="main-text"></p>
     </div>
     <div class="article2 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
-        <h1>Ро́берт де Брюс</h1>
+        <a class="h-s" id="h-s"></a>
         <div class="line1"></div>
-        <p class="main-text">Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд Аннандейл[en] с 1124 года.
-            Он был членом семьи, представители которой были вассалами герцогов Нормандии и имели владения на оконечности
-            полуострова Котантен (Западная Нормандия). После того как королём Англии стал Генрих I, Роберт получил
-            обширные владения в Йоркшире и Хартнессе, став одним из ведущих баронов в регионе. Позже благодаря дружбе с
-            будущим королём Шотландии Давидом I получил Аннандейл в Юго-Западной Шотландии, став после восшествия того
-            на престол бароном и в Англии, и в Шотландии. </p>
+        <p id="main-text" class="main-text"></p>
 
     </div>
     <br><br><br><br><br><br>

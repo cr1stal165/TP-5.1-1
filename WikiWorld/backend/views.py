@@ -1,6 +1,6 @@
 import datetime
 
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
 from djoser import utils
 from djoser.conf import settings
 from djoser.serializers import TokenSerializer
@@ -63,6 +63,7 @@ class TokenCreateViewApi(TokenCreateView):
     def _action(self, serializer):
         token = utils.login_user(self.request, serializer.user)
         token_serializer_class = settings.SERIALIZERS.token
+        login(self.request, serializer.user)
         return Response(
             data=(token_serializer_class(token).data, ({"nickname": serializer.user.nickname}),({"email": serializer.user.email}), ({"is_superuser":serializer.user.is_superuser}), ({"id": serializer.user.id}),({"password": serializer.user.password})),
             status=status.HTTP_200_OK,
@@ -70,12 +71,12 @@ class TokenCreateViewApi(TokenCreateView):
 
 
 class TokenDestroyViewApi(TokenDestroyView):
-    """Use this endpoint to logout user (remove user authentication token)."""
 
     permission_classes = settings.PERMISSIONS.token_destroy
 
     def post(self, request):
         utils.logout_user(request)
+        logout(request)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 

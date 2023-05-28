@@ -21,7 +21,7 @@ $(document).ready(function () {
             .then(data => {
                 localStorage.removeItem('token');
 
-                // Показываем кнопку для перенаправления на страницу после аутентификации
+
                 $('#logoutBtn').show();
 
                 redirectToMainPage();
@@ -31,22 +31,19 @@ $(document).ready(function () {
             });
     }
 
-    // Функция для перенаправления на страницу после аутентификации
     function redirectToMainPage() {
 
         window.location.href = 'http://127.0.0.1:8000';
 
     }
 
-    // Обработчик события клика на кнопке входа
-    $('#logoutBtn').click(function (event) {
-        event.preventDefault(); // Предотвращаем отправку формы
-        logout(); // Вызываем функцию аутентификации
+    $('#button_save_exit').click(function (event) {
+        event.preventDefault();
+        logout();
     });
 
-    // Обработчик события отправки формы
     $('#myForm').submit(function (event) {
-        event.preventDefault(); // Предотвращаем отправку формы
-        logout(); // Вызываем функцию аутентификации
+        event.preventDefault();
+        logout();
     });
 });

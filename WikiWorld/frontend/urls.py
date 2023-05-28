@@ -20,6 +20,7 @@ from django.urls import path
 from frontend import views
 from WikiWorld import settings
 
+
 urlpatterns1 = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
@@ -33,8 +34,8 @@ urlpatterns1 = [
     path('download_audio/', views.download_audio, name='download_audio'),
     path('index_auth/', views.index_auth, name='index_auth'),
     path('edit_profile_auth/', views.edit_profile_auth, name='edit_profile_auth'),
-    path('article_page_auth/', views.article_page_auth, name='article_page_auth'),
-    path('articles_topic_auth/', views.articles_topic_auth, name='articles_topic_auth'),
+    path('article_page_auth/<int:pk>/', views.article_page_auth, name='article_page_auth'),
+    path('articles_topic_auth/<int:pk>/', views.articles_topic_auth, name='articles_topic_auth'),
     path('all_topics_auth/', views.all_topics_auth, name='all_topics_auth'),
     path('add_article/', views.add_article, name='add_article'),
     path('edit_article/', views.edit_article, name='edit_article'),

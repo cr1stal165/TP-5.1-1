@@ -21,6 +21,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
     <script src="{% static 'scripts/logout_user.js' %}"></script>
+    <script src="{% static 'scripts/get_articles_profile_auth.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
 </head>
 
@@ -39,86 +40,98 @@
                                                       height="65px"></a>
 
                 <input class="search1" placeholder="Search">
-                <form>
-                    <button class="button_save" id="button_save_editprofile"><p class=p-myprofilebutton>Редактировать
+                <form action="{% url 'edit_profile_auth' %}">
+                    <button type="submit" class="button_save" id="button_save_editprofile"><p class=p-myprofilebutton>
+                        Редактировать
                         профиль</p></button>
                 </form>
+            </header>
         </div>
         </form>
         <form>
-            <button class="button_save" id="button_save_exit"><p class=p-myprofilebutton>Выйти</p>
+            <button class="button_save" id="button_save_exit"><p class=p-myprofilebutton>Выйти</p></button>
+        </form>
     </div>
-    </form>
 
-    </header>
+
 </div>
 </div>
 </div>
 <!-- ОСНОВНОЙ КОНТЕНТ -->
 <main>
-    {#    <script>#}
-    {#        function logout() {#}
-    {#            // Remove the token from local storage#}
-    {#            localStorage.removeItem('token');#}
-    {##}
-    {#            // Redirect to the logout page or any other desired destination#}
-    {#            window.location.href = 'http://127.0.0.1:8000/';#}
-    {#        }#}
-    {#    </script>#}
-
-    <form id="myForm">
-        <button id="logoutBtn">Logout</button>
-    </form>
     <br><br><br><br>
 
     <img class="profilepic-myprofile" src="{% static 'img/lexa_avatarka.svg' %}">
     <a id="author" name="author" class="loginname-myprofile"></a>
-    <a class="email-myprofile"> alex372@gmail.com </a>
-    <div class="thematic-edit">
-        <form>
-            <button class="deletebutton-profile"><img class="deletebutton-profile-svg"
-                                                      src="{% static 'img/delete.svg' %}"></button>
-        </form>
-        <h class="articlename_profile"> Ро́берт де Брюс</h>
-        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд
-            Аннандейл[en] с 1124 </p>
-        <form>
-            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="{% static 'img/pencil.svg' %}">
-            </button>
-        </form>
+    <a id="author_email" class="email-myprofile"></a>
+
+    <div id="scrollable-div" class="scrollable-div">
+{#        <div class="my-article">#}
+{#            <a class="article_title">Ро́берт де Брюс</a>#}
+{#            <p class="article_description">Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лордФеодальный#}
+{#                барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лордФеодальный барон Кливленда[en] (Скелтона) и#}
+{#                Хартнесса, 1-й лорд</p>#}
+{##}
+{#            <form id="form_delete_article">#}
+{#                <button class="deletebutton-profile"><img class="deletebutton-profile-svg"#}
+{#                                                          src="{% static 'img/delete.svg' %}"></button>#}
+{#            </form>#}
+{##}
+{#            <form id="form_edit_article">#}
+{#                <button class="editbutton-profile"><img class="editbutton-profile-svg"#}
+{#                                                        src="{% static 'img/pencil.svg' %}">#}
+{#                </button>#}
+{##}
+{#            </form>#}
+{#        </div>#}
+{#        <br>#}
+
     </div>
-    <div class="thematic-edit2">
-        <form>
-            <button class="deletebutton-profile"><img class="deletebutton-profile-svg"
-                                                      src="{% static 'img/delete.svg' %}"></button>
-        </form>
-        <h class="articlename_profile"> Ро́берт де Брюс</h>
-        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд
-            Аннандейл[en] с 1124 </p>
-        <form>
-            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="{% static 'img/pencil.svg' %}">
-            </button>
-        </form>
-    </div>
-    <div class="thematic-edit3">
-        <form>
-            <button class="deletebutton-profile"><img class="deletebutton-profile-svg"
-                                                      src="{% static 'img/delete.svg' %}"></button>
-        </form>
-        <h class="articlename_profile"> Ро́берт де Брюс</h>
-        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд
-            Аннандейл[en] с 1124 </p>
-        <form>
-            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="{% static 'img/pencil.svg' %}">
-            </button>
-        </form>
-    </div>
-    <form>
+    {#    <div class="thematic-edit">#}
+    {#        <form>#}
+    {#            <button class="deletebutton-profile"><img class="deletebutton-profile-svg"#}
+    {#                                                      src="{% static 'img/delete.svg' %}"></button>#}
+    {#        </form>#}
+    {#        <h class="articlename_profile"> Ро́берт де Брюс</h>#}
+    {#        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд#}
+    {#            Аннандейл[en] с 1124 </p>#}
+    {#        <form>#}
+    {#            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="{% static 'img/pencil.svg' %}">#}
+    {#            </button>#}
+    {#        </form>#}
+    {#    </div>#}
+    {#    <div class="thematic-edit2">#}
+    {#        <form>#}
+    {#            <button class="deletebutton-profile"><img class="deletebutton-profile-svg"#}
+    {#                                                      src="{% static 'img/delete.svg' %}"></button>#}
+    {#        </form>#}
+    {#        <h class="articlename_profile"> Ро́берт де Брюс</h>#}
+    {#        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд#}
+    {#            Аннандейл[en] с 1124 </p>#}
+    {#        <form>#}
+    {#            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="{% static 'img/pencil.svg' %}">#}
+    {#            </button>#}
+    {#        </form>#}
+    {#    </div>#}
+    {#    <div class="thematic-edit3">#}
+    {#        <form>#}
+    {#            <button class="deletebutton-profile"><img class="deletebutton-profile-svg"#}
+    {#                                                      src="{% static 'img/delete.svg' %}"></button>#}
+    {#        </form>#}
+    {#        <h class="articlename_profile"> Ро́берт де Брюс</h>#}
+    {#        <p class="articledescription-profile"> Феодальный барон Кливленда[en] (Скелтона) и Хартнесса, 1-й лорд#}
+    {#            Аннандейл[en] с 1124 </p>#}
+    {#        <form>#}
+    {#            <button class="editbutton-profile"><img class="editbutton-profile-svg" src="{% static 'img/pencil.svg' %}">#}
+    {#            </button>#}
+    {#        </form>#}
+    {#    </div>#}
+    <form action="{% url 'add_article' %}">
         <button class="add-article-button"> Добавить статью</button>
     </form>
-    <div class="chosenbutton_onetwothree"> 1</div>
-    <div class="leftunchosenbutton_onetwothree"> 2</div>
-    <div class="rightunchosenbutton_onetwothree"> 3</div>
+    {#    <div class="chosenbutton_onetwothree"> 1</div>#}
+    {#    <div class="leftunchosenbutton_onetwothree"> 2</div>#}
+    {#    <div class="rightunchosenbutton_onetwothree"> 3</div>#}
 
 
     <br><br><br><br><br><br>
@@ -132,5 +145,4 @@
 </footer>
 
 </body>
-<button id="add"></button>
 </html>

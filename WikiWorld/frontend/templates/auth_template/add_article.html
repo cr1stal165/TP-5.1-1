@@ -2,76 +2,90 @@
 <html lang="ru">
 {% load static %}
 <head>
-  <title>Добавление статьи</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link href="/examples/vendors/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-  <!-- <style> -->
- <!-- <link href="oldstyle.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
- <!-- </style> -->
+    <title>Добавление статьи</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link href="/examples/vendors/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"
+            integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <!-- </style> -->
 </head>
 
 <body>
 
 
-  <!-- NAV #1 и HEADER -->
-  <div class="top">
+<!-- NAV #1 и HEADER -->
+<div class="top">
     <div class="container1">
-      <div class="row">
-        <!-- HEADER -->
-        <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-          <a href="{% url 'index_auth' %}"><img class="main-logo"
+        <div class="row">
+            <!-- HEADER -->
+            <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
+                <a href="{% url 'index_auth' %}"><img class="main-logo"
                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                       width="65px"
                                                       height="65px"></a>
-                <a id="loginname" class="loginname">AlexWriter28</a>
+                <a id="loginname" class="loginname"></a>
                 <input class="search1" placeholder="Search">
-                <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}"></a>
-        </header>
-      </div>
+                <a href="{% url 'profile_page' %}"><img class="profilepic"
+                                                        src="{% static 'img/lexa_avatarka.svg' %}"></a>
+            </header>
+        </div>
     </div>
-  </div>
-  <!-- ОСНОВНОЙ КОНТЕНТ -->
-  <main>
+</div>
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<main>
 
     <br><br><br><br>
     <div class="article-editor col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: block;">
-    <input type="text" placeholder="Заголовок" class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-    <select class="selecttheme_field"> <option class="op_selecttheme_field" value="">Тематика</option>
-      <option value="history">История</option>
-      <option value="geography">География</option>
-      <option value="politics">Политика</option>
-    </select>
-    <div class="upload_image"> <label for="file_input" id="upload_label">Загрузить изображение <br> <img src="{% static 'img/cloud_upload.svg' %}"> </label>
-      <input type="file" id="file_input" accept="image/*"> </div>
-      <input type="text" placeholder="Текст статьи" class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-      <form><button class = "button_save" id="button-save-article-edit"> <p class="p-editarticlebutton"> Добавить </p> </button></form>
+        <input type="text" placeholder="Заголовок"
+               class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+        <select class="selecttheme_field">
+            <option class="op_selecttheme_field" value="">Тематика</option>
+            <option value="history">История</option>
+            <option value="geography">География</option>
+            <option value="politics">Политика</option>
+        </select>
+        <div class="upload_image"><label for="file_input" id="upload_label">Загрузить изображение <br> <img
+                src="{% static 'img/cloud_upload.svg' %}"> </label>
+            <input type="file" id="file_input" accept="image/*"></div>
+        <input type="text" placeholder="Текст статьи"
+               class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+        <form>
+            <button class="button_save" id="button-save-article-edit"><p class="p-editarticlebutton"> Добавить </p>
+            </button>
+        </form>
     </div>
-</div>
+    </div>
     <br><br><br><br><br><br>
-  </main>
-  <!-- FOOTER -->
-  <footer>
+</main>
+<!-- FOOTER -->
+<footer>
     <div class="container footer col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-      <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
-      <p class="p2023">2023</p>
+        <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
+        <p class="p2023">2023</p>
     </div>
-  </footer>
+</footer>
 
-  <!-- jQuery -->
-  <script src="/examples/vendors/jquery/jquery-3.3.1.min.js"></script>
-  <!-- Popper -->
-  <script src="/examples/vendors/popper.js/popper.min.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="/examples/vendors/bootstrap-4/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="/examples/vendors/jquery/jquery-3.3.1.min.js"></script>
+<!-- Popper -->
+<script src="/examples/vendors/popper.js/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="/examples/vendors/bootstrap-4/js/bootstrap.min.js"></script>
 
 </body>
 

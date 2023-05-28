@@ -18,9 +18,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/get_username.js' %}"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
-    <!-- </style> -->
+
 </head>
 
 <body>
@@ -34,9 +36,9 @@
                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                       width="65px"
                                                       height="65px"></a>
-                <a id="loginname" class="loginname">AlexWriter28</a>
+                <a id="loginname" class="loginname"></a>
                 <input class="search1" placeholder="Search">
-                <img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}">
+                <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}"></a>
 
             </header>
         </div>
@@ -48,8 +50,8 @@
     <br><br><br><br>
 
     <img class="profilepic-myprofile" src="{% static 'img/lexa_avatarka.svg' %}">
-    <a class="loginname-myprofile"> AlexWriter28 </a>
-    <a class="email-myprofile"> alex372@gmail.com </a>
+    <a id="author" class="loginname-myprofile"></a>
+    <a id="author_email" class="email-myprofile"></a>
 
     <div class="profile-edit">
         <input class="string-input" id="nicknameinput-editprofile" placeholder="Никнейм">

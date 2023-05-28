@@ -9,7 +9,7 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (response) {
             $('#author').text(JSON.stringify(response['nickname']).replace(/"/g, ''));
-
+            $('#author_email').text(JSON.stringify(response['email']).replace(/"/g, ''));
         },
         error: function (error) {
             console.log(error);

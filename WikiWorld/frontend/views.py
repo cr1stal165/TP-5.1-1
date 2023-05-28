@@ -1,21 +1,31 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.shortcuts import render
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import authentication_classes, permission_classes
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from gtts import gTTS
+from rest_framework.permissions import IsAuthenticated
+
 from backend.models import Article
 
 
-
 def index(request):
-    return render(request, 'index.html')
+    print(request.user.is_authenticated)
+    if request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return render(request, 'index.html')
 
 
 def all_topics(request):
-    return render(request, 'all_topics.html')
+    if request.user.is_authenticated:
+        return redirect('all_topics_auth')
+    else:
+        return render(request, 'all_topics.html')
 
 
 def article_page(request, pk):
@@ -23,7 +33,7 @@ def article_page(request, pk):
 
 
 def articles_topic(request, pk):
-   return render(request, 'articles_topic.html')
+    return render(request, 'articles_topic.html')
 
 
 def login_page(request):
@@ -46,11 +56,11 @@ def edit_profile_auth(request):
     return render(request, 'auth_template/editprofile.html')
 
 
-def article_page_auth(request):
+def article_page_auth(request, pk):
     return render(request, 'auth_template/article_page_auth.html')
 
 
-def articles_topic_auth(request):
+def articles_topic_auth(request, pk):
     return render(request, 'auth_template/articles_topic_auth.html')
 
 
@@ -112,7 +122,6 @@ def download_pdf(request):
 
 
 def download_audio(request):
-
     if request.method == 'POST':
         art_id = request.POST.get('hid_id1')
         descript = Article.objects.get(id=art_id)
@@ -130,4 +139,3 @@ def download_audio(request):
             response = HttpResponse(file.read(), content_type="audio/mpeg")
             response["Content-Disposition"] = 'attachment; filename=audio.mp3'
             return response
-

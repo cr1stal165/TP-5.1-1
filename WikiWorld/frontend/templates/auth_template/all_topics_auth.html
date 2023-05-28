@@ -2,11 +2,12 @@
 <html lang="ru">
 {% load static %}
 <head>
-<!--    <title>Пример адаптивно-фиксированного макета, построенного с использованием Bootstrap 4</title>-->
+    <!--    <title>Пример адаптивно-фиксированного макета, построенного с использованием Bootstrap 4</title>-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static  'scripts/get_alltopics.js' %}"></script>
+    <script src="{% static  'scripts/get_alltopics_auth.js' %}"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <style>
         .container {
             text-align: center;
@@ -41,6 +42,13 @@
         .article {
             background-color: #c00000;
             min-height: 10rem;
+        }
+
+        .profilepic {
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 3%;
+            height: 50px;
         }
 
         .aside {
@@ -310,6 +318,17 @@
             margin-top: 120px;
         }
 
+        .loginname {
+            position: absolute;
+            margin-left: 52%;
+            margin-top: 4%;
+            height: 50px;
+            font-size: 18px;
+            font-family: 'Montserrat-Medium', sans-serif;
+            font-weight: bold;
+            color: black;
+        }
+
     </style>
 </head>
 
@@ -322,13 +341,14 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                 <a href="{% url 'index_auth' %}"><img class="main-logo"
+                <a href="{% url 'index_auth' %}"><img class="main-logo"
                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                       width="65px"
                                                       height="65px"></a>
                 <a id="loginname" class="loginname">AlexWriter28</a>
                 <input class="search1" placeholder="Search">
-                <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}"></a>
+                <a href="{% url 'profile_page' %}"><img class="profilepic"
+                                                        src="{% static 'img/lexa_avatarka.svg' %}"></a>
 
             </header>
         </div>
@@ -338,38 +358,10 @@
 <main>
 
     <div>
-        <form id="forma1">
-            {#            <div class="container234">#}
-            {#                <div class="topic">#}
-            {#                    <a class="topic-main">Наука</a>#}
-            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
-            {#                </div>#}
-            {#                <div class="topic">#}
-            {#                    <a class="topic-main">История</a>#}
-            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
-            {#                </div>#}
-            {#            </div>#}
-            {#            <div class="container234">#}
-            {#                <div class="topic">#}
-            {#                    <a class="topic-main">Спорт</a>#}
-            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
-            {#                </div>#}
-            {#                <div class="topic">#}
-            {#                    <a class="topic-main">Политика</a>#}
-            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
-            {#                </div>#}
-            {#            </div>#}
-            {#            <div class="container234">#}
-            {#                <div class="topic">#}
-            {#                    <a class="topic-main">Философия</a>#}
-            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
-            {#                </div>#}
-            {#                <div class="topic">#}
-            {#                    <a class="topic-main">Технологии</a>#}
-            {#                    <img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">#}
-            {#                </div>#}
-            {#            </div>#}
+        <form>
+            <div id="forma1">
 
+            </div>
         </form>
     </div>
     <br><br><br><br><br><br>

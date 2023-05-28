@@ -76,7 +76,7 @@
 
         .but1 {
             position: absolute;
-            margin-left: 52%;
+            margin-left: 50%;
             background: #2558B8;
             border-radius: 25px;
             margin-top: 3.2%;
@@ -239,7 +239,7 @@
                 <a href="{% url 'index' %}"><img class="main-logo"
                                                  src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                  width="65px" height="65px"></a>
-                <button class="but1">Вход</button>
+                <a href="{% url 'login_page' %}"><button class="but1">Вход</button></a>
                 <input class="search1" placeholder="Search">
 
             </header>
@@ -296,6 +296,7 @@
         {#        </div>#}
 
     </div>
+
     <br><br><br><br><br><br>
 </main>
 

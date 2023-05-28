@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_article.js' %}"></script>
-    <script src="{% static 'scripts/get_topics.js' %}"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/get_topics_auth.js' %}"></script>
+
     <style>
         .container {
             text-align: center;
@@ -55,14 +57,14 @@
         }
 
         .loginname {
-        position: absolute;
-        margin-left: 52%;
-        margin-top: 4%;
-        height: 50px;
-        font-size: 18px;
-        font-family: 'Montserrat-Medium', sans-serif;
-        font-weight: bold;
-        color: black;
+            position: absolute;
+            margin-left: 52%;
+            margin-top: 4%;
+            height: 50px;
+            font-size: 18px;
+            font-family: 'Montserrat-Medium', sans-serif;
+            font-weight: bold;
+            color: black;
         }
 
         .nav-1,
@@ -289,6 +291,13 @@
             font-size: 20px;
         }
 
+        .profilepic {
+            position: absolute;
+            margin-left: 45%;
+            margin-top: 3%;
+            height: 50px;
+        }
+
     </style>
 </head>
 
@@ -305,9 +314,10 @@
                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                       width="65px"
                                                       height="65px"></a>
-                <a id="loginname" class="loginname">AlexWriter28</a>
+                <a id="loginname" class="loginname"></a>
                 <input class="search1" placeholder="Search">
-                <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}"></a>
+                <a href="{% url 'profile_page' %}"><img class="profilepic"
+                                                        src="{% static 'img/lexa_avatarka.svg' %}"></a>
             </header>
         </div>
     </div>
@@ -369,17 +379,6 @@
                     music.play();
 
                 }
-
-
-
-
-
-
-
-
-
-
-
 
 
             </script>

@@ -44,6 +44,7 @@ body {
 .footer {
     height: 102px;
     background-color: #2558B8;
+    margin-top: 200px;
 }
 
 .nav-1,
@@ -168,6 +169,9 @@ a {
 }
 
 .article1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     vertical-align: top;
     width: 513px;
     height: 597px;
@@ -181,6 +185,9 @@ a {
 }
 
 .article2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     vertical-align: top;
     width: 513px;
     height: 597px;
@@ -402,11 +409,12 @@ h1 {
 }
 
 .add-article-button {
-    position: absolute;
+    position: static;
     width: 193px;
     height: 50px;
-    margin-left: 33%;
-    top: 722px;
+    margin-left: 13%;
+    margin-top: 260px;
+
     background: #2558B8;
     border-radius: 25px;
     font-family: 'Montserrat-Medium', sans-serif;
@@ -423,6 +431,49 @@ h1 {
 
     color: #FFFFFF;
 
+}
+
+.scrollable-div {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    overflow: scroll;
+    background-color: #F6F9FD;
+    margin: -150px 0 0 50%;
+}
+
+.my-article {
+
+    padding-top: 19px;
+    width: 427px;
+    height: 159px;
+    margin-left: 30px;
+    background: #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 33px;
+}
+
+.article_title {
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-size: 26px;
+    margin-left: 24px !important;
+    color: black;
+}
+
+.article_description {
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-size: 13px;
+    line-height: 160%;
+    margin-left: 24px;
+    width: 315px;
+    height: 46px;
+    color: #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
 }
 
 #admintheme-button {
@@ -473,6 +524,7 @@ h1 {
 }
 
 .thematic-edit {
+    margin-top: -200px;
     position: absolute;
     width: 427px;
     height: 119px;
@@ -484,7 +536,7 @@ h1 {
 }
 
 #thematic-edit-manyarticles {
-     position:static !important;
+    position: static !important;
     left: 40% !important;
     right: 60% !important;
 }
@@ -611,10 +663,9 @@ h1 {
     height: 68px;
     left: 974px;
     top: 735px;
-    border-radius: 25px;
+    border-radius: 50px;
 
     background: #2558B8;
-    border-radius: 25px;
     border-color: #F3F3F3;
     border: 0px;
     font-family: 'Montserrat-Medium', sans-serif;
@@ -900,11 +951,12 @@ h1 {
 }
 
 .deletebutton-profile {
-    position: absolute;
+    float: right;
+    position: static;
     width: 43.98px;
     height: 38.7px;
-    right: 25px;
-    top: 10px;
+    right: 44px;
+    top: 15px;
     border-color: #2558d8;
     border: 0px;
 
@@ -941,13 +993,14 @@ h1 {
 }
 
 .editbutton-profile {
+    float: right;
     width: 43.98px;
     height: 38.7px;
     position: static;
-
+    top: 75px;
     border-color: #2558d8;
     border: 0px;
-
+    right: 44px;
 
     background: #2558B8;
     border-radius: 15px;
