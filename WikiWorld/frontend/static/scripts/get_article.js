@@ -10,12 +10,14 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (response) {
             var user = response['user'];
-
+            var lsd = btoa(JSON.stringify(response['image']).replace(/"/g, ''));
             $('#art').text(JSON.stringify(response['title']).replace(/"/g, ''));
             $('#main-text').text(JSON.stringify(response['description']).replace(/"/g, ''));
             $('#hid_id').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
             $('#hid_id1').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
-            $('#avatar').attr('src', `data:image/png;base64,${JSON.stringify(response['image']).replace(/"/g, '')}`);
+            $('#avatar').attr('src', 'data:image/png;base64,' + lsd);
+
+
             var url2 = `http://127.0.0.1:8000/api/v1/user/${user}/`;
             $.ajax({
                 url: url2,

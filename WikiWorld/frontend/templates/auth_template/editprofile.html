@@ -21,6 +21,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/reset_password.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
 
 </head>
@@ -38,7 +39,8 @@
                                                       height="65px"></a>
                 <a id="loginname" class="loginname"></a>
                 <input class="search1" placeholder="Search">
-                <a href="{% url 'profile_page' %}"><img class="profilepic" src="{% static 'img/lexa_avatarka.svg' %}"></a>
+                <a href="{% url 'profile_page' %}"><img class="profilepic"
+                                                        src="{% static 'img/lexa_avatarka.svg' %}"></a>
 
             </header>
         </div>
@@ -54,9 +56,10 @@
     <a id="author_email" class="email-myprofile"></a>
 
     <div class="profile-edit">
-        <input class="string-input" id="nicknameinput-editprofile" placeholder="Никнейм">
-        <input class="string-input" id="passwordnameinput-editprofile" type="password" placeholder="Пароль">
-        <form>
+        <form id="editForm">
+            <input class="string-input" id="nicknameinput-editprofile" placeholder="Никнейм">
+            <input class="string-input" id="passwordnameinput-editprofile" type="password" placeholder="Пароль">
+
             <button class="button_save" id="button-save-profile-edit"><p class="p-editprofilebutton"> Редактировать
                 профиль</p></button>
         </form>

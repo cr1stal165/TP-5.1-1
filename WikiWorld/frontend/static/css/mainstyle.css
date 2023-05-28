@@ -636,8 +636,10 @@ h1 {
     font-size: 24px;
 }
 
+
 .selecttheme_field {
     position: absolute;
+    overflow-y: auto;
     width: 514px;
     height: 68px;
     left: 3%;
@@ -653,9 +655,6 @@ h1 {
 
 }
 
-.op_selecttheme_field {
-
-}
 
 .button_save {
     position: absolute;
@@ -951,17 +950,15 @@ h1 {
 }
 
 .deletebutton-profile {
-    float: right;
+    float: left;
     position: static;
     width: 43.98px;
     height: 38.7px;
-    right: 44px;
-    top: 15px;
     border-color: #2558d8;
     border: 0px;
-
     background: #2558B8;
     border-radius: 15px;
+    margin-left: 24px;
 }
 
 #deletebutton-adminthematics1 {
@@ -993,15 +990,13 @@ h1 {
 }
 
 .editbutton-profile {
-    float: right;
     width: 43.98px;
     height: 38.7px;
     position: static;
     top: 75px;
     border-color: #2558d8;
     border: 0px;
-    right: 44px;
-
+    margin-left: 10px;
     background: #2558B8;
     border-radius: 15px;
 }
@@ -1028,10 +1023,8 @@ h1 {
 
 .editbutton-profile-svg {
     position: relative;
-    left: 0%;
-    right: 15.67%;
-    top: 1%;
-    bottom: 32.5%;
+    left: -16px;
+    top: 2%;
 }
 
 .allthematics {

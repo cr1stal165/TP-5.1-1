@@ -22,6 +22,7 @@ def index(request):
 
 
 def all_topics(request):
+    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         return redirect('all_topics_auth')
     else:
@@ -29,50 +30,78 @@ def all_topics(request):
 
 
 def article_page(request, pk):
-    return render(request, 'article_page.html')
+    if request.user.is_authenticated:
+        return redirect('article_page_auth', pk=pk)
+    else:
+        return render(request, 'article_page.html')
 
 
 def articles_topic(request, pk):
-    return render(request, 'articles_topic.html')
+    if request.user.is_authenticated:
+        return redirect('articles_topic_auth', pk=pk)
+    else:
+        return render(request, 'articles_topic.html')
 
 
 def login_page(request):
-    return render(request, 'login.html')
+    if request.user.is_authenticated:
+        return redirect('profile_page')
+    else:
+        return render(request, 'login.html')
 
 
 def registration_page(request):
-    return render(request, 'registration.html')
+    if request.user.is_authenticated:
+        return redirect('profile_page')
+    else:
+        return render(request, 'registration.html')
 
 
 def profile_page(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'auth_template/myprofile.html')
 
 
 def index_auth(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'auth_template/main_authorised.html')
 
 
 def edit_profile_auth(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'auth_template/editprofile.html')
 
 
 def article_page_auth(request, pk):
+    if not request.user.is_authenticated:
+        return redirect('article_page', pk=pk)
     return render(request, 'auth_template/article_page_auth.html')
 
 
 def articles_topic_auth(request, pk):
+    if not request.user.is_authenticated:
+        return redirect('articles_topic', pk=pk)
     return render(request, 'auth_template/articles_topic_auth.html')
 
 
 def all_topics_auth(request):
+    if not request.user.is_authenticated:
+        return redirect('all_topics')
     return render(request, 'auth_template/all_topics_auth.html')
 
 
 def add_article(request):
+    if not request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'auth_template/add_article.html')
 
 
-def edit_article(request):
+def edit_article(request, pk):
+    if not request.user.is_authenticated:
+        return redirect('index')
     return render(request, 'auth_template/edit_article.html')
 
 

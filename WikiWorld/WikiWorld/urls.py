@@ -18,7 +18,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
 from backend.views import ArticleAPIList, ArticleAPIUpdateView, ArticleAPIDestroyView, RegistrUserView, \
-    TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView, TokenDestroyViewApi, TopicDetailView
+    TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView, TokenDestroyViewApi, TopicDetailView, \
+    UpdatePasswordUserView
 from frontend.urls import urlpatterns1
 from WikiWorld import settings
 from .yasg import urlpatterns as doc_urls
@@ -39,7 +40,7 @@ urlpatterns = [
 
     path('api/v1/user/<int:pk>/', UsersDetailView.as_view()),
 
-    # path('api/v1/updatepassword/', UpdatePasswordUserView.as_view()),
+    path('api/v1/updatepassword/', UpdatePasswordUserView.as_view()),
     # path('api/v1/auth/', include('djoser.urls')),
     # re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]

@@ -53,7 +53,7 @@ class UpdatePasswordUserView(UpdateAPIView):
         user.set_password(new_password)
         user.save()
 
-        return Response({'response': 'Пароль успешно изменене'}, status=status.HTTP_200_OK)
+        return Response({'response': 'Пароль успешно изменен'}, status=status.HTTP_200_OK)
 
 
 class TokenCreateViewApi(TokenCreateView):
@@ -83,7 +83,7 @@ class TokenDestroyViewApi(TokenDestroyView):
 class ArticleAPIList(generics.ListCreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-    # permission_classes = (IsAuthenticatedOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
         serializer.save(date=datetime.date.today())
@@ -101,7 +101,7 @@ class ArticleAPIUpdateView(generics.RetrieveUpdateAPIView):
 class ArticleAPIDestroyView(generics.RetrieveDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-    permission_classes = (IsAdminOrReadOnly,)
+    permission_classes = (IsAuthenticated,)
 
 
 class ArticleDetailView(APIView):

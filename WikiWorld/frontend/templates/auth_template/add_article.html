@@ -21,6 +21,8 @@
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/add_and_edit_article_list_topics.js' %}"></script>
+    <script src="{% static 'scripts/add_article.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
     <!-- </style> -->
 </head>
@@ -50,25 +52,27 @@
 <main>
 
     <br><br><br><br>
-    <div class="article-editor col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: block;">
-        <input type="text" placeholder="Заголовок"
-               class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <select class="selecttheme_field">
-            <option class="op_selecttheme_field" value="">Тематика</option>
-            <option value="history">История</option>
-            <option value="geography">География</option>
-            <option value="politics">Политика</option>
-        </select>
-        <div class="upload_image"><label for="file_input" id="upload_label">Загрузить изображение <br> <img
-                src="{% static 'img/cloud_upload.svg' %}"> </label>
-            <input type="file" id="file_input" accept="image/*"></div>
-        <input type="text" placeholder="Текст статьи"
-               class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <form>
+    <form id="addForm">
+        <div class="article-editor col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: block;">
+            <input id="title" type="text" placeholder="Заголовок"
+                   class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+            <select id="selecttheme_field" class="selecttheme_field">
+                {#                <option value="">Тематика</option>#}
+                {#                <option value="history">История</option>#}
+                {#                <option value="geography">География</option>#}
+                {#                <option value="politics">Политика</option>#}
+            </select>
+            <div class="upload_image"><label for="file_input" id="upload_label">Загрузить изображение <br> <img
+                    src="{% static 'img/cloud_upload.svg' %}"> </label>
+                <input type="file" id="file_input" accept="image/*"></div>
+            <input id="description" type="text" placeholder="Текст статьи"
+                   class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+
             <button class="button_save" id="button-save-article-edit"><p class="p-editarticlebutton"> Добавить </p>
             </button>
-        </form>
-    </div>
+
+        </div>
+    </form>
     </div>
     <br><br><br><br><br><br>
 </main>
@@ -80,12 +84,6 @@
     </div>
 </footer>
 
-<!-- jQuery -->
-<script src="/examples/vendors/jquery/jquery-3.3.1.min.js"></script>
-<!-- Popper -->
-<script src="/examples/vendors/popper.js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="/examples/vendors/bootstrap-4/js/bootstrap.min.js"></script>
 
 </body>
 

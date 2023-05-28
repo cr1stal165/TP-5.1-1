@@ -162,6 +162,9 @@
         }
 
         .article1 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             padding-top: 36px;
             vertical-align: top;
             width: 513px;
@@ -173,6 +176,9 @@
         }
 
         .article2 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             padding-top: 36px;
             vertical-align: top;
             width: 513px;
@@ -191,7 +197,7 @@
             padding-bottom: 10px;
         }
 
-        .h-f, .h-s{
+        .h-f, .h-s {
             margin-top: 36px;
             margin-left: 31px;
             font-family: 'Montserrat-SemiBold', sans-serif;
@@ -234,7 +240,7 @@
             white-space: normal;
         }
 
-        .but1337{
+        .but1337 {
             margin-left: -20px;
         }
 
@@ -250,9 +256,13 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <a href="{% url 'index' %}"><img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px"
+                <a href="{% url 'index' %}"><img class="main-logo"
+                                                 src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                 width="65px"
                                                  height="65px"></a>
-                <a class="but1337" href="{% url 'login_page' %}"><button class="but1">Вход</button></a>
+                <a class="but1337" href="{% url 'login_page' %}">
+                    <button class="but1">Вход</button>
+                </a>
                 <input class="search1" placeholder="Search">
 
             </header>
