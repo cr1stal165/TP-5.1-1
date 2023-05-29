@@ -19,6 +19,9 @@
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'scripts/search_auth.js' %}"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <script src="{% static 'scripts/reset_password.js' %}"></script>
@@ -38,7 +41,8 @@
                                                       width="65px"
                                                       height="65px"></a>
                 <a id="loginname" class="loginname"></a>
-                <input class="search1" placeholder="Search">
+                <input type="text" name="search" id="search" class="search1" placeholder="Search">
+                <ul class="list-group" id="result"></ul>
                 <a href="{% url 'profile_page' %}"><img class="profilepic"
                                                         src="{% static 'img/lexa_avatarka.svg' %}"></a>
 

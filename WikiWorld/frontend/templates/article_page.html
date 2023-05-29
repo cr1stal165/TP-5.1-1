@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'scripts/search.js' %}"></script>
     <script src="{% static 'scripts/get_article.js' %}"></script>
     <script src="{% static 'scripts/get_topics.js' %}"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
@@ -243,7 +246,8 @@
 
         {#.avatar {#}
         {#    border-radius: 10px;#}
-        {#}#}
+        {
+        #}#}
 
         .date,
         .author {
@@ -278,6 +282,36 @@
             font-size: 20px;
         }
 
+        #result {
+            list-style-type: none;
+            position: absolute;
+            width: 300px;
+            max-width: 300px;
+            cursor: pointer;
+            overflow-y: auto;
+            max-height: 400px;
+            box-sizing: border-box;
+            z-index: 1001;
+            margin-left: 1110px;
+            margin-top: -45px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .link-class {
+            background-color: white;
+        }
+
+        .link-class:hover {
+            background-color: rgba(37, 88, 184, 0.45);
+
+        }
+
+        .search-item {
+            color: black;
+        }
+
 
     </style>
 </head>
@@ -294,8 +328,11 @@
                 <a href="{% url 'index' %}"><img class="main-logo"
                                                  src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                  width="65px" height="65px"></a>
-                <a href="{% url 'login_page' %}"><button class="but1">Вход</button></a>
-                <input class="search1" placeholder="Search">
+                <a href="{% url 'login_page' %}">
+                    <button class="but1">Вход</button>
+                </a>
+                <input type="text" name="search" id="search" class="search1" placeholder="Search">
+                <ul class="list-group" id="result"></ul>
 
             </header>
         </div>
@@ -360,7 +397,8 @@
                 }
 
             </script>
-            <button onclose="" onclick="playMusic()" class="button1"><img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px"></button>
+            <button onclose="" onclick="playMusic()" class="button1"><img src="{% static 'img/Group 27.svg' %}"
+                                                                          height="43px" width="43px"></button>
             <p class="button1_text">Прослушать статью</p>
         </div>
     </div>

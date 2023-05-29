@@ -21,6 +21,8 @@
             crossorigin="anonymous"></script>
     <!-- <style> -->
     <!-- <link href="oldstyle.css" rel="stylesheet"> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/logout_admin.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
     <!-- </style> -->
 </head>
@@ -34,14 +36,12 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-sm-5 col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <a href="{% url 'index_auth' %}"><img class="main-logo"
-                                                      src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
-                                                      width="65px"
-                                                      height="65px"></a>
+                <a href="{% url 'admin_main' %}"> <img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}" width="65px"
+                     height="65px"></a>
                 <a class="loginname" id="loginname-admin">Admin32</a>
                 <!-- <input class="search1" placeholder="Search"> -->
                 <img class="profilepic" id="profilepic-admin" src="{% static 'img/admin_ava.svg' %}">
-                <form>
+                <form id="myForm">
                     <button class="button_save" id="button_save_exit_admin"><p class=p-myprofilebutton>Выйти</p>
                     </button>
                 </form>

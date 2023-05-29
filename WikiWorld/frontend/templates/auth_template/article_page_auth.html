@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'scripts/search_auth.js' %}"></script>
     <script src="{% static 'scripts/get_article.js' %}"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
@@ -298,6 +301,36 @@
             height: 50px;
         }
 
+        #result {
+            list-style-type: none;
+            position: absolute;
+            width: 300px;
+            max-width: 300px;
+            cursor: pointer;
+            overflow-y: auto;
+            max-height: 400px;
+            box-sizing: border-box;
+            z-index: 1001;
+            margin-left: 1110px;
+            margin-top: -45px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .link-class {
+            background-color: white;
+        }
+
+        .link-class:hover {
+            background-color: rgba(37, 88, 184, 0.45);
+
+        }
+
+        .search-item {
+            color: black;
+        }
+
     </style>
 </head>
 
@@ -315,7 +348,8 @@
                                                       width="65px"
                                                       height="65px"></a>
                 <a id="loginname" class="loginname"></a>
-                <input class="search1" placeholder="Search">
+                <input type="text" name="search" id="search" class="search1" placeholder="Search">
+                <ul class="list-group" id="result"></ul>
                 <a href="{% url 'profile_page' %}"><img class="profilepic"
                                                         src="{% static 'img/lexa_avatarka.svg' %}"></a>
             </header>

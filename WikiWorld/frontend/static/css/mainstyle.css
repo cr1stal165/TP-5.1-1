@@ -81,6 +81,30 @@ body {
     font-style: normal;
 }
 
+.adminmain-but {
+    width: 513px;
+    height: 88px;
+    border: 1px solid #2558B8;
+    text-align: center;
+    background: #2558B8;
+    border-radius: 30px;
+}
+
+.text_adm {
+    width: 182px;
+    height: 44px;
+    margin-left: 166px;
+    margin-top: 18px;
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-size: 36px;
+    color: #FFFFFF;
+
+}
+
+.divvv {
+    margin-top: 171px;
+}
+
 .but1 {
     position: absolute;
     margin-left: 52%;
@@ -236,9 +260,6 @@ h1 {
     color: black;
 }
 
-#loginname-admin {
-    margin-left: 67% !important;
-}
 
 .profilepic {
     position: absolute;
@@ -440,6 +461,15 @@ h1 {
     overflow: scroll;
     background-color: #F6F9FD;
     margin: -150px 0 0 50%;
+}
+
+.scrollable-div1 {
+    position: static;
+    width: 500px;
+    height: 500px;
+    overflow: scroll;
+    background-color: #F6F9FD;
+    margin: 0 0 0 30%;
 }
 
 .my-article {
@@ -655,14 +685,44 @@ h1 {
 
 }
 
+#result {
+    list-style-type: none;
+    position: absolute;
+    width: 300px;
+    max-width: 300px;
+    cursor: pointer;
+    overflow-y: auto;
+    max-height: 400px;
+    box-sizing: border-box;
+    z-index: 1001;
+    margin-left: 1110px;
+    margin-top: -45px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.link-class {
+    background-color: white;
+}
+
+.link-class:hover {
+    background-color: rgba(37, 88, 184, 0.45);
+
+}
+
+.search-item {
+    color: black;
+}
+
 
 .button_save {
     position: absolute;
-    width: 263px;
-    height: 68px;
+    width: 165px;
+    height: 50px;
     left: 974px;
     top: 735px;
-    border-radius: 50px;
+    border-radius: 25px;
 
     background: #2558B8;
     border-color: #F3F3F3;

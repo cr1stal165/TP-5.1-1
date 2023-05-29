@@ -1,20 +1,14 @@
-from django.contrib.auth.decorators import login_required
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.decorators import authentication_classes, permission_classes
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from gtts import gTTS
-from rest_framework.permissions import IsAuthenticated
-
 from backend.models import Article
 
 
 def index(request):
-    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         return redirect('index_auth')
     else:
@@ -22,7 +16,6 @@ def index(request):
 
 
 def all_topics(request):
-    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         return redirect('all_topics_auth')
     else:
@@ -103,6 +96,11 @@ def edit_article(request, pk):
     if not request.user.is_authenticated:
         return redirect('index')
     return render(request, 'auth_template/edit_article.html')
+
+
+def admin_main(request):
+    print(request.user.is_superuser)
+    return render(request, 'admin_template/adminmain.html')
 
 
 def admin_thematics(request):

@@ -46,11 +46,11 @@ $(document).ready(function() {
             $('#myModal').modal('show');
             return;
         }
-        // if (is_superuser === 'true') {
-        //     window.location.href = '/topics/';
-        // } else {
-        window.location.href = '/profile/?token=' + token + '&user=' + id;
-
+        if (is_superuser === 'true') {
+            window.location.href = '/admin_main/?token=' + token + '&user=' + id;
+        } else {
+            window.location.href = '/profile/?token=' + token + '&user=' + id;
+        }
     }
 
     // Обработчик события клика на кнопке входа
