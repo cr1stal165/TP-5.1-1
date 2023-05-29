@@ -124,9 +124,15 @@ class UsersDetailView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
 
 
-class TopicAPIList(generics.ListAPIView):
+class TopicAPIList(generics.ListCreateAPIView):
     queryset = Topic.objects.all()
     serializer_class = TopicSerializer
+
+
+class TopicAPIAdd(generics.CreateAPIView):
+    queryset = Topic.objects.all()
+    serializer_class = TopicSerializer
+    permission_classes = (IsAdminOrReadOnly, )
 
 
 class TopicDetailView(APIView):

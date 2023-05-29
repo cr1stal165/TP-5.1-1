@@ -99,25 +99,57 @@ def edit_article(request, pk):
 
 
 def admin_main(request):
-    print(request.user.is_superuser)
-    return render(request, 'admin_template/adminmain.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/adminmain.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_thematics(request):
-    return render(request, 'admin_template/admin_thematics.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_thematics.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_many_articles(request):
-    return render(request, 'admin_template/admin_many_articles.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_many_articles.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_edit_article(request):
-    return render(request, 'admin_template/admin_edit_article.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_edit_article.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_edit_thematics(request):
-    return render(request, 'admin_template/admin_edit_thematics.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_edit_thematics.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
+
+def admin_add_thematics(request):
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_add_thematis.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 def download_pdf(request):
     global pdf

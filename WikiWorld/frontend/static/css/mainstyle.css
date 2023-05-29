@@ -508,7 +508,7 @@ h1 {
 
 #admintheme-button {
     left: 380px !important;
-    top: 652px !important;
+    top: 852px !important;
 }
 
 .article-activity {
@@ -888,7 +888,7 @@ h1 {
     position: absolute;
     width: 578px;
     height: 78px;
-    left: 14%;
+    left: 150px;
     top: 15%;
 
     font-family: 'Montserrat-medium';
@@ -898,7 +898,6 @@ h1 {
     line-height: 78px;
     /* identical to box height */
 
-    text-align: center;
 
     color: #000000;
 }
