@@ -1,4 +1,5 @@
-from django.http import HttpResponse, HttpResponseNotAllowed
+
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
