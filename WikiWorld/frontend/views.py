@@ -1,20 +1,14 @@
-from django.contrib.auth.decorators import login_required
-from rest_framework.authentication import TokenAuthentication
-from rest_framework.decorators import authentication_classes, permission_classes
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import render, redirect
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from gtts import gTTS
-from rest_framework.permissions import IsAuthenticated
-
 from backend.models import Article
 
 
 def index(request):
-    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         return redirect('index_auth')
     else:
@@ -22,7 +16,6 @@ def index(request):
 
 
 def all_topics(request):
-    print(request.user.is_authenticated)
     if request.user.is_authenticated:
         return redirect('all_topics_auth')
     else:
@@ -30,6 +23,8 @@ def all_topics(request):
 
 
 def article_page(request, pk):
+    global temp
+    temp = pk
     if request.user.is_authenticated:
         return redirect('article_page_auth', pk=pk)
     else:
@@ -105,21 +100,58 @@ def edit_article(request, pk):
     return render(request, 'auth_template/edit_article.html')
 
 
+def admin_main(request):
+    if request.user.is_superuser:
+        return render(request, 'admin_template/adminmain.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
+
+
 def admin_thematics(request):
-    return render(request, 'admin_template/admin_thematics.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_thematics.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_many_articles(request):
-    return render(request, 'admin_template/admin_many_articles.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_many_articles.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_edit_article(request):
-    return render(request, 'admin_template/admin_edit_article.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_edit_article.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 
 def admin_edit_thematics(request):
-    return render(request, 'admin_template/admin_edit_thematics.html')
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_edit_thematics.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
+
+def admin_add_thematics(request):
+    if request.user.is_superuser:
+        return render(request, 'admin_template/admin_add_thematis.html')
+    elif request.user.is_authenticated and not request.user.is_authenticated:
+        return redirect('index_auth')
+    else:
+        return redirect('index')
 
 def download_pdf(request):
     global pdf
@@ -162,9 +194,25 @@ def download_audio(request):
         tts = gTTS(text=text, lang=language)
 
         # сохранение аудиофайла
-        tts.save("audio.mp3")
+        tts.save("frontend/static/audio.mp3")
 
-        with open("audio.mp3", "rb") as file:
+        with open("frontend/static/audio.mp3", "rb") as file:
             response = HttpResponse(file.read(), content_type="audio/mpeg")
             response["Content-Disposition"] = 'attachment; filename=audio.mp3'
             return response
+
+
+def play_music(request):
+    if request.method == 'POST':
+        art_id = request.POST.get('hid_id2')
+        descript = Article.objects.get(id=art_id)
+
+        text = descript.description
+        language = 'ru'
+
+        # создание объекта gTTS
+        tts = gTTS(text=text, lang=language)
+
+        # сохранение аудиофайла
+        tts.save("frontend/static/audio.mp3")
+        return redirect('article_page', pk=temp)

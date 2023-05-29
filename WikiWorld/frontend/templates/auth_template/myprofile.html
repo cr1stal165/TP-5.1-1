@@ -19,6 +19,9 @@
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'scripts/search_auth.js' %}"></script>
     <script src="{% static 'scripts/get_username.js' %}"></script>
     <script src="{% static 'scripts/logout_user.js' %}"></script>
     <script src="{% static 'scripts/get_articles_profile_auth.js' %}"></script>
@@ -40,7 +43,8 @@
                                                       width="65px"
                                                       height="65px"></a>
 
-                <input class="search1" placeholder="Search">
+                <input type="text" name="search" id="search" class="search1" placeholder="Search">
+                <ul class="list-group" id="result"></ul>
                 <form action="{% url 'edit_profile_auth' %}">
                     <button type="submit" class="button_save" id="button_save_editprofile"><p class=p-myprofilebutton>
                         Редактировать

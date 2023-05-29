@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- Bootstrap CSS -->
-    <link href="/examples/vendors/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">
+
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -19,13 +18,88 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
-    <!-- <style> -->
-    <!-- <link href="oldstyle.css" rel="stylesheet"> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/logout_admin.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
     <!-- </style> -->
 </head>
 
 <body>
+
+<style>
+    .button1 {
+        order: 1;
+        margin-left: 23px;
+        background-color: #FFFFFF;
+        border: none;
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-size: 20px;
+        width: 43px;
+        height: 43px;
+    }
+
+    .button1_text {
+        margin-left: 20px;
+        order: 2;
+        align-content: center;
+        color: #000000;
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-size: 20px;
+    }
+
+    .topic {
+        display: flex;
+        align-items: center;
+        width: 513px;
+        height: 84px;
+        margin-left: 1%;
+        background: #2558B8;
+        border-radius: 21px;
+
+    }
+
+    .topic-main {
+        order: 1;
+        font-family: 'Montserrat-Regular', sans-serif;
+        color: #FFFFFF;
+        font-size: 36px;
+        margin-left: 52px;
+    }
+
+    .topic_img {
+        order: 2;
+        margin-top: 50px;
+
+    }
+
+    .container234 {
+        margin-left: 14%;
+        margin-top: 15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .add-article-button {
+        margin-left: 470px;
+        margin-top: 50px !important;
+        margin-bottom: 100px !important;
+    }
+
+    .forma1 {
+        width: 800px;
+        height: 500px;
+        overflow: scroll;
+    }
+
+    .loginname {
+        margin-left: 67% !important;
+    }
+
+
+</style>
 
 
 <!-- NAV #1 и HEADER -->
@@ -34,14 +108,14 @@
         <div class="row">
             <!-- HEADER -->
             <header class="col-sm-5 col-md-6 col-xl-12 header order-md-0 order-xl-1">
-                <a href="{% url 'index_auth' %}"><img class="main-logo"
-                                                      src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
-                                                      width="65px"
-                                                      height="65px"></a>
-                <a class="loginname" id="loginname-admin">Admin32</a>
+                <a href="{% url 'admin_main' %}"> <img class="main-logo"
+                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                       width="65px"
+                                                       height="65px"></a>
+                <a class="loginname" id="loginname">Admin32</a>
                 <!-- <input class="search1" placeholder="Search"> -->
                 <img class="profilepic" id="profilepic-admin" src="{% static 'img/admin_ava.svg' %}">
-                <form>
+                <form id="myForm">
                     <button class="button_save" id="button_save_exit_admin"><p class=p-myprofilebutton>Выйти</p>
                     </button>
                 </form>
@@ -50,76 +124,51 @@
         </div>
     </div>
 </div>
-<!-- ОСНОВНОЙ КОНТЕНТ -->
+
 <main>
 
-    <br><br><br><br>
-    <div class="thematic-button" id="thembut1"><p class="p-thematic-button"> Наука </p>  <img class="thematic-img"
-                                                                                              src="{% static 'img/science.svg' %}">
-    </div>
-    <form>
-        <button class="deletebutton-profile" id="deletebutton-adminthematics1"><img class="deletebutton-profile-svg"
-                                                                                    src="{% static 'img/delete.svg' %}">
-        </button>
-    </form>
-    <form>
-        <button class="editbutton-profile" id="editbutton-adminthematics1"><img class="editbutton-profile-svg"
-                                                                                src="{% static 'img/pencil.svg' %}">
-        </button>
-    </form>
-    <div class="thematic-button" id="thembut2"><p class="p-thematic-button"> Спорт </p>  <img class="thematic-img"
-                                                                                              src="{% static 'img/sport.svg' %}">
-    </div>
-    <form>
-        <button class="deletebutton-profile" id="deletebutton-adminthematics2"><img class="deletebutton-profile-svg"
-                                                                                    src="{% static 'img/delete.svg' %}">
-        </button>
-    </form>
-    <form>
-        <button class="editbutton-profile" id="editbutton-adminthematics2"><img class="editbutton-profile-svg"
-                                                                                src="{% static 'img/pencil.svg' %}">
-        </button>
-    </form>
-    <div class="thematic-button" id="thembut3"><p class="p-thematic-button"> Технологии </p> <img class="thematic-img"
-                                                                                                  src="{% static 'img/tech.svg' %}">
-    </div>
-    <form>
-        <button class="deletebutton-profile" id="deletebutton-adminthematics3"><img class="deletebutton-profile-svg"
-                                                                                    src="{% static 'img/delete.svg' %}">
-        </button>
-    </form>
-    <form>
-        <button class="editbutton-profile" id="editbutton-adminthematics3"><img class="editbutton-profile-svg"
-                                                                                src="{% static 'img/pencil.svg' %}">
-        </button>
-    </form>
-    <div class="thematic-button" id="thembut4"><p class="p-thematic-button"> Финансы </p> <img class="thematic-img"
-                                                                                               src="{% static 'img/money.svg' %}">
-    </div>
-    <form>
-        <button class="deletebutton-profile" id="deletebutton-adminthematics4"><img class="deletebutton-profile-svg"
-                                                                                    src="{% static 'img/delete.svg' %}">
-        </button>
-    </form>
-    <form>
-        <button class="editbutton-profile" id="editbutton-adminthematics4"><img class="editbutton-profile-svg"
-                                                                                src="{% static 'img/pencil.svg' %}">
-        </button>
+    <br><br>
+    <center>
+        <div id="forma1" class="forma1">
+
+        </div>
+    </center>
+    <form action="{% url 'admin_add_thematics' %}">
+        <button class="add-article-button"> Добавить</button>
     </form>
 
-    <div class="add-article-button"> Добавить статью </div>
 
-    <br><br><br><br><br><br>
 </main>
 
-
-<!-- jQuery -->
-<script src="/examples/vendors/jquery/jquery-3.3.1.min.js"></script>
-<!-- Popper -->
-<script src="/examples/vendors/popper.js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="/examples/vendors/bootstrap-4/js/bootstrap.min.js"></script>
-
 </body>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/api/v1/topics/",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                var users = data;
+                for (var i = 0; i < users.length; i++) {
+
+
+                    var cont4 = '<img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">'
+                    var cont3 = `<a href="#" class="topic-main">${users[i].name}</a>`;
+                    var cont2 = '<div class="topic">' + cont3 + cont4 + '</div>'
+
+                    var cont1 = '<div class="container234">' + cont2 + '</div>'
+
+
+                    $('#forma1').append(cont1);
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    });
+
+</script>
 
 </html>

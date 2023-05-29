@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from backend.views import ArticleAPIList, ArticleAPIUpdateView, ArticleAPIDestroyView, RegistrUserView, \
     TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView, TokenDestroyViewApi, TopicDetailView, \
-    UpdatePasswordUserView
+    UpdatePasswordUserView, TopicAPIAdd
 from frontend.urls import urlpatterns1
 from WikiWorld import settings
 from .yasg import urlpatterns as doc_urls
@@ -37,7 +37,7 @@ urlpatterns = [
     path('api/v1/logout/', TokenDestroyViewApi.as_view()),
     path('api/v1/topics/', TopicAPIList.as_view()),
     path('api/v1/topics/<int:pk>/', TopicDetailView.as_view()),
-
+    path('api/v1/topics/add/', TopicAPIAdd.as_view()),
     path('api/v1/user/<int:pk>/', UsersDetailView.as_view()),
 
     path('api/v1/updatepassword/', UpdatePasswordUserView.as_view()),

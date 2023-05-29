@@ -6,8 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'scripts/search.js' %}"></script>
     <script src="{% static 'scripts/get_articles.js' %}"></script>
     <script src="{% static 'scripts/get_topics.js' %}"></script>
+
     <style>
         .container {
             text-align: center;
@@ -100,6 +104,7 @@
         }
 
         .search1 {
+
             border: none;
             border-bottom: 2px solid #2558B8;
             font-size: 16px;
@@ -244,6 +249,36 @@
             margin-left: -20px;
         }
 
+        #result {
+            list-style-type: none;
+            position: absolute;
+            width: 300px;
+            max-width: 300px;
+            cursor: pointer;
+            overflow-y: auto;
+            max-height: 400px;
+            box-sizing: border-box;
+            z-index: 1001;
+            margin-left: 1110px;
+            margin-top: -45px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .link-class {
+            background-color: white;
+        }
+
+        .link-class:hover {
+            background-color: rgba(37, 88, 184, 0.45);
+
+        }
+
+        .search-item {
+            color: black;
+        }
+
     </style>
 </head>
 
@@ -263,8 +298,8 @@
                 <a class="but1337" href="{% url 'login_page' %}">
                     <button class="but1">Вход</button>
                 </a>
-                <input class="search1" placeholder="Search">
-
+                <input type="text" name="search" id="search" class="search1" placeholder="Search">
+                <ul class="list-group" id="result"></ul>
             </header>
         </div>
     </div>
@@ -303,7 +338,7 @@
     </div>
     <br><br><br><br><br><br>
 </main>
-<!-- FOOTER -->
+
 <footer>
     <div class="container footer">
         <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
@@ -313,6 +348,7 @@
 
 
 </body>
+
 
 </html>
 						
