@@ -1,3 +1,4 @@
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from reportlab.pdfgen import canvas
@@ -23,6 +24,8 @@ def all_topics(request):
 
 
 def article_page(request, pk):
+    global temp
+    temp = pk
     if request.user.is_authenticated:
         return redirect('article_page_auth', pk=pk)
     else:
@@ -192,9 +195,25 @@ def download_audio(request):
         tts = gTTS(text=text, lang=language)
 
         # сохранение аудиофайла
-        tts.save("audio.mp3")
+        tts.save("frontend/static/audio.mp3")
 
-        with open("audio.mp3", "rb") as file:
+        with open("frontend/static/audio.mp3", "rb") as file:
             response = HttpResponse(file.read(), content_type="audio/mpeg")
             response["Content-Disposition"] = 'attachment; filename=audio.mp3'
             return response
+
+
+def play_music(request):
+    if request.method == 'POST':
+        art_id = request.POST.get('hid_id2')
+        descript = Article.objects.get(id=art_id)
+
+        text = descript.description
+        language = 'ru'
+
+        # создание объекта gTTS
+        tts = gTTS(text=text, lang=language)
+
+        # сохранение аудиофайла
+        tts.save("frontend/static/audio.mp3")
+        return redirect('article_page', pk=temp)

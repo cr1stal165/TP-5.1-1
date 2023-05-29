@@ -15,6 +15,7 @@ $(document).ready(function () {
             $('#main-text').text(JSON.stringify(response['description']).replace(/"/g, ''));
             $('#hid_id').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
             $('#hid_id1').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
+            $('#hid_id2').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
             $('#avatar').attr('src', 'data:image/png;base64,' + lsd);
 
 

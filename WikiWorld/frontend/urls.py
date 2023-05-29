@@ -45,6 +45,8 @@ urlpatterns1 = [
     path('admin_edit_article/', views.admin_edit_article, name='admin_edit_article'),
     path('admin_edit_thematics/', views.admin_edit_thematics, name='admin_edit_thematics'),
     path('admin_add_thematics/', views.admin_add_thematics, name='admin_add_thematics'),
+    path('play_music/', views.play_music, name='play_music'),
+
 ]
 
 if settings.DEBUG:
