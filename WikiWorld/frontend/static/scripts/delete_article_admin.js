@@ -27,6 +27,6 @@ $(document).ready(function () {
 
     function redirectToMainPage() {
         alert('Статья успешно удалена');
-        window.location.href = '/index_auth/';
+        window.location.href = '/admin_main/';
     }
 });

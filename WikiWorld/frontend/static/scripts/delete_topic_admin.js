@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function delete_article(id) {
         var token = localStorage.getItem('token');
-        var url = `/api/v1/articles/delete/${id}/`;
+        var url = `/api/v1/topics/delete/${id}/`;
 
         fetch(url, {
             method: 'DELETE',
@@ -26,7 +26,7 @@ $(document).ready(function () {
     }
 
     function redirectToMainPage() {
-        alert('Статья успешно удалена');
-        window.location.href = '/index_auth/';
+        alert('Тематика успешно удалена');
+        window.location.href = '/admin_main/';
     }
 });

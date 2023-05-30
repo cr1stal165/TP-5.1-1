@@ -18,18 +18,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
-    <!-- <style> -->
-    <!-- <link href="oldstyle.css" rel="stylesheet"> -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/logout_admin.js' %}"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/edit_topic_admin.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
     <!-- </style> -->
 </head>
 
+<style>
+    .add-article-button {
+        margin-top: 450px !important;
+    }
+
+    .loginname {
+        margin-left: 67% !important;
+    }
+</style>
+
 <body>
 
 
-<!-- NAV #1 и HEADER -->
 <div class="top">
     <div class="container1">
         <div class="row">
@@ -39,7 +49,7 @@
                                                        src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
                                                        width="65px"
                                                        height="65px"></a>
-                <a class="loginname" id="loginname-admin">Admin32</a>
+                <a class="loginname" id="loginname">Admin32</a>
                 <img class="profilepic" id="profilepic-admin" src="{% static 'img/admin_ava.svg' %}">
 
                 <form id="myForm">
@@ -57,35 +67,49 @@
 
     <br><br><br><br>
     <div class="adminthematicforms col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <h class="edit-zagolovok"> Редактирование</h>
-        <div class="admin-uploadfile-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1"><label for="file_input"
-                                                                                                      id="upload_label2">
-            Загрузить изображение </label>
-            <input type="file" id="file_input" accept="image/*">
-        </div>
-        <input type="text" placeholder="Введите тематику"
-               class="admin-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <form>
-            <button class="add-article-button" id="admintheme-button"> Редактировать</button>
+        <form id="myForm">
+            <h class="edit-zagolovok">Редактирование</h>
+            <div class="admin-uploadfile-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1"><label
+                    for="file_input"
+                    id="upload_label2">
+                Загрузить изображение </label>
+                <input type="file" id="file_input" accept="image/*">
+            </div>
+            <input id="topic_id" type="text" placeholder="Введите тематику"
+                   class="admin-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+
+            <button class="add-article-button" id="admintheme-button" type="submit">Редактировать</button>
         </form>
     </div>
 
     <br><br><br><br><br><br>
 </main>
-<!-- FOOTER -->
-<footer>
-    <div class="container footer col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
-        <p class="p2023">2023</p>
-    </div>
-</footer>
 
-<!-- jQuery -->
-<script src="/examples/vendors/jquery/jquery-3.3.1.min.js"></script>
-<!-- Popper -->
-<script src="/examples/vendors/popper.js/popper.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="/examples/vendors/bootstrap-4/js/bootstrap.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        var path = window.location.pathname;
+        var parts = path.split('/');
+        var id = parts[parts.length - 2];
+        var url = `/api/v1/topics/${id}/`;
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                $('#topic_id').val(JSON.stringify(response['name']).replace(/"/g, ''));
+
+
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+
+    });
+
+</script>
+
 
 </body>
 

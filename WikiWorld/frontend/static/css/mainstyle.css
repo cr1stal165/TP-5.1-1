@@ -718,7 +718,7 @@ h1 {
 
 .button_save {
     position: absolute;
-    width: 165px;
+    width: 185px;
     height: 50px;
     left: 974px;
     top: 735px;
@@ -732,7 +732,6 @@ h1 {
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    /* identical to box height */
     text-align: center;
 
     color: #FFFFFF;
@@ -741,6 +740,7 @@ h1 {
 }
 
 #button_save_editprofile {
+    width: 250px !important;
     bottom: 00px !important;
     top: 42px !important;
     left: 824px !important;

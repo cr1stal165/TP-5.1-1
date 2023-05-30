@@ -21,6 +21,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <script src="{% static 'scripts/delete_topic_admin.js' %}"></script>
     <script src="{% static 'scripts/logout_admin.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
     <!-- </style> -->
@@ -155,8 +156,10 @@
 
                     var cont4 = '<img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">'
                     var cont3 = `<a href="#" class="topic-main">${users[i].name}</a>`;
-                    var cont2 = '<div class="topic">' + cont3 + cont4 + '</div>'
+                    var but1 = '<form class="form-delete-article">' + `<button data-id="${data[i].id}" class="deletebutton-profile"><img class="deletebutton-profile-svg" src="/static/img/delete-admin.svg"></button>` + '</form>';
+                    var but2 = '<form id="form_edit_article">' + `<button class="editbutton-profile"><a href="/admin_edit_thematics/${data[i].id}/"><img class="editbutton-profile-svg" src="/static/img/edit-admin.svg"></a></button>` + '</form>';
 
+                    var cont2 = '<div class="topic">' + cont3 + cont4 + but1 + but2 + '</div>'
                     var cont1 = '<div class="container234">' + cont2 + '</div>'
 
 
@@ -169,6 +172,25 @@
         });
     });
 
+
 </script>
+
+<style>
+    .topic {
+        display: flex;
+        align-items: center;
+    }
+
+    .topic_img {
+        margin-left: auto; /* Расположение изображения справа */
+        margin-right: 15px; /* Расстояние между текстом и изображением */
+        margin-top: 0 !important;
+    }
+
+    .deletebutton-profile,
+    .editbutton-profile{
+        background-color: #FFFFFF !important;
+    }
+</style>
 
 </html>

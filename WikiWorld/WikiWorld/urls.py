@@ -19,15 +19,13 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from backend.views import ArticleAPIList, ArticleAPIUpdateView, ArticleAPIDestroyView, RegistrUserView, \
     TokenCreateViewApi, TopicAPIList, ArticleDetailView, UsersDetailView, TokenDestroyViewApi, TopicDetailView, \
-    UpdatePasswordUserView, TopicAPIAdd
+    UpdatePasswordUserView, TopicAPIAdd, TopicAPIDelete, TopicAPIUpdate
 from frontend.urls import urlpatterns1
 from WikiWorld import settings
 from .yasg import urlpatterns as doc_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('api/v1/drf-auth/', include('rest_framework.urls')),
-    # path('api/v1/articles-full/', ArticleAPIList1.as_view()),
     path('api/v1/articles/', ArticleAPIList.as_view()),
     path('api/v1/article/<int:pk>/', ArticleDetailView.as_view()),
     path('api/v1/articles/<int:pk>/', ArticleAPIUpdateView.as_view()),
@@ -38,11 +36,11 @@ urlpatterns = [
     path('api/v1/topics/', TopicAPIList.as_view()),
     path('api/v1/topics/<int:pk>/', TopicDetailView.as_view()),
     path('api/v1/topics/add/', TopicAPIAdd.as_view()),
+    path('api/v1/topics/update/<int:pk>/', TopicAPIUpdate.as_view()),
+    path('api/v1/topics/delete/<int:pk>/', TopicAPIDelete.as_view()),
     path('api/v1/user/<int:pk>/', UsersDetailView.as_view()),
-
     path('api/v1/updatepassword/', UpdatePasswordUserView.as_view()),
-    # path('api/v1/auth/', include('djoser.urls')),
-    # re_path(r'^auth/', include('djoser.urls.authtoken')),
+
 ]
 
 urlpatterns += doc_urls

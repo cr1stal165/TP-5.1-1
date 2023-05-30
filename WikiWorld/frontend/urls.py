@@ -42,11 +42,10 @@ urlpatterns1 = [
     path('admin_main/', views.admin_main, name='admin_main'),
     path('admin_thematics/', views.admin_thematics, name='admin_thematics'),
     path('admin_many_articles/', views.admin_many_articles, name='admin_many_articles'),
-    path('admin_edit_article/', views.admin_edit_article, name='admin_edit_article'),
-    path('admin_edit_thematics/', views.admin_edit_thematics, name='admin_edit_thematics'),
+    path('admin_edit_article/<int:pk>/', views.admin_edit_article, name='admin_edit_article'),
+    path('admin_edit_thematics/<int:pk>/', views.admin_edit_thematics, name='admin_edit_thematics'),
     path('admin_add_thematics/', views.admin_add_thematics, name='admin_add_thematics'),
     path('play_music/', views.play_music, name='play_music'),
-
 ]
 
 if settings.DEBUG:

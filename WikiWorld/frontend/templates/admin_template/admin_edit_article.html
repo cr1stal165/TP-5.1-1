@@ -22,9 +22,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <script src="{% static 'scripts/add_and_edit_article_list_topics.js' %}"></script>
-{#    <script src="{% static 'scripts/edit_article.js' %}"></script>#}
+    <script src="{% static 'scripts/edit_article_admin.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
-    <!-- </style> -->
 </head>
 
 <body>
@@ -47,7 +46,7 @@
                 <!-- <input class="search1" placeholder="Search"> -->
                 <img class="profilepic" id="profilepic-admin" src="{% static 'img/admin_ava.svg' %}">
                 <style>
-                    .loginname{
+                    .loginname {
                         margin-left: 67% !important;
                     }
                 </style>
@@ -58,22 +57,25 @@
 <main>
 
     <br><br><br><br>
-    <div class="article-editor col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: block;">
-        <input id="title" type="text" placeholder="Заголовок"
-               class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <select id="selecttheme_field" class="selecttheme_field">
-            <option id="op_selecttheme_field" class="op_selecttheme_field" value=""></option>
+    <form>
+        <div class="article-editor col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: block;">
+            <input id="title" type="text" placeholder="Заголовок"
+                   class="article-edit-string col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+            <select id="selecttheme_field" class="selecttheme_field">
+                <option id="op_selecttheme_field" class="op_selecttheme_field" value=""></option>
 
-        </select>
-        <div class="upload_image"><label for="file_input" id="upload_label">Загрузить изображение <br> <img
-                src="{% static 'img/cloud_upload.svg' %}"> </label>
-            <input type="file" id="file_input" accept="image/*"></div>
-        <input id="description" type="text" placeholder="Текст статьи"
-               class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
-        <form>
-            <button class="button_save" id="button-save-article-edit"><p class="p-editarticlebutton"> Редактировать </p>
+            </select>
+            <div class="upload_image"><label for="file_input" id="upload_label">Загрузить изображение <br> <img
+                    src="{% static 'img/cloud_upload.svg' %}"> </label>
+                <input type="file" id="file_input" accept="image/*"></div>
+            <input id="description" type="text" placeholder="Текст статьи"
+                   class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+
+            <button class="button_save" id="button-save-article-edit"><p class="p-editarticlebutton" type="submit">
+                Редактировать </p>
             </button>
-        </form>
+        </div>
+    </form>
     </div>
     </div>
     <br><br><br><br><br><br>
@@ -104,14 +106,13 @@
                 $('#description').val(JSON.stringify(response['description']).replace(/"/g, ''));
 
 
-
                 var url2 = `http://127.0.0.1:8000/api/v1/topics/${topic_id}/`;
                 $.ajax({
                     url: url2,
                     type: 'GET',
                     dataType: 'json',
                     success: function (response) {
-                            $('#op_selecttheme_field').text(JSON.stringify(response['name']).replace(/"/g, '')).val((JSON.stringify(response['id']).replace(/"/g, '')));
+                        $('#op_selecttheme_field').text(JSON.stringify(response['name']).replace(/"/g, '')).val((JSON.stringify(response['id']).replace(/"/g, '')));
                     },
                     error: function (error) {
                         console.log(error);

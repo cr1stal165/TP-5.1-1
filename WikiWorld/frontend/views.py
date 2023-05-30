@@ -1,5 +1,4 @@
-
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotAllowed
 from django.shortcuts import render, redirect
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
@@ -128,7 +127,7 @@ def admin_many_articles(request):
         return redirect('index')
 
 
-def admin_edit_article(request):
+def admin_edit_article(request, pk):
     if request.user.is_superuser:
         return render(request, 'admin_template/admin_edit_article.html')
     elif request.user.is_authenticated and not request.user.is_authenticated:
@@ -137,7 +136,7 @@ def admin_edit_article(request):
         return redirect('index')
 
 
-def admin_edit_thematics(request):
+def admin_edit_thematics(request, pk):
     if request.user.is_superuser:
         return render(request, 'admin_template/admin_edit_thematics.html')
     elif request.user.is_authenticated and not request.user.is_authenticated:

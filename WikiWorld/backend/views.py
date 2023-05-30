@@ -135,6 +135,18 @@ class TopicAPIAdd(generics.CreateAPIView):
     permission_classes = (IsAdminOrReadOnly, )
 
 
+class TopicAPIDelete(generics.DestroyAPIView):
+    queryset = Topic.objects.all()
+    serializer_class = TopicSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+
+class TopicAPIUpdate(generics.UpdateAPIView):
+    queryset = Topic.objects.all()
+    serializer_class = TopicSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+
 class TopicDetailView(APIView):
     def get(self, request, pk):
         try:
