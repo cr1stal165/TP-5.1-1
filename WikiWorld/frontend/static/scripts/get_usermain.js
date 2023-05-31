@@ -1,6 +1,6 @@
 $(document).ready(function () {
     const name = localStorage.getItem('id');
-    var url = `/api/v1/user/${name}/`;
+    var url = `http://158.160.51.82:30/api/v1/user/${name}/`;
 
     $.ajax({
         url: url,

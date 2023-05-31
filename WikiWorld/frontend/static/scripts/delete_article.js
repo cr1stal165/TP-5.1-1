@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function delete_article(id) {
         var token = localStorage.getItem('token');
-        var url = `/api/v1/articles/delete/${id}/`;
+        var url = `http://158.160.51.82:30/api/v1/articles/delete/${id}/`;
 
         fetch(url, {
             method: 'DELETE',
@@ -27,6 +27,6 @@ $(document).ready(function () {
 
     function redirectToMainPage() {
         alert('Статья успешно удалена');
-        window.location.href = '/index_auth/';
+        window.location.href = 'http://158.160.51.82:30/index_auth/';
     }
 });

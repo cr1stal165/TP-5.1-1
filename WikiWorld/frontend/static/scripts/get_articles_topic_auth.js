@@ -2,7 +2,7 @@ $(document).ready(function () {
     var path = window.location.pathname;
     var parts = path.split('/');
     var id = parts[parts.length - 2];
-    var url = `http://127.0.0.1:8000/api/v1/topics/${id}/`;
+    var url = `http://158.160.51.82:30/api/v1/topics/${id}/`;
     $.ajax({
         url: url,
         type: 'GET',
@@ -10,7 +10,7 @@ $(document).ready(function () {
         success: function (response) {
             $('#topic-1').text(JSON.stringify(response['name']).replace(/"/g, ''));
 
-            var secondUrl = '/api/v1/articles/';
+            var secondUrl = 'http://158.160.51.82:30/api/v1/articles/';
 
             $.ajax({
                 url: secondUrl,
@@ -22,7 +22,7 @@ $(document).ready(function () {
 
                             var topic = data[i];
 
-                            var cont3 = `<a href="/article_page_auth/${topic.id}/" class="topic-main">${topic.title}</a>`;
+                            var cont3 = `<a href="http://158.160.51.82:30/article_page_auth/${topic.id}/" class="topic-main">${topic.title}</a>`;
                             var cont5 = '<p class="topic-text">' + topic.description + '</p>'
                             var cont2 = '<div class="topic">' + cont3 + cont5 + '</div>';
                             var cont1 = '<div class="container234">' + cont2 + '</div>';

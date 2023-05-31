@@ -4,7 +4,7 @@ $(document).ready(function() {
         var username = localStorage.getItem('nickname');
         var password = $('#passwordnameinput-editprofile').val();
         var token = localStorage.getItem('token');
-        var url = '/api/v1/updatepassword/';
+        var url = 'http://158.160.51.82:30/api/v1/updatepassword/';
 
         var data = {
             'nickname': username,
@@ -35,7 +35,7 @@ $(document).ready(function() {
     // Функция для перенаправления на страницу после аутентификации
     function redirectToMainPage() {
 
-        window.location.href = '/profile/';
+        window.location.href = 'http://158.160.51.82:30/profile/';
 
     }
 

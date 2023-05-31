@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -91,7 +91,7 @@
         var path = window.location.pathname;
         var parts = path.split('/');
         var id = parts[parts.length - 2];
-        var url = `/api/v1/topics/${id}/`;
+        var url = `http://158.160.51.82:30/api/v1/topics/${id}/`;
         $.ajax({
             url: url,
             type: 'GET',
@@ -110,6 +110,35 @@
 
 </script>
 
+<style>
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-SemiBold';
+        src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
 
 </body>
 

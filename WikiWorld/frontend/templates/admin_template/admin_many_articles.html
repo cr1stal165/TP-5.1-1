@@ -2,13 +2,13 @@
 <html lang="ru">
 {% load static %}
 <head>
-    <title>Редактирование статей</title>
+    <title>Все статьи</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -78,5 +78,34 @@
 </footer>
 
 </body>
+<style>
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-SemiBold';
+        src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
 
 </html>

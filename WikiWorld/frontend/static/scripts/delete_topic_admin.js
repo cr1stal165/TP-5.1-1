@@ -7,7 +7,7 @@ $(document).ready(function () {
 
     function delete_article(id) {
         var token = localStorage.getItem('token');
-        var url = `/api/v1/topics/delete/${id}/`;
+        var url = `http://158.160.51.82:30/api/v1/topics/delete/${id}/`;
 
         fetch(url, {
             method: 'DELETE',
@@ -27,6 +27,6 @@ $(document).ready(function () {
 
     function redirectToMainPage() {
         alert('Тематика успешно удалена');
-        window.location.href = '/admin_main/';
+        window.location.href = 'http://158.160.51.82:30/admin_main/';
     }
 });

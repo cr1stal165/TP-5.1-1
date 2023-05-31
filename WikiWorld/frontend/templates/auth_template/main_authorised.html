@@ -2,7 +2,8 @@
 <html lang="ru">
 {% load static %}
 <head>
-
+    <title>Главная</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -11,9 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
-    <style>
 
-    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <script src="{% static 'scripts/get_articles_auth.js' %}"></script>
@@ -37,6 +36,34 @@
             font-size: 26px;
             padding-bottom: 10px;
             color: black;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-SemiBold';
+            src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Medium';
+            src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Regular';
+            src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Light';
+            src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
 
         @font-face {

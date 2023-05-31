@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link href="/examples/vendors/bootstrap-4/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -95,7 +94,7 @@
         var path = window.location.pathname;
         var parts = path.split('/');
         var id = parts[parts.length - 2];
-        var url = `http://127.0.0.1:8000/api/v1/article/${id}/`;
+        var url = `http://158.160.51.82:30/api/v1/article/${id}/`;
         $.ajax({
             url: url,
             type: 'GET',
@@ -106,7 +105,7 @@
                 $('#description').val(JSON.stringify(response['description']).replace(/"/g, ''));
 
 
-                var url2 = `http://127.0.0.1:8000/api/v1/topics/${topic_id}/`;
+                var url2 = `http://158.160.51.82:30/api/v1/topics/${topic_id}/`;
                 $.ajax({
                     url: url2,
                     type: 'GET',
@@ -127,6 +126,36 @@
     });
 
 </script>
+
+<style>
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-SemiBold';
+        src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
 
 </body>
 

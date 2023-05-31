@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -146,7 +146,7 @@
 <script>
     $(document).ready(function () {
         $.ajax({
-            url: "/api/v1/topics/",
+            url: "http://158.160.51.82:30/api/v1/topics/",
             type: "GET",
             dataType: "json",
             success: function (data) {
@@ -157,7 +157,7 @@
                     var cont4 = '<img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">'
                     var cont3 = `<a href="#" class="topic-main">${users[i].name}</a>`;
                     var but1 = '<form class="form-delete-article">' + `<button data-id="${data[i].id}" class="deletebutton-profile"><img class="deletebutton-profile-svg" src="/static/img/delete-admin.svg"></button>` + '</form>';
-                    var but2 = '<form id="form_edit_article">' + `<button class="editbutton-profile"><a href="/admin_edit_thematics/${data[i].id}/"><img class="editbutton-profile-svg" src="/static/img/edit-admin.svg"></a></button>` + '</form>';
+                    var but2 = '<form id="form_edit_article">' + `<button class="editbutton-profile"><a href="http://158.160.51.82:30/admin_edit_thematics/${data[i].id}/"><img class="editbutton-profile-svg" src="/static/img/edit-admin.svg"></a></button>` + '</form>';
 
                     var cont2 = '<div class="topic">' + cont3 + cont4 + but1 + but2 + '</div>'
                     var cont1 = '<div class="container234">' + cont2 + '</div>'
@@ -188,9 +188,38 @@
     }
 
     .deletebutton-profile,
-    .editbutton-profile{
+    .editbutton-profile {
         background-color: #FFFFFF !important;
     }
 </style>
 
+<style>
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-SemiBold';
+        src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
 </html>

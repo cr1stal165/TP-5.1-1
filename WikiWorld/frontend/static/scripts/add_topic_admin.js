@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function add_topic() {
-        var url = '/api/v1/topics/add/';
+        var url = 'http://158.160.51.82:30/api/v1/topics/add/';
         var topic = $('#topic_id').val();
         var token = localStorage.getItem('token');
         var data = {

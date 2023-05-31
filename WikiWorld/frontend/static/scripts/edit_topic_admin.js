@@ -9,7 +9,7 @@ $(document).ready(function() {
         var name = $('#topic_id').val();
 
         var token = localStorage.getItem('token');
-        var url = `/api/v1/topics/update/${art_id}/`;
+        var url = `http://158.160.51.82:30/api/v1/topics/update/${art_id}/`;
 
         var data = {
             'name': name
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     function redirectToMainPage() {
 
-        window.location.href = '/admin_thematics/';
+        window.location.href = 'http://158.160.51.82:30/admin_thematics/';
 
     }
 

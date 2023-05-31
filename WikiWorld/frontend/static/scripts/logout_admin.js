@@ -1,6 +1,6 @@
 $(document).ready(function () {
     function logout() {
-        var url = 'http://127.0.0.1:8000/api/v1/logout/';
+        var url = 'http://158.160.51.82:30/api/v1/logout/';
 
         var username = localStorage.getItem('nickname');
         var password = localStorage.getItem('password');
@@ -33,7 +33,7 @@ $(document).ready(function () {
 
     function redirectToMainPage() {
 
-        window.location.href = 'http://127.0.0.1:8000';
+        window.location.href = 'http://158.160.51.82:30';
 
     }
 

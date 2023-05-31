@@ -10,7 +10,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: 'http://127.0.0.1:8000/api/v1/registration/',
+            url: 'http://158.160.51.82:30/api/v1/registration/',
             type: 'POST',
             dataType: 'json',
             data: requestData,
@@ -21,7 +21,7 @@ $(document).ready(function () {
             },
             complete: function (xmlHttp) {
 
-                window.location.href = 'http://127.0.0.1:8000/login/'
+                window.location.href = 'http://158.160.51.82:30/login/'
             },
             error: function (error) {
                 // Обработка ошибки

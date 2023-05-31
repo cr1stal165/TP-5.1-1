@@ -3,7 +3,7 @@ $(document).ready(function() {
     function authenticate() {
         var username = $('#nickname').val();
         var password = $('#password').val();
-        var url = '/api/v1/login/';
+        var url = 'http://158.160.51.82:30/api/v1/login/';
 
         var data = {
             'nickname': username,
@@ -47,9 +47,9 @@ $(document).ready(function() {
             return;
         }
         if (is_superuser === 'true') {
-            window.location.href = '/admin_main/?token=' + token + '&user=' + id;
+            window.location.href = 'http://158.160.51.82:30/admin_main/?token=' + token + '&user=' + id;
         } else {
-            window.location.href = '/profile/?token=' + token + '&user=' + id;
+            window.location.href = 'http://158.160.51.82:30/profile/?token=' + token + '&user=' + id;
         }
     }
 

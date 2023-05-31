@@ -59,42 +59,56 @@ def profile_page(request):
 
 
 def index_auth(request):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('index')
     return render(request, 'auth_template/main_authorised.html')
 
 
 def edit_profile_auth(request):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('index')
     return render(request, 'auth_template/editprofile.html')
 
 
 def article_page_auth(request, pk):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('article_page', pk=pk)
     return render(request, 'auth_template/article_page_auth.html')
 
 
 def articles_topic_auth(request, pk):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('articles_topic', pk=pk)
     return render(request, 'auth_template/articles_topic_auth.html')
 
 
 def all_topics_auth(request):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('all_topics')
     return render(request, 'auth_template/all_topics_auth.html')
 
 
 def add_article(request):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('index')
     return render(request, 'auth_template/add_article.html')
 
 
 def edit_article(request, pk):
+    if request.user.is_superuser:
+        return redirect('admin_main')
     if not request.user.is_authenticated:
         return redirect('index')
     return render(request, 'auth_template/edit_article.html')

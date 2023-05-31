@@ -11,7 +11,7 @@ $(document).ready(function() {
         var topic_id = $('#selecttheme_field').val();
         var id = localStorage.getItem('id');
         var token = localStorage.getItem('token');
-        var url = `/api/v1/articles/${art_id}/`;
+        var url = `http://158.160.51.82:30/api/v1/articles/${art_id}/`;
 
         var data = {
             'title': title,
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
     function redirectToMainPage() {
 
-        window.location.href = '/profile/';
+        window.location.href = 'http://158.160.51.82:30/profile/';
 
     }
 

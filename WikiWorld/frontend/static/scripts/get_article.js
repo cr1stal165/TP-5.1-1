@@ -3,7 +3,7 @@ $(document).ready(function () {
     var path = window.location.pathname;
     var parts = path.split('/');
     var id = parts[parts.length - 2];
-    var url = `http://127.0.0.1:8000/api/v1/article/${id}/`;
+    var url = `http://158.160.51.82:30/api/v1/article/${id}/`;
     $.ajax({
         url: url,
         type: 'GET',
@@ -19,7 +19,7 @@ $(document).ready(function () {
             $('#avatar').attr('src', 'data:image/png;base64,' + lsd);
 
 
-            var url2 = `http://127.0.0.1:8000/api/v1/user/${user}/`;
+            var url2 = `http://158.160.51.82:30/api/v1/user/${user}/`;
             $.ajax({
                 url: url2,
                 type: 'GET',
