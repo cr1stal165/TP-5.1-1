@@ -1,9 +1,18 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+    function getImageBinaryData(imageFile) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsArrayBuffer(imageFile);
+        });
+    }
 
     var path = window.location.pathname;
     var parts = path.split('/');
     var art_id = parts[parts.length - 2];
-    // Функция аутентификации
+
     function add_article() {
         var date = '';
         var title = $('#title').val();
@@ -13,33 +22,43 @@ $(document).ready(function() {
         var token = localStorage.getItem('token');
         var url = `http://158.160.51.82:30/api/v1/articles/${art_id}/`;
 
-        var data = {
-            'title': title,
-            'description': description,
-            'user': id,
-            'topic': topic_id
+        var imageInput = document.getElementById('file_input');
+        var imageFile = imageInput.files[0];
 
-        };
+        getImageBinaryData(imageFile)
+            .then(imageBinaryData => {
+                var base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(imageBinaryData)));
+                var image = base64String;
+                alert(base64String);
 
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + token
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(data => {
+                var data = {
+                    'title': title,
+                    'description': description,
+                    'image': image,
+                    'user': id,
+                    'topic': topic_id
+                };
 
-            $('#button-save-article-edit').show();
-
-            redirectToMainPage();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-
-        });
+                fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token ' + token
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        $('#button-save-article-edit').show();
+                        redirectToMainPage();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     }
 
     function redirectToMainPage() {
@@ -49,9 +68,14 @@ $(document).ready(function() {
     }
 
     // Обработчик события клика на кнопке входа
-    $('#button-save-article-edit').click(function(event) {
+    $('#button-save-article-edit').click(function (event) {
         event.preventDefault(); // Предотвращаем отправку формы
         add_article(); // Вызываем функцию аутентификации
     });
 
+    // // // Обработчик события отправки формы
+    // $('#addForm').submit(function (event) {
+    //     event.preventDefault(); // Предотвращаем отправку формы
+    //     add_article(); // Вызываем функцию аутентификации
+    // });
 });

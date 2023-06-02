@@ -16,7 +16,7 @@ $(document).ready(function () {
             $('#hid_id').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
             $('#hid_id1').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
             $('#hid_id2').val(JSON.stringify(response['id']).replace(/"/g, '')).text(JSON.stringify(response['id']).replace(/"/g, ''));
-            $('#avatar').attr('src', 'data:image/png;base64,' + lsd);
+            $('#avatar').attr('src', 'data:image/png;base64,' + JSON.stringify(response['image']).replace(/"/g, ''));
 
 
             var url2 = `http://158.160.51.82:30/api/v1/user/${user}/`;

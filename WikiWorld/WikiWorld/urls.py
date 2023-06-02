@@ -23,6 +23,9 @@ from backend.views import ArticleAPIList, ArticleAPIUpdateView, ArticleAPIDestro
 from frontend.urls import urlpatterns1
 from WikiWorld import settings
 from .yasg import urlpatterns as doc_urls
+from django.conf.urls import handler404
+
+handler404 = 'frontend.views.page_not_found'
 
 urlpatterns = [
     path('admin/', admin.site.urls),

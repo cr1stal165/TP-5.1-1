@@ -1,27 +1,50 @@
 $(document).ready(function () {
-    function add_topic() {
-        var url = 'http://158.160.51.82:30/api/v1/topics/add/';
+    // Функция аутентификации
+    function getImageBinaryData(imageFile) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onloadend = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsArrayBuffer(imageFile);
+        });
+    }
+
+    function add_article() {
         var topic = $('#topic_id').val();
         var token = localStorage.getItem('token');
-        var data = {
-            'name': topic,
-            'image': null
-        };
+        var url = 'http://158.160.51.82:30/api/v1/topics/add/';
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + token
-            },
-            body: JSON.stringify(data)
-        })
-            .then(response => response.json())
-            .then(data => {
+        var imageInput = document.getElementById('file_input');
+        var imageFile = imageInput.files[0];
 
-                $('#admintheme-button').show();
+        getImageBinaryData(imageFile)
+            .then(imageBinaryData => {
+                var base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(imageBinaryData)));
+                var image = base64String;
+                alert(base64String);
 
-                redirectToMainPage();
+                var data = {
+                    'name': topic,
+                    'image': image,
+
+                };
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token ' + token
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        $('#admintheme-button').show();
+                        redirectToMainPage();
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -30,17 +53,19 @@ $(document).ready(function () {
 
     function redirectToMainPage() {
 
-        window.location.href = 'http://127.0.0.1:8000/admin_main/';
+        window.location.href = 'http://158.160.51.82:30/admin_main/';
 
     }
 
+    // Обработчик события клика на кнопке входа
     $('#admintheme-button').click(function (event) {
-        event.preventDefault();
-        add_topic();
+        event.preventDefault(); // Предотвращаем отправку формы
+        add_article(); // Вызываем функцию аутентификации
     });
 
+    // Обработчик события отправки формы
     $('#myForm').submit(function (event) {
-        event.preventDefault();
-        add_topic();
+        event.preventDefault(); // Предотвращаем отправку формы
+        add_article(); // Вызываем функцию аутентификации
     });
 });

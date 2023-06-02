@@ -387,46 +387,17 @@
 
         </div>
         <div class="button-container">
+            <script>
+                var music; // Define the audio variable outside the function for access in multiple functions
 
-            <form action="{% url 'play_music' %}" method="post">
-                {% csrf_token %}
-                <input name="hid_id2" id="hid_id2" type="hidden">
-                <button onclick="openPopup()" class="button1" type="submit">
-                    <img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px">
-                </button>
+                function playMusic() {
+                    music = new Audio('{% static 'audio.mp3' %}');
+                    music.play();
+                }
 
-            </form>
-            <p class="button1_text">Прослушать статью</p>
-
-        </div>
-    </div>
-    <br><br><br><br><br><br>
-</main>
-
-<input type="hidden" id="hid" class="hid" name="hid"></input>
-<footer>
-    <div class="container footer">
-        <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
-        <p class="p2023">2023</p>
-    </div>
-</footer>
-
-</body>
-
-<script>
-    var music; // Define the audio variable outside the function for access in multiple functions
-
-    function playMusic() {
-        music = new Audio('{% static 'audio.mp3' %}');
-        music.play();
-    }
-
-    function openPopup() {
-        var popup = window.open('', 'audioPopup', 'width=400,height=200');
-        window.addEventListener('beforeunload', function () {
-            popup.location.reload();
-        });
-        popup.document.write(`
+                function openPopup() {
+                    var popup = window.open('', 'audioPopup', 'width=400,height=200');
+                    popup.document.write(`
                 <html>
                 <head>
                     <style>
@@ -455,14 +426,33 @@
                 </body>
                 </html>
             `);
-        popup.document.close();
-    }
+                    popup.document.close();
+                }
 
-    function closePopup() {
-        music.pause(); // Pause the audio when the popup is closed
-        window.close();
-    }
-</script>
+                function closePopup() {
+                    music.pause(); // Pause the audio when the popup is closed
+                    window.close();
+                }
+            </script>
+            <button onclick="openPopup()" class="button1">
+                <img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px">
+            </button>
+            <p class="button1_text">Прослушать статью</p>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+</main>
+
+<input type="hidden" id="hid" class="hid" name="hid"></input>
+<footer>
+    <div class="container footer">
+        <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
+        <p class="p2023">2023</p>
+    </div>
+</footer>
+
+</body>
+
 
 </html>
 						

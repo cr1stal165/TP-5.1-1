@@ -11,7 +11,6 @@ from rest_framework.generics import CreateAPIView, UpdateAPIView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.authtoken.models import Token
 from .models import Article, User, Topic
 from .serializers import ArticleSerializer, UserRegistrSerializer, TopicSerializer, UserSerializer
 from .permissions import IsAdminOrReadOnly

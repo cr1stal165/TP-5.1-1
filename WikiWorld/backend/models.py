@@ -48,7 +48,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Topic(models.Model):
     name = models.CharField(max_length=100)
-    image = models.BinaryField(null=True)
+    image = models.TextField(null=True)
 
     def __str__(self):
         return self.name
@@ -58,7 +58,7 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     description = models.CharField()
     date = models.DateField()
-    image = models.BinaryField(null=True)
+    image = models.TextField(null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
 

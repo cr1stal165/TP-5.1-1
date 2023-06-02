@@ -154,7 +154,7 @@
                 for (var i = 0; i < users.length; i++) {
 
 
-                    var cont4 = '<img class="topic_img" src="mingcute_science-line.svg" width="50px" height="50px">'
+                    var cont4 = `<img class="topic_img" src="data:image/svg+xml;base64,${data[i].image}" width="50px" height="50px">`
                     var cont3 = `<a href="#" class="topic-main">${users[i].name}</a>`;
                     var but1 = '<form class="form-delete-article">' + `<button data-id="${data[i].id}" class="deletebutton-profile"><img class="deletebutton-profile-svg" src="/static/img/delete-admin.svg"></button>` + '</form>';
                     var but2 = '<form id="form_edit_article">' + `<button class="editbutton-profile"><a href="http://158.160.51.82:30/admin_edit_thematics/${data[i].id}/"><img class="editbutton-profile-svg" src="/static/img/edit-admin.svg"></a></button>` + '</form>';

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена</title>
+</head>
+<body>
+<center>
+    <p class="info">Страница не найдена</p>
+    <p class="error">404</p>
+</center>
+</body>
+
+<style>
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-SemiBold';
+        src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        background-color: #2558B8;
+    }
+
+    .info {
+        width: 900px;
+        height: 78px;
+        margin-top: 181px;
+
+        font-family: 'Montserrat-Medium', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 54px;
+        line-height: 78px;
+        /* identical to box height */
+
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+
+    .error {
+        width: 727px;
+        height: 78px;
+
+        margin-top: 81px;
+
+        font-family: 'Montserrat-Medium', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 150px;
+        line-height: 78px;
+
+        text-align: center;
+
+        color: #FFFFFF;
+    }
+</style>
+</html>

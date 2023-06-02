@@ -1,9 +1,12 @@
-from django.http import HttpResponse, HttpResponseNotAllowed
+from io import BytesIO
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph
+from django.shortcuts import get_object_or_404
 from gtts import gTTS
 from backend.models import Article
 
@@ -167,33 +170,68 @@ def admin_add_thematics(request):
     else:
         return redirect('index')
 
+
+def page_not_found(request, exception):
+    return render(request, 'page_not_found.html', status=404)
+
+
 def download_pdf(request):
-    global pdf
     if request.method == 'POST':
         art_id = request.POST.get('hid_id')
-        descript = Article.objects.get(id=art_id)
-        # # Установка шрифта и кодировки
-        pdfmetrics.registerFont(TTFont('Arial', 'arial.ttf', 'Windows-1251'))
-        pdfmetrics.registerFont(TTFont('Arial', 'arial.ttf'))
-        pdfmetrics.registerFont(TTFont('Arial-Bold', 'arialbd.ttf', 'Windows-1251'))
-        pdfmetrics.registerFont(TTFont('Arial-Italic', 'ariali.ttf', 'Windows-1251'))
-        pdfmetrics.registerFont(TTFont('Arial-BoldItalic', 'arialbi.ttf', 'Windows-1251'))
-        # Создание нового документа PDF
-        pdf = canvas.Canvas("example.pdf", pagesize=A4, )
+        descript = get_object_or_404(Article, id=art_id)
 
-        # Добавление текста в документ
+        # Set up the document with A4 size
+        pdf_buffer = BytesIO()
+        pdf = SimpleDocTemplate(pdf_buffer, pagesize=A4, encoding='utf-8')
+        styles = getSampleStyleSheet()
+
+        font_path = 'frontend/static/fonts/Montserrat-Regular.ttf'
+        pdfmetrics.registerFont(TTFont('Montserrat', font_path))
+        font_path1 = 'frontend/static/fonts/Montserrat-Bold.ttf'
+        pdfmetrics.registerFont(TTFont('Montserrat-Bold', font_path1))
+
+
+        # Add the article title to the document
+        title_style = ParagraphStyle(
+            'TitleStyle',
+            parent=styles['Heading1'],
+            fontSize=16,
+            leading=18,
+            spaceAfter=12,
+            fontName='Montserrat-Bold',  # Specify the registered font name
+            alignment=1,  # Center alignment
+            fontWeight='bold',  # Make the title bold
+            language='en',
+        )
+        title_paragraph = Paragraph(descript.title, title_style)
+
+        # Add the article text to the document
         text = descript.description
-        pdf.setFont('Arial', 12)
-        pdf.drawString(100, 100, text)
+        article_style = ParagraphStyle(
+            'ArticleStyle',
+            parent=styles['Normal'],
+            fontSize=12,
+            leading=14,
+            spaceAfter=12,
+            fontName='Montserrat',  # Specify the registered font name
+            language='en',
+        )
+        article_paragraphs = [Paragraph(line, article_style) for line in text.split('\n')]
 
-        # Сохранение документа
-        pdf.save()
+        # Build the document content
+        content = [title_paragraph] + article_paragraphs
 
-        # Открытие файла PDF и чтение его содержимого
-        with open("example.pdf", "rb") as pdf_file:
-            response = HttpResponse(pdf_file.read(), content_type="application/pdf")
-            response["Content-Disposition"] = 'attachment; filename="example.pdf"'
-            return response
+        # Build the PDF document
+        pdf.build(content)
+
+        # Get the PDF file from the buffer
+        pdf_buffer.seek(0)
+        response = HttpResponse(
+            pdf_buffer.read(),
+            content_type='application/pdf'
+        )
+        response['Content-Disposition'] = 'attachment; filename="example.pdf"'
+        return response
 
 
 def download_audio(request):

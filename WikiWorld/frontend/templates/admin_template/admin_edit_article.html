@@ -22,6 +22,7 @@
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <script src="{% static 'scripts/add_and_edit_article_list_topics.js' %}"></script>
     <script src="{% static 'scripts/edit_article_admin.js' %}"></script>
+    <script src="{% static 'scripts/logout_admin.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
 </head>
 
@@ -67,8 +68,8 @@
             <div class="upload_image"><label for="file_input" id="upload_label">Загрузить изображение <br> <img
                     src="{% static 'img/cloud_upload.svg' %}"> </label>
                 <input type="file" id="file_input" accept="image/*"></div>
-            <input id="description" type="text" placeholder="Текст статьи"
-                   class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1">
+            <textarea id="description" type="text" placeholder="Текст статьи"
+                      class="textarticle_field col-sm-5 col-md-6 col-xl-12 order-md-0 order-xl-1"></textarea>
 
             <button class="button_save" id="button-save-article-edit"><p class="p-editarticlebutton" type="submit">
                 Редактировать </p>
