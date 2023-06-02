@@ -45,10 +45,11 @@ class UpdatePasswordUserView(UpdateAPIView):
         user = request.user
         curr_password = user.password
         new_password = request.data.get('password')
-
+        new_nickname = request.data.get('nickname')
         if curr_password == new_password:
             return Response({'error': 'Пароли совпадают'}, status=status.HTTP_400_BAD_REQUEST)
 
+        user.nickname = new_nickname
         user.set_password(new_password)
         user.save()
 

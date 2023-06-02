@@ -173,6 +173,7 @@
         }
 
         .but3 {
+            display: flex;
             position: relative;
             float: right;
             margin-right: 220px;
@@ -185,6 +186,11 @@
             font-size: 20px;
             color: white;
             border: 0;
+        }
+
+        .register_but{
+            margin-top: 16px !important;
+            margin-left: 36px;
         }
 
 
@@ -206,8 +212,8 @@
                 <br><br><br>
 
 
-                <button class="but3"><a style="text-decoration: none; color: white;"
-                                        href="{% url 'registration_page' %}">Регистрация</a></button>
+                <div class="but3"><a class="register_but" style="text-decoration: none; color: white;"
+                                        href="{% url 'registration_page' %}">Регистрация</a></div>
                 <button id="loginBtn" type="submit" class="but2">Войти</button>
             </div>
         </div>

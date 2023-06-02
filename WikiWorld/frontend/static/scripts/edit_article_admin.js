@@ -29,7 +29,7 @@ $(document).ready(function () {
             .then(imageBinaryData => {
                 var base64String = btoa(String.fromCharCode.apply(null, new Uint8Array(imageBinaryData)));
                 var image = base64String;
-                alert(base64String);
+                
 
                 var data = {
                     'title': title,

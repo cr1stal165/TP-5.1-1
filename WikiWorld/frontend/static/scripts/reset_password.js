@@ -1,7 +1,13 @@
 $(document).ready(function() {
     // Функция аутентификации
     function edit_profile() {
-        var username = localStorage.getItem('nickname');
+        var username;
+        var temp = $('#nicknameinput-editprofile').val();
+        if (temp === '' || temp === ' '){
+            username = localStorage.getItem('nickname');
+        } else {
+            username = $('#nicknameinput-editprofile').val();
+        }
         var password = $('#passwordnameinput-editprofile').val();
         var token = localStorage.getItem('token');
         var url = 'http://158.160.51.82:30/api/v1/updatepassword/';

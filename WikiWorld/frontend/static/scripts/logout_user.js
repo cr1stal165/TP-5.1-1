@@ -38,12 +38,8 @@ $(document).ready(function () {
     }
 
     $('#button_save_exit').click(function (event) {
-        event.preventDefault();
+        
         logout();
     });
 
-    $('#myForm').submit(function (event) {
-        event.preventDefault();
-        logout();
-    });
 });
