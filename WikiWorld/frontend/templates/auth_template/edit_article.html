@@ -128,6 +128,43 @@
 </body>
 
 <style>
+    .preview-img {
+        /* width: 100px;
+         height: 100px;  */
+        /* right: 2px; */
+        float: left;
+
+    }
+
+    .file-details {
+        /* left: 2px; */
+        float: right;
+
+    }
+
+    .file-name {
+        color: black;
+        font-size: 13px !important;
+        text-align: right;
+        line-height: 1.2;
+
+    }
+
+    .file-size {
+        color: black;
+        font-size: 13px !important;
+        text-align: right;
+        line-height: 1.2;
+
+    }
+
+    .file-resolution {
+        color: black;
+        font-size: 13px !important;
+        text-align: right;
+        line-height: 1.2;
+    }
+
     @font-face {
         font-family: 'Montserrat-Medium';
         src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
@@ -156,5 +193,100 @@
         font-style: normal;
     }
 </style>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function () {
+        var fileInput = document.getElementById('file_input');
+        var uploadLabel = document.getElementById('upload_label');
+
+        fileInput.addEventListener('change', function () {
+            var file = fileInput.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.addEventListener('load', function () {
+                    var image = new Image();
+                    image.src = reader.result;
+
+                    image.addEventListener('load', function () {
+                        var width = image.width;
+                        var height = image.height;
+
+                        if (width > 700 || height > 700) {
+                            uploadLabel.innerHTML = 'Выберите изображение формата .jpg и разрешением не более 700x700';
+                            return;
+                        }
+
+                        var canvas = document.createElement('canvas');
+                        var ctx = canvas.getContext('2d');
+                        var maxSize = 100;
+
+                        if (width > height) {
+                            if (width > maxSize) {
+                                height *= maxSize / width;
+                                width = maxSize;
+                            }
+                        } else {
+                            if (height > maxSize) {
+                                width *= maxSize / height;
+                                height = maxSize;
+                            }
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+
+                        ctx.drawImage(image, 0, 0, width, height);
+
+                        var resizedDataUrl = canvas.toDataURL();
+
+                        var fileSize = formatSize(file.size);
+                        var originalResolution = image.width + 'x' + image.height;
+
+                        var previewImg = document.createElement('img');
+                        previewImg.src = resizedDataUrl;
+                        previewImg.className = 'preview-img';
+
+                        var fileDetails = document.createElement('div');
+                        fileDetails.className = 'file-details';
+
+                        var fileName = document.createElement('div');
+                        fileName.className = 'file-name';
+                        fileName.textContent = 'Выбран файл: ' + file.name;
+
+                        var fileSizeElement = document.createElement('div');
+                        fileSizeElement.className = 'file-size';
+                        fileSizeElement.textContent = 'Размер: ' + fileSize;
+
+                        var fileResolution = document.createElement('div');
+                        fileResolution.className = 'file-resolution';
+                        fileResolution.textContent = 'Разрешение: ' + originalResolution;
+
+                        fileDetails.appendChild(fileName);
+                        fileDetails.appendChild(fileSizeElement);
+                        fileDetails.appendChild(fileResolution);
+
+                        uploadLabel.innerHTML = '';
+                        uploadLabel.appendChild(previewImg);
+                        uploadLabel.appendChild(fileDetails);
+
+                        uploadLabel.classList.add('selected');
+                    });
+                });
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function formatSize(bytes) {
+            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            if (bytes === 0) return '0 Bytes';
+            var i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return parseFloat((bytes / Math.pow(1024, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+    });
+
+</script>
 
 </html>
