@@ -88,6 +88,7 @@ body {
     text-align: center;
     background: #2558B8;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .text_adm {
@@ -118,6 +119,7 @@ body {
     font-size: 18px;
     font-family: 'Montserrat-Medium', sans-serif;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .search1 {
@@ -350,6 +352,7 @@ h1 {
     font-weight: 200;
     font-size: 36px;
     line-height: 44px;
+    cursor: pointer;
 
 }
 
@@ -451,6 +454,7 @@ h1 {
     text-align: center;
 
     color: #FFFFFF;
+    cursor: pointer;
 
 }
 
@@ -742,7 +746,7 @@ textarea::placeholder {
     text-align: center;
 
     color: #FFFFFF;
-
+    cursor: pointer;
 
 }
 
@@ -751,12 +755,14 @@ textarea::placeholder {
     bottom: 00px !important;
     top: 42px !important;
     left: 824px !important;
+    cursor: pointer;
 }
 
 #button_save_exit {
     bottom: 00px !important;
     top: 42px !important;
     left: 524px !important;
+    cursor: pointer;
 }
 
 #button_save_exit_admin {
@@ -764,11 +770,13 @@ textarea::placeholder {
     top: 34px !important;
     left: 754px !important;
     border-radius: 25px;
+    cursor: pointer;
 }
 
 .p-editprofilebutton {
     position: relative;
     top: 0px;
+    cursor: pointer;
 }
 
 .p-myprofilebutton {

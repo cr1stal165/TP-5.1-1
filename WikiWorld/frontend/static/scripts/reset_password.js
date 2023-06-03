@@ -3,12 +3,22 @@ $(document).ready(function() {
     function edit_profile() {
         var username;
         var temp = $('#nicknameinput-editprofile').val();
-        if (temp === '' || temp === ' '){
+        if (temp === '' || temp === ' ') {
             username = localStorage.getItem('nickname');
         } else {
+            if (temp.length < 3) {
+                alert('Никнейм должен содержать не менее 3 символов.');
+                return;
+            }
             username = $('#nicknameinput-editprofile').val();
         }
+
         var password = $('#passwordnameinput-editprofile').val();
+
+        if (!/[A-Z]/.test(password) || !/[!@#$%^&*]/.test(password) || password.length < 8) {
+            alert('Пароль должен содержать не менее 8 символов, хотя бы одну заглавную букву, один специальный символ (!@#$%^&*).');
+            return;
+        }
         var token = localStorage.getItem('token');
         var url = 'http://158.160.51.82:30/api/v1/updatepassword/';
 
