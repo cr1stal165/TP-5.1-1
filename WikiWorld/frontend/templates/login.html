@@ -9,6 +9,34 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="{% static 'scripts/authorization_user.js' %}"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(93830378, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93830378" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <style>
         .container {
             text-align: center;
@@ -189,7 +217,7 @@
             border: 0;
         }
 
-        .register_but{
+        .register_but {
             margin-top: 16px !important;
             margin-left: 36px;
         }
@@ -214,7 +242,7 @@
 
 
                 <div class="but3"><a class="register_but" style="text-decoration: none; color: white;"
-                                        href="{% url 'registration_page' %}">Регистрация</a></div>
+                                     href="{% url 'registration_page' %}">Регистрация</a></div>
                 <button id="loginBtn" type="submit" class="but2">Войти</button>
             </div>
         </div>

@@ -27,6 +27,33 @@
     <script src="{% static 'scripts/get_usermain.js' %}"></script>
     <script src="{% static 'scripts/add_and_edit_article_list_topics.js' %}"></script>
     <script src="{% static 'scripts/edit_article.js' %}"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(93830378, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93830378" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
     <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
     <!-- </style> -->
 </head>
@@ -102,14 +129,13 @@
                 $('#description').val(JSON.stringify(response['description']).replace(/"/g, ''));
 
 
-
                 var url2 = `http://158.160.51.82:30/api/v1/topics/${topic_id}/`;
                 $.ajax({
                     url: url2,
                     type: 'GET',
                     dataType: 'json',
                     success: function (response) {
-                            $('#op_selecttheme_field').text(JSON.stringify(response['name']).replace(/"/g, '')).val((JSON.stringify(response['id']).replace(/"/g, '')));
+                        $('#op_selecttheme_field').text(JSON.stringify(response['name']).replace(/"/g, '')).val((JSON.stringify(response['id']).replace(/"/g, '')));
                     },
                     error: function (error) {
                         console.log(error);
