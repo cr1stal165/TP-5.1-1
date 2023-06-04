@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+{% load static %}
+<head>
+    <title>Главная</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js"
+            integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+            integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/logout_admin.js' %}"></script>
+    <script src="{% static 'scripts/get_usermain.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <!-- </style> -->
+</head>
+
+<body>
+
+
+<!-- NAV #1 и HEADER -->
+<div class="top">
+    <div class="container1">
+        <div class="row">
+            <!-- HEADER -->
+            <header class="col-sm-5 col-md-6 col-xl-12 header order-md-0 order-xl-1">
+                <form id="myForm">
+                    <button class="but1" id="but1-admin"> Выход</button>
+                </form>
+                <a href="{% url 'admin_main' %}"> <img class="main-logo"
+                                                       src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                       width="65px"
+                                                       height="65px"></a>
+                <a class="loginname" id="loginname"></a>
+                <!-- <input class="search1" placeholder="Search"> -->
+                <img class="profilepic" id="profilepic-admin" src="{% static 'img/admin_ava.svg' %}">
+                <style>
+                    .loginname {
+                        margin-left: 67% !important;
+                    }
+                </style>
+            </header>
+        </div>
+    </div>
+</div>
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<main>
+
+
+    <center>
+        <div class="divvv">
+            <form action="{% url 'admin_thematics' %}">
+                <button class="adminmain-but" id="adminmain-but1"><p class="text_adm">Тематики</p></button>
+            </form>
+            <br><br>
+            <form action="{% url 'admin_many_articles' %}">
+                <button class="adminmain-but" id="adminmain-but2"><p class="text_adm">Статьи</p></button>
+            </form>
+        </div>
+    </center>
+    <br><br><br><br><br><br>
+
+</main>
+
+
+</body>
+
+<style>
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Regular';
+        src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Light';
+        src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Montserrat-SemiBold';
+        src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+</style>
+</html>

@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ru">
+{% load static %}
+<head>
+    <title>Страница со статьей</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'scripts/search.js' %}"></script>
+    <script src="{% static 'scripts/get_article.js' %}"></script>
+    <script src="{% static 'scripts/get_topics.js' %}"></script>
+    <script src="{% static 'scripts/get_username.js' %}"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(93830378, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93830378" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <style>
+        .container {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .container1 {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        body {
+            margin: 0 0 0 0;
+            background-color: #F6F9FD;
+        }
+
+        .nav-1 {
+            background-color: #00b0f0;
+        }
+
+        .header {
+            background-color: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+            height: 144px;
+        }
+
+        .nav-2 {
+            background-color: #002060;
+        }
+
+        .article {
+            background-color: #c00000;
+            min-height: 10rem;
+        }
+
+        .aside {
+            background-color: #00b050;
+        }
+
+        .footer {
+            height: 102px;
+            background-color: #2558B8;
+        }
+
+        .nav-1,
+        .header,
+        .nav-2,
+        .article,
+        .aside,
+        .footer {
+            color: #fff;
+        }
+
+        .main-logo {
+            margin: 39px 0 40px 91px;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Medium';
+            src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Regular';
+            src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Light';
+            src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Bold';
+            src: url({% static 'fonts/Montserrat-Bold.ttf' %}) format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .but1 {
+            position: absolute;
+            margin-left: 50%;
+            background: #2558B8;
+            border-radius: 25px;
+            margin-top: 3.2%;
+            border-color: #2558B8;
+            border: 1px;
+            width: 165px;
+            height: 50px;
+            font-size: 18px;
+            font-family: 'Montserrat-Medium', sans-serif;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .search1 {
+            position: absolute;
+            outline: none;
+            left: 76%;
+            margin-top: 3.4%;
+            width: 230px;
+            height: 39px;
+
+        }
+
+        .search1 {
+            border: none;
+            border-bottom: 2px solid #2558B8;
+            font-size: 16px;
+            font-family: 'Montserrat-Medium', sans-serif;
+
+        }
+
+        .footer-1 {
+            margin-top: 1.3%;
+        }
+
+        .p2023 {
+            font-size: 16px;
+            margin-top: -0.1%;
+            font-family: 'Montserrat-Medium', sans-serif;
+        }
+
+
+        h3 {
+            margin: 30px 0 0 23px;
+            padding-bottom: 24px;
+            color: white;
+            font-size: 36px;
+            font-family: 'Montserrat-Medium', sans-serif;
+        }
+
+        a {
+            font-size: 20px;
+            margin-left: 23px;
+            font-family: 'Montserrat-Regular', sans-serif;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .line {
+            width: 140px;
+            height: 0px;
+            margin-left: 23px;
+            border: 1.5px solid #FFFFFF;
+        }
+
+        .down-topic {
+            margin-left: 23px;
+            font-size: 20px;
+            font-family: 'Montserrat-Regular', sans-serif;
+            color: white;
+            font-family: 'Montserrat-Medium', sans-serif;
+        }
+
+        .menu-bar1 {
+            vertical-align: top;
+            width: 193px;
+            height: 353px;
+            margin-left: 6%;
+
+            background: #2558B8;
+            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+
+        }
+
+        .article1 {
+            display: inline-block;
+            vertical-align: top;
+            width: 664px;
+            margin-left: 20px;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+            padding-top: 35px;
+
+        }
+
+        .article2 {
+            vertical-align: top;
+            width: 348px;
+            height: 675px;
+            margin-left: 20px;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 25px;
+        }
+
+        h1 {
+            margin-top: 36px;
+            margin-left: 31px;
+            font-family: 'Montserrat-Medium', sans-serif;
+            font-size: 26px;
+            padding-bottom: 10px;
+        }
+
+        .line1 {
+            width: 256px;
+            height: 0px;
+            margin-left: 31px;
+            border: 2px solid #2558B8;
+            margin-top: 20px;
+        }
+
+        .main-text {
+            padding-bottom: 30px;
+            font-size: 16px;
+            width: 535px;
+            margin-left: 31px;
+            margin-top: 24px;
+            font-family: 'Montserrat-Regular', sans-serif;
+            line-height: 160%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+
+        .art {
+            font-size: 34px;
+            color: #000000;
+            font-family: 'Montserrat-Bold', sans-serif;
+            margin-left: 31px;
+            text-indent: 67px;
+        }
+
+
+        .date,
+        .author {
+            font-size: 20px;
+            font-family: 'Montserrat-Regular', sans-serif;
+            color: #000000;
+            margin-left: 26px;
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            width: 350px;
+        }
+
+        .button1 {
+            order: 1;
+            margin-left: 23px;
+            background-color: #FFFFFF;
+            border: none;
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 20px;
+            width: 43px;
+            height: 43px;
+        }
+
+        .button1_text {
+            margin-left: 20px;
+            order: 2;
+            align-content: center;
+            color: #000000;
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 20px;
+        }
+
+        #result {
+            list-style-type: none;
+            position: absolute;
+            width: 300px;
+            max-width: 300px;
+            cursor: pointer;
+            overflow-y: auto;
+            max-height: 400px;
+            box-sizing: border-box;
+            z-index: 1001;
+            margin-left: 1110px;
+            margin-top: -45px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .link-class {
+            background-color: white;
+        }
+
+        .link-class:hover {
+            background-color: rgba(37, 88, 184, 0.45);
+
+        }
+
+        .search-item {
+            color: black;
+        }
+
+        .avatar {
+            border-radius: 10px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- NAV #1 и HEADER -->
+<div class="top">
+    <div class="container1">
+        <div class="row">
+            <!-- HEADER -->
+            <header class="col-md-6 col-xl-12 header order-md-0 order-xl-1">
+                <a href="{% url 'index' %}"><img class="main-logo"
+                                                 src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"
+                                                 width="65px" height="65px"></a>
+                <a href="{% url 'login_page' %}">
+                    <button class="but1">Вход</button>
+                </a>
+                <input type="text" name="search" id="search" class="search1" placeholder="Search">
+                <ul class="list-group" id="result"></ul>
+
+            </header>
+        </div>
+    </div>
+</div>
+
+<main>
+
+    <br><br><br><br>
+    <div class="menu-bar1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
+        <h3>Темы</h3>
+        <a id="1"></a>
+        <br><br>
+        <a id="2"></a>
+        <br><br>
+        <a id="3"></a>
+        <br><br>
+        <a id="4"></a>
+        <br>
+        <br>
+        <div class="line"></div>
+        <br>
+        <a href="{% url 'all_topics' %}" class="down-topic">Все тематики</a>
+        <br>
+    </div>
+    <div class="article1 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
+        <a id="art" class="art"></a>
+        <div class="line1"></div>
+        <p class="main-text" id="main-text"></p>
+    </div>
+    <div class="article2 col-md-6 col-xl-12 order-md-0 order-xl-1" style="display: inline-block;">
+        <img id="avatar" class="avatar" name="avatar" width="348px" height="351px">
+
+        <p class="author" id="author"></p>
+        <p id="date" class="date"></p>
+        <div class="button-container">
+            <form method="post" action="{% url 'download_pdf' %}">
+                {% csrf_token %}
+                <input name="hid_id" id="hid_id" type="hidden">
+                <button type="submit" class="button1"><img src="{% static 'img/Group 26.svg' %}" height="43px"
+                                                           width="43px">
+                </button>
+            </form>
+            <p class="button1_text">Скачать статью</p>
+
+        </div>
+        <div class="button-container">
+            <form method="post" action="{% url 'download_audio' %}">
+                {% csrf_token %}
+                <input name="hid_id1" id="hid_id1" type="hidden">
+                <button class="button1"><img src="{% static 'img/Group 28.svg' %}" height="43px" width="43px"></button>
+            </form>
+            <p class="button1_text">Скачать аудио статьи</p>
+
+        </div>
+        <div class="button-container">
+            <script>
+                var music; // Define the audio variable outside the function for access in multiple functions
+
+                function playMusic() {
+                    music = new Audio('{% static 'audio.mp3' %}');
+                    music.play();
+                }
+
+                function openPopup() {
+                    var popup = window.open('', 'audioPopup', 'width=400,height=200');
+                    popup.document.write(`
+                <html>
+                <head>
+                    <style>
+                        body {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            height: 100%;
+                            margin: 0;
+                            font-family: Arial, sans-serif;
+                        }
+                        button {
+                            padding: 10px 20px;
+                            margin-top: 20px;
+                            font-size: 16px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <h2>Воспроизведение</h2>
+                    <audio id="popupAudio" controls>
+                        <source src="{% static 'audio.mp3' %}" type="audio/mpeg">
+                    </audio>
+
+                </body>
+                </html>
+            `);
+                    popup.document.close();
+                }
+
+                function closePopup() {
+                    music.pause(); // Pause the audio when the popup is closed
+                    window.close();
+                }
+            </script>
+            <button onclick="openPopup()" class="button1">
+                <img src="{% static 'img/Group 27.svg' %}" height="43px" width="43px">
+            </button>
+            <p class="button1_text">Прослушать статью</p>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+</main>
+
+<input type="hidden" id="hid" class="hid" name="hid"></input>
+<footer>
+    <div class="container footer">
+        <img class="footer-1" src="{% static 'img/Mask group.png' %}" width="38px" height="38px">
+        <p class="p2023">2023</p>
+    </div>
+</footer>
+
+</body>
+
+
+</html>
+						

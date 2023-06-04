@@ -1,0 +1,33 @@
+version: '3'
+
+networks:
+  my_network:
+    driver: bridge
+
+services:
+  db:
+    container_name: bd
+    image: postgres:latest
+    networks:
+      - my_network
+    restart: always
+    environment:
+      POSTGRES_USER: sergey
+      POSTGRES_PASSWORD: sergey
+      POSTGRES_DB: sergey
+    ports:
+      - "5432:5432"
+
+  app:
+    container_name: app
+    networks:
+      - my_network
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports: 
+      - "30:30"
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:30"
+    environment:
+        HOST: bd

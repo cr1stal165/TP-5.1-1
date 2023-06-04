@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="ru">
+{% load static %}
+<head>
+    <title>Регистрация</title>
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'scripts/registration_user.js' %}"></script>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(93830378, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/93830378" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+    <style>
+        .container {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .container1 {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        body {
+            margin: 0 0 0 0;
+            background-color: #F6F9FD;
+        }
+
+        .nav-1 {
+            background-color: #00b0f0;
+        }
+
+        .header {
+            background-color: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+            height: 144px;
+        }
+
+        .nav-2 {
+            background-color: #002060;
+        }
+
+        .article {
+            background-color: #c00000;
+            min-height: 10rem;
+        }
+
+        .aside {
+            background-color: #00b050;
+        }
+
+        .footer {
+            height: 102px;
+            background-color: #2558B8;
+        }
+
+        .nav-1,
+        .header,
+        .nav-2,
+        .article,
+        .aside,
+        .footer {
+            color: #fff;
+        }
+
+        .main-logo {
+            margin: 39px 0 40px 91px;
+            width: 65px;
+            height: 65px;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Medium';
+            src: url({% static 'fonts/Montserrat-Medium.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Regular';
+            src: url({% static 'fonts/Montserrat-Regular.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-Light';
+            src: url({% static 'fonts/Montserrat-Light.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Montserrat-SemiBold';
+            src: url({% static 'fonts/Montserrat-SemiBold.ttf' %}) format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .bg {
+            position: absolute;
+            float: right;
+            width: 494px;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #2558B8;
+            z-index: 1;
+        }
+
+        .wiki {
+            position: static;
+            float: right;
+            margin-top: 40px;
+            right: 0;
+            bottom: 0;
+
+        }
+
+
+        .link_origin {
+            margin-top: 16px !important;
+            margin-left: 77px;
+
+        }
+
+
+        .forma1 {
+            padding: 64px 0 0 74px;
+            position: relative;
+            width: 940px;
+            height: 592px;
+            margin-top: -50px;
+            background: #FFFFFF;
+
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            border-radius: 64px;
+            z-index: 2;
+        }
+
+        h1 {
+            font-family: 'Montserrat-Medium', sans-serif;
+            color: #000000;
+            font-size: 50px;
+        }
+
+        form {
+            margin-left: 20%
+        }
+
+        .first, .first1, .first2 {
+            width: 714px;
+            height: 71px;
+            font-size: 25px;
+            border: 0;
+            background: #F3F3F3;
+            border-radius: 25px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+            font-family: 'Montserrat-Regular', sans-serif;
+
+        }
+
+        input::placeholder {
+            padding: 25px;
+            color: rgba(0, 0, 0, 0.2);
+        }
+
+        .but2 {
+            position: relative;
+            float: right;
+
+            width: 255px;
+            height: 55px;
+            background: #2558B8;
+            border-radius: 25px;
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 20px;
+            color: white;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .but1 {
+            display: flex;
+            position: relative;
+            float: right;
+            margin-right: 220px;
+            margin-left: 20px;
+            width: 205px;
+            height: 55px;
+            background: #2558B8;
+            border-radius: 25px;
+            font-family: 'Montserrat-Regular', sans-serif;
+            font-size: 20px;
+            color: white;
+            border: 0;
+        }
+
+    </style>
+</head>
+<header>
+    <a href="{% url 'index' %}"><img class="main-logo" src="{% static 'img/Wikipedia-W-bold-in-square-Clean 1.png' %}"></a>
+</header>
+<body>
+<div class="grid-container">
+
+    <form id="myForm">
+        {% csrf_token %}
+        <div class="forma1">
+            <h1>Регистрация</h1>
+            <div>
+                <input class="first" id="email" placeholder="Почта">
+                <br><br><br>
+                <input class="first1" id="nickname" placeholder="Никнейм">
+                <br><br><br>
+                <input type="password" class="first2" id="password" placeholder="Пароль">
+                <br><br><br>
+
+                <div class="but1" value="2"><a style="text-decoration: none; color: white;"
+                                               href="{% url 'login_page' %}" class="link_origin">Вход</a></div>
+                <button id="register-btn" class="but2" value="1" type="submit">Зарегистрироваться</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="bg">
+        <img class="wiki" src="{% static 'img/Wikipedia-Form.svg' %}">
+    </div>
+</div>
+
+</body>
+
+</html>
+						
