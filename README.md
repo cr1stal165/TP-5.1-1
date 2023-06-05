@@ -31,10 +31,10 @@
 # Сервисы для работы
 
 * Таск-менеджер: [Trello](https://trello.com/b/EdGDby24/%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%B2%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D0%B8) <br/>
-
 * Функциональная диаграмма с User Story: [Miro](https://miro.com/app/board/uXjVMe9HOf4=/?share_link_id=191011390342) <br />
-
 * Production макеты: [Figma](https://www.figma.com/file/lbwCyNJmzD3AKl5oquqVBu/WikiWorld?node-id=0%3A1&t=4BweVBgmoZyOHkVO-1) <br />
+* Swagger: [Swagger](http://158.160.51.82:30/swagger/) <br />
+* Яндекс Метрики: [Яндекс Метрики](https://metrika.yandex.ru/dashboard?id=93830378) <br />
 
 # Документация
 
@@ -43,6 +43,7 @@
 * [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
 * [Презентация к техническому заданию](https://github.com/IvannikovS/TP-5.1-1/tree/main/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E)
 * [Видеопрезентация технического задания](https://www.youtube.com/watch?v=J_6BETO7cBw)
+* [Скриншоты аналитики](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/analytics)
 
 # Видео
 * [Видео демонстрация серверной части веб-приложения](https://www.youtube.com/watch?v=46eb8rk0nIs)
