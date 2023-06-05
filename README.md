@@ -33,6 +33,16 @@
 2. [Сильнов Сергей](https://github.com/cr1stal165) <br />
 3. [Саратов Иван](https://github.com/ivirmn) <br />
 
+---
+# Отчёт по ролям 
+
+Студенты:
+|  Имя | Роль | Задачи |Backend dev, DataBase dev
+| --- | --- | --- |
+| [Иванников Сергей](https://github.com/IvannikovS) | Application manager, Creative director, TeamLead |  Разработка баз данных, разработка backend, swagger, курсовой проект,  деплоинг|
+| [Сильнов Сергей](https://github.com/cr1stal165) | Backend dev, DataBase dev |ER - диаграммы, Анализ предметной области, разработка макетов, курсовой проект, тестирование, яндекс метрика,  деплоинг |
+| [Саратов Иван](https://github.com/ivirmn) | Frontend dev | Составление ТЗ, разработка frontend, деплоинг |
+
 # Сервисы для работы
 
 * Таск-менеджер: [Trello](https://trello.com/b/EdGDby24/%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3-%D0%B2%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D0%B8) <br/>
@@ -43,19 +53,23 @@
 
 # Документация
 
-* [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
+* [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Курсовой%20проект.pdf)
+* [Итоговая презентация](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Презентация_ТП.pdf)
 * [Техническое задание](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
+* [Сопроводительное письмо](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Сопроводительное%20письмо.pdf)
 * [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
 * [Презентация к техническому заданию](https://github.com/IvannikovS/TP-5.1-1/tree/main/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E)
 * [Видеопрезентация технического задания](https://www.youtube.com/watch?v=J_6BETO7cBw)
 * [Скриншоты аналитики](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/analytics)
 * [Скриншоты swagger](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/swagger)
 
+
 # Видео
 * [Видео демонстрация серверной части веб-приложения](https://www.youtube.com/watch?v=46eb8rk0nIs)
 * [Видео демонстрация клиентской части веб-приложения](https://www.youtube.com/watch?v=5MILuTl0S40)
 * [Видео c работой веб-приложения](https://www.youtube.com/watch?v=jNKd9AGj598)
 * [Видео с развёртыванием веб-приложения](https://www.youtube.com/watch?v=JldQJ38Elb4)
+
 
 
 
