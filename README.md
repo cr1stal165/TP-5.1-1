@@ -37,11 +37,9 @@
 # Отчёт по ролям 
 
 Студенты:
-|  Имя | Роль | Задачи |Backend dev, DataBase dev
-| --- | --- | --- |
-| [Иванников Сергей](https://github.com/IvannikovS) | Application manager, Creative director, TeamLead |  Разработка баз данных, разработка backend, swagger, курсовой проект,  деплоинг|
-| [Сильнов Сергей](https://github.com/cr1stal165) | Backend dev, DataBase dev |ER - диаграммы, Анализ предметной области, разработка макетов, курсовой проект, тестирование, яндекс метрика,  деплоинг |
-| [Саратов Иван](https://github.com/ivirmn) | Frontend dev | Составление ТЗ, разработка frontend, деплоинг |
+[Иванников Сергей](https://github.com/IvannikovS),  Application manager, Creative director, TeamLead, Разработка баз данных, разработка backend, swagger, курсовой проект,  деплоинг
+[Сильнов Сергей](https://github.com/cr1stal165),  Backend dev, ER - диаграммы, Анализ предметной области, разработка макетов, курсовой проект, тестирование, яндекс метрика,  деплоинг
+[Саратов Иван](https://github.com/ivirmn), Frontend dev, Составление ТЗ, разработка frontend, деплоинг
 
 # Сервисы для работы
 
