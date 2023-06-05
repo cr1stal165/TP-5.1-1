@@ -24,14 +24,18 @@
 
 # Документация
 
-1. [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
-2. [Техническое задание](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
-3. [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
-4. [Презентация к техническому заданию](https://github.com/IvannikovS/TP-5.1-1/tree/main/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E)
-5. [Видеопрезентация технического задания](https://www.youtube.com/watch?v=J_6BETO7cBw)
+* [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
+* [Техническое задание](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
+* [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
+* [Презентация к техническому заданию](https://github.com/IvannikovS/TP-5.1-1/tree/main/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E)
+* [Видеопрезентация технического задания](https://www.youtube.com/watch?v=J_6BETO7cBw)
 
-# 2 аттестация
+# Видео
+* [Видео демонстрация серверной части веб-приложения](https://www.youtube.com/watch?v=46eb8rk0nIs)
+* [Видео демонстрация клиентской части веб-приложения](https://www.youtube.com/watch?v=5MILuTl0S40)
+* [Видео c работой веб-приложения](https://www.youtube.com/watch?v=jNKd9AGj598)
+* [Видео с развёртыванием веб-приложения](https://www.youtube.com/watch?v=JldQJ38Elb4)
 
-1. [Видеопрезентация production макетов](https://www.youtube.com/watch?v=0kdLCa_OOzQ)
-2. [Production макеты](https://www.figma.com/file/lbwCyNJmzD3AKl5oquqVBu/WikiWorld?node-id=0%3A1&t=4BweVBgmoZyOHkVO-1)
-3. [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
+
+
+
