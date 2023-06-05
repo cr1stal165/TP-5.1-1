@@ -30,8 +30,11 @@
 # Команда по созданию проекта:
 
 1. [Иванников Сергей](https://github.com/IvannikovS) <br />
-2. [Сильнов Сергей](https://github.com/cr1stal165) <br />
-3. [Саратов Иван](https://github.com/ivirmn) <br />
+    TeamLead, Project Manager
+3. [Сильнов Сергей](https://github.com/cr1stal165) <br />
+    Backend developer, Designer
+5. [Саратов Иван](https://github.com/ivirmn) <br />
+    Frontend developer
 
 ---
 # Отчёт по ролям 
