@@ -37,9 +37,11 @@
 # Отчёт по ролям 
 
 Студенты:
-[Иванников Сергей](https://github.com/IvannikovS),  Application manager, Creative director, TeamLead, Разработка баз данных, разработка backend, swagger, курсовой проект,  деплоинг
-[Сильнов Сергей](https://github.com/cr1stal165),  Backend dev, ER - диаграммы, Анализ предметной области, разработка макетов, курсовой проект, тестирование, яндекс метрика,  деплоинг
-[Саратов Иван](https://github.com/ivirmn), Frontend dev, Составление ТЗ, разработка frontend, деплоинг
+[Иванников Сергей:](https://github.com/IvannikovS) Application manager, Creative director, TeamLead, Разработка баз данных, разработка backend, swagger, курсовой проект,  деплоинг.
+
+[Сильнов Сергей:](https://github.com/cr1stal165) Backend dev, ER - диаграммы, Анализ предметной области, разработка макетов, курсовой проект, тестирование, яндекс метрика,  деплоинг.
+
+[Саратов Иван:](https://github.com/ivirmn) Frontend dev, Составление ТЗ, разработка frontend, деплоинг.
 
 # Сервисы для работы
 
@@ -61,6 +63,9 @@
 * [Скриншоты аналитики](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/analytics)
 * [Скриншоты swagger](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/swagger)
 
+# Код приложения
+* [Backend](https://github.com/IvannikovS/TP-5.1-1/tree/main/WikiWorld/backend)
+* [Frontend](https://github.com/IvannikovS/TP-5.1-1/tree/main/WikiWorld/frontend)
 
 # Видео
 * [Видео демонстрация серверной части веб-приложения](https://www.youtube.com/watch?v=46eb8rk0nIs)
