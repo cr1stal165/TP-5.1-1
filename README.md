@@ -51,16 +51,16 @@
 
 # Документация
 
-* [Итоговая презентация](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Презентация_ТП.pdf)
-* [Техническое задание](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
-* [Сопроводительное письмо](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Сопроводительное%20письмо.pdf)
-* [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
-* [Скриншоты аналитики](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/analytics)
-* [Скриншоты swagger](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/swagger)
+* [Итоговая презентация](https://github.com/cr1stal165/WikiWorld/blob/main/Документация/Презентация_ТП.pdf)
+* [Техническое задание](https://github.com/cr1stal165/WikiWorld/tree/main/Документация)
+* [Сопроводительное письмо](https://github.com/cr1stal165/WikiWorld/blob/main/Документация/Сопроводительное%20письмо.pdf)
+* [Диаграммы](https://github.com/cr1stal165/WikiWorld/tree/main/Диаграммы)
+* [Скриншоты аналитики](https://github.com/cr1stal165/WikiWorld/tree/main/Документация/analytics)
+* [Скриншоты swagger](https://github.com/cr1stal165/WikiWorld/tree/main/Документация/swagger)
 
 # Код приложения
-* [Backend](https://github.com/IvannikovS/TP-5.1-1/tree/main/WikiWorld/backend)
-* [Frontend](https://github.com/IvannikovS/TP-5.1-1/tree/main/WikiWorld/frontend)
+* [Backend](https://github.com/cr1stal165/WikiWorld/tree/main/WikiWorld/backend)
+* [Frontend](https://github.com/cr1stal165/WikiWorld/tree/main/WikiWorld/frontend)
 
 # Видео
 * [Видео c работой веб-приложения](https://www.youtube.com/watch?v=jNKd9AGj598)
