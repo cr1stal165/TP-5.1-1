@@ -51,7 +51,6 @@
 
 # Документация
 
-* [Итоговая презентация](https://github.com/cr1stal165/WikiWorld/blob/main/Документация/Презентация_ТП.pdf)
 * [Техническое задание](https://github.com/cr1stal165/WikiWorld/tree/main/Документация)
 * [Сопроводительное письмо](https://github.com/cr1stal165/WikiWorld/blob/main/Документация/Сопроводительное%20письмо.pdf)
 * [Диаграммы](https://github.com/cr1stal165/WikiWorld/tree/main/Диаграммы)
