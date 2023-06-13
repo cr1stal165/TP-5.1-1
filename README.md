@@ -2,8 +2,6 @@
 -----------
 ## Аналог википедии "WikiWorld" <br />
 
-## [Ссылка на веб-приложение](http://158.160.51.82:30/)
-
 # Описание и особенности проекта
 <strong>WikiWorld</strong> - это автоматическая система для сбора, организации и публикации информации в формате статей на различные тематики, которая является аналогом Википедии. Основными особенностями проекта являются:
 1. Подборка статей по тематикам. WikiWorld предлагает пользователю выбрать интересующую тему, и автоматически подбирает для него наиболее подходящие статьи.
@@ -53,13 +51,10 @@
 
 # Документация
 
-* [Курсовой проект](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Курсовой%20проект.pdf)
 * [Итоговая презентация](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Презентация_ТП.pdf)
 * [Техническое задание](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация)
 * [Сопроводительное письмо](https://github.com/IvannikovS/TP-5.1-1/blob/main/Документация/Сопроводительное%20письмо.pdf)
 * [Диаграммы](https://github.com/IvannikovS/TP-5.1-1/tree/main/Диаграммы)
-* [Презентация к техническому заданию](https://github.com/IvannikovS/TP-5.1-1/tree/main/%D0%9F%D1%80%D0%B5%D0%B7%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D1%8F%20%D0%BA%20%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC%D1%83%20%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E)
-* [Видеопрезентация технического задания](https://www.youtube.com/watch?v=J_6BETO7cBw)
 * [Скриншоты аналитики](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/analytics)
 * [Скриншоты swagger](https://github.com/IvannikovS/TP-5.1-1/tree/main/Документация/swagger)
 
@@ -68,10 +63,8 @@
 * [Frontend](https://github.com/IvannikovS/TP-5.1-1/tree/main/WikiWorld/frontend)
 
 # Видео
-* [Видео демонстрация серверной части веб-приложения](https://www.youtube.com/watch?v=46eb8rk0nIs)
-* [Видео демонстрация клиентской части веб-приложения](https://www.youtube.com/watch?v=5MILuTl0S40)
 * [Видео c работой веб-приложения](https://www.youtube.com/watch?v=jNKd9AGj598)
-* [Видео с развёртыванием веб-приложения](https://www.youtube.com/watch?v=JldQJ38Elb4)
+
 
 
 
